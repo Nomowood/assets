@@ -1,5 +1,8 @@
 <script type='text/javascript'>
 //<![CDATA[
+function isInsidePostBody(element) {
+return element.closest && (element.closest('.post-body') || element.closest('.entry-content'));
+}
 // 投稿された最新記事を表示
 fetch("https://nomowood.blogspot.com/feeds/posts/default/-/ゆめしま?alt=json")
 .then(response => response.json())
