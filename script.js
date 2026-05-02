@@ -58,7 +58,7 @@ window.addEventListener('DOMContentLoaded', loadGuides);
 
 // レイアウト調整
 window.setTimeout(function() {
-document.body.className = document.body.className.replace(&#39;loading&#39;, &#39;&#39;);
+document.body.className = document.body.className.replace('loading', '');
 }, 10);
 
 // ヘッダーのスクロール固定
@@ -212,9 +212,6 @@ const categorySlugMap = {
 "しぶい":"dry"
 }
 const catbody = el.dataset.catbody || "";
-const catbodyHTML = `
-${el.dataset[`catbody$`]}
-`;
 const catCount = Number(el.dataset.category);
 let catHTML = "";
 let catSpanHTML = "";
