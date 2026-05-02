@@ -215,6 +215,8 @@ const categorySlugMap = {
 "しぶい":"dry"
 }
 const catbody = el.dataset.catbody || "";
+const catbodyHTML = `
+${el.dataset[`catbody$`]}`;
 
 const catCount = Number(el.dataset.category);
 let catHTML = "";
