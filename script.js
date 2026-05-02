@@ -1,32 +1,33 @@
 <script type='text/javascript'>
 //<![CDATA[
-console.log("=== JS LOADED ===");
+const debugDiv = document.createElement('div');
+debugDiv.style.position = 'fixed';
+debugDiv.style.top = '10px';
+debugDiv.style.left = '10px';
+debugDiv.style.background = 'rgba(0,0,0,0.8)';
+debugDiv.style.color = 'yellow';
+debugDiv.style.padding = '10px';
+debugDiv.style.zIndex = '99999';
+debugDiv.style.fontSize = '14px';
+document.body.appendChild(debugDiv);
 
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOMContentLoaded fired");
-    console.log("Found .item-data:", document.querySelectorAll('.item-data').length);
-    
-    // テスト：.item-dataが見つかったら目立つ表示
-    document.querySelectorAll('.item-data').forEach((el, i) => {
-        console.log(`.item-data ${i} found`);
-        el.style.border = "5px solid red";
-        el.style.background = "yellow";
-        el.insertAdjacentHTML("afterend", `<p style="color:red; font-size:1.2em;">JSテスト成功 - ${i}</p>`);
-    });
+function log(msg) {
+    debugDiv.innerHTML += msg + '<br>';
+    console.log(msg);
+}
 
-    // 本文の状態確認
-    const postBody = document.querySelector('.post-body');
-    if (postBody) {
-        console.log("post-body found. InnerHTML length:", postBody.innerHTML.length);
-    }
-});
+// テスト開始
+log("=== JS TEST START ===");
 
-// 5秒後に強制実行（タイミング問題対策）
-setTimeout(() => {
-    console.log("5秒後強制実行");
-    document.querySelectorAll('.item-data').forEach(el => {
-        el.style.border = "5px solid blue";
-    });
-}, 5000);
+const externalScript = document.createElement('script');
+externalScript.src = 'https://nomowood.github.io/assets/script.js';
+externalScript.async = false;
+
+externalScript.onload = () => log("✅ 外部JS読み込み <b>成功</b>");
+externalScript.onerror = () => log("❌ 外部JS読み込み <b>失敗</b>");
+
+document.head.appendChild(externalScript);
+
+log("スクリプト読み込み試行中...");
 //]]>
 </script>
