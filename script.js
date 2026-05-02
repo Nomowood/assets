@@ -89,7 +89,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // 投稿の簡易化
-document.querySelectorAll('.item-data').forEach(el => {
+const items = document.querySelectorAll('.item-data');
+if (items.length === 0) {
+    console.log("item-data がないので処理をスキップ");
+    return;
+}
+items.forEach(el => {
 const name = el.dataset.name || "";
 const dir = el.dataset.dir || "left"; // left / right
 const isLeft = dir === "left";
