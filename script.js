@@ -57,45 +57,38 @@ window.addEventListener('DOMContentLoaded', loadGuides);
 
 // レイアウト調整
 window.setTimeout(function() {
-document.body.className = document.body.className.replace(&#39;loading&#39;, &#39;&#39;);
+document.body.className = document.body.className.replace('loading', '');
 }, 10);
 
 // ヘッダーのスクロール固定
 const header = document.getElementById('main-header');  
-  function handleScroll() {
-    if (window.scrollY > 60) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  }
-  window.addEventListener('scroll', handleScroll);
-  handleScroll();
+function handleScroll() {
+if (window.scrollY > 60) {
+header.classList.add('scrolled');
+} else {
+header.classList.remove('scrolled');
+}}
+window.addEventListener('scroll', handleScroll);
+handleScroll();
 
 // 動く吹き出し
 document.addEventListener("DOMContentLoaded", () => {
-  const targets = document.querySelectorAll(".inview_re");
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-show");
-      } else {
-        entry.target.classList.remove("is-show");
-      }
-    });
-  }, {
-    threshold: 0.2
-  });
-  targets.forEach(el => observer.observe(el));
+const targets = document.querySelectorAll(".inview_re");
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add("is-show");
+} else {
+entry.target.classList.remove("is-show");
+}
+});}, {
+threshold: 0.2
+});
+targets.forEach(el => observer.observe(el));
 });
 
 // 投稿の簡易化
-const items = document.querySelectorAll('.item-data');
-if (items.length === 0) {
-    console.log("item-data がないので処理をスキップ");
-    return;
-}
-items.forEach(el => {
+document.querySelectorAll('.item-data').fotEach(el = > {
 const name = el.dataset.name || "";
 const dir = el.dataset.dir || "left"; // left / right
 const isLeft = dir === "left";
