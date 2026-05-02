@@ -12,5 +12,5 @@ document.addEventListener("DOMContentLoaded", () => {
             el.style.border = "5px solid red";
             el.style.background = "yellow";
         });
-    }, 800); // 800ms遅らせる
+    }, 2000); // 800ms遅らせる
 });
