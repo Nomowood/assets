@@ -1,33 +1,15 @@
-<script>
-  //<![CDATA[
-     // 投稿の簡易化（安全版）
+// デバッグ用超簡易版
+console.log("script.js loaded");
+
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("item-data処理開始");
+    console.log("DOMContentLoaded in script.js");
 
+    // .item-data の処理を完全に無効化
     document.querySelectorAll('.item-data').forEach(el => {
-        if (el.dataset.processed) return;
-        el.dataset.processed = "true";
-
-        try {
-            // ここにあなたの元の長いコード（name, dir, img, starHTML, getHTML など全部）をそのまま入れる
-            // ...（省略）...
-
-            // 最後の挿入部分だけ安全に変更
-            const newHTML = `...あなたの長いHTML文字列...`;   // 元の insertAdjacentHTML の中身
-
-            const tempDiv = document.createElement('div');
-            tempDiv.innerHTML = newHTML;
-            
-            // afterend の代わりに安全に挿入
-            if (el.nextSibling) {
-                el.parentNode.insertBefore(tempDiv, el.nextSibling);
-            } else {
-                el.parentNode.appendChild(tempDiv);
-            }
-
-        } catch(e) {
-            console.error("item-data処理エラー", e);
-        }
+        el.style.border = "4px solid lime";
+        el.style.background = "rgba(0,255,0,0.1)";
+        console.log("item-data found and highlighted");
     });
+
+    // 他の処理も一旦停止
 });
-//]]>
