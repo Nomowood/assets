@@ -155,6 +155,9 @@ recipeHTML += `<li><img alt="${el.dataset[`recipe${i}`]}のイラスト" src="${
 }
 
 const recipebody = el.dataset.recipebody || "";
+const recipebodyHTML = `
+${el.dataset[`recipebody$`]}
+`;
 
 const typeCount = Number(el.dataset.type);
 const typeimg = Number(el.dataset.typeimg);
@@ -217,7 +220,6 @@ const categorySlugMap = {
 const catbody = el.dataset.catbody || "";
 const catbodyHTML = `
 ${el.dataset[`catbody$`]}`;
-
 const catCount = Number(el.dataset.category);
 let catHTML = "";
 let catSpanHTML = "";
