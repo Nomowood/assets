@@ -1,5 +1,5 @@
 //<![CDATA
-// 投稿された最新記事を表示
+// 投稿された最新記事を表示,ok
 fetch("https://nomowood.blogspot.com/feeds/posts/default/-/ゆめしま?alt=json")
 .then(response => response.json())
 .then(data => {
@@ -21,7 +21,7 @@ fetch("https://nomowood.blogspot.com/feeds/posts/default/-/ゆめしま?alt=json
  });
   });
 
-// guideラベルの記事を表示
+// guideラベルの記事を表示.ok
 const newguide = document.getElementById('guidesGrid');
 async function loadGuides() {
   if (!newguide) return;
@@ -88,7 +88,7 @@ targets.forEach(el => observer.observe(el));
 });
 
 // 投稿の簡易化
-document.querySelectorAll('.item-data').fotEach(el = > {
+document.querySelectorAll('.item-data').forEach(el => {
 const name = el.dataset.name || "";
 const dir = el.dataset.dir || "left"; // left / right
 const isLeft = dir === "left";
