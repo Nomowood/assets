@@ -91,7 +91,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // 投稿の簡易化
+document.addEventListener("DOMContentLoaded", () => {
+
 document.querySelectorAll('.item-data').forEach(el => {
+
+if (isInsidePostBody(el)) { return; }
+
 const name = el.dataset.name || "";
 const dir = el.dataset.dir || "left"; // left / right
 const isLeft = dir === "left";
@@ -245,5 +250,6 @@ ${catSpanHTML}<br>のアイテムを好きなポケモンが喜びます。</p>
 </div>
 `);
 });
+}
 //]]>
 </script>
