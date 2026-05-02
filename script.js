@@ -1,16 +1,18 @@
-console.log("script.js loaded - v5");
+console.log("script.js - FINAL TEST");
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOMContentLoaded");
+    console.log("DOMContentLoaded in script.js");
 
-    // 遅延実行（本文が完全にロードされた後）
+    // ページ全体を赤くして目立つ
+    document.body.style.border = "8px solid red";
+    
     setTimeout(() => {
-        console.log("遅延処理開始");
+        const items = document.querySelectorAll('.item-data');
+        console.log(`.item-data 見つかった数: ${items.length}`);
         
-        document.querySelectorAll('.item-data').forEach((el, i) => {
-            console.log(`item-data ${i} 処理`);
-            el.style.border = "5px solid red";
+        items.forEach((el, i) => {
+            el.style.border = "6px solid lime";
             el.style.background = "yellow";
         });
-    }, 2000); // 800ms遅らせる
+    }, 1500);
 });
