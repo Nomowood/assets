@@ -1,15 +1,29 @@
 <script>
-  // スクロールヘッダー
-    let lastScroll = 0;
-    window.addEventListener('scroll', () => {
-      const header = document.querySelector('header');
-      const current = window.scrollY;
-      if (current > lastScroll &amp;&amp; current > 100) {
-        header.style.transform = 'translateY(-100%)';
-      } else {
-header.style.transform = 'translateY(0)';
+// ヘッダーのスクロール固定
+const header = document.getElementById('main-header');  
+function handleScroll() {
+if (window.scrollY > 60) {
+header.classList.add('scrolled');
+} else {
+header.classList.remove('scrolled');
+}}
+window.addEventListener('scroll', handleScroll);
+handleScroll();
+
+// 動く吹き出し
+document.addEventListener("DOMContentLoaded", () => {
+const targets = document.querySelectorAll(".inview_re");
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add("is-show");
+} else {
+entry.target.classList.remove("is-show");
 }
-lastScroll = current;
+});}, {
+threshold: 0.2
+});
+targets.forEach(el => observer.observe(el));
 });
     
 // シェアボタン
