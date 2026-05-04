@@ -84,10 +84,8 @@ entry.target.classList.remove("is-show");
 threshold: 0.2
 });
 targets.forEach(el => observer.observe(el));
-});
+})
 
-// SNSシェアボタン
-<script>
 // スクロールヘッダー
 let lastScroll = 0;
     window.addEventListener('scroll', () => {
