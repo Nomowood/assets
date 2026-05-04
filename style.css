@@ -81,7 +81,6 @@ p.other::before,
 p.other::after {content: ''; display: inline-block; width: 50px; height: 1px; background: var(--text-main); vertical-align: middle;}
 p.other::before {margin-right: 8px;}
 p.other::after {margin-left: 8px;}
-
 /* Content
 ----------------------------------------------- */
 html, body {overflow-x: hidden;}
@@ -207,7 +206,7 @@ post grid 記事
       display: flex; align-items: center; gap: 12px; font-size: 0.82rem; color: var(--text-sub); margin-bottom: 12px;
     }
 .label-badge {
-      background: var(--primary); color: #fff; padding: 3px 11px; border-radius: 9999px; font-size: 0.73rem; font-weight: 700;
+background: var(--primary); color: #fff; padding: 3px 11px; border-radius: 9999px; font-size: 0.73rem; font-weight: 700;
     }
 /* Article Page */
 .article-wrap {
@@ -279,6 +278,7 @@ main { outline: none; }
 /* =====================
 Share シェアボタン 
 ======================= */
+.share_box {margin: 50px 0; padding: 20px; background: #f8faf9; border-radius: 12px; text-align: center;}
 .btn_wrap {
     position: relative;
     display: flex;
@@ -293,6 +293,7 @@ Share シェアボタン
     border-radius: 80px;
     padding: 0 18px;
     transition: all .3s ease;
+overflow:hidden;
 }
 .btn_wrap span {
     position: absolute;
@@ -384,7 +385,9 @@ flex-direction: column;align-items: flex-start;padding: 100px 30px 30px;gap: 24p
 #nav-toggle:checked + .hamburger span:nth-child(1) {transform: rotate(45deg) translate(5px, 5px);}
 #nav-toggle:checked + .hamburger span:nth-child(2) {opacity: 0;}
 #nav-toggle:checked + .hamburger span:nth-child(3) {transform: rotate(-45deg) translate(6px, -6px);}
-}
+.share_box {padding: 8pc;}
+.btn_wrap {width:100%;}
+.article-wrap {padding: 10px;}
 @media (max-width: 480px) {
 .nav-container {padding: 0 16px;}
 }
