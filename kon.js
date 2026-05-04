@@ -27,7 +27,7 @@ targets.forEach(el => observer.observe(el));
 });
     
 // シェアボタン
-const btn = document.getElementById('shareBtn');
+const btn = document.getElementById('.btn_wrap');
 let isOpen = false;
 // クリックで開閉
 btn.addEventListener('click', function(e) {
