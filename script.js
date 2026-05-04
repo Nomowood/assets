@@ -1,4 +1,3 @@
-//<![CDATA
 // 投稿された最新記事を表示,ok
 fetch("https://nomowood.blogspot.com/feeds/posts/default/-/ゆめしま?alt=json")
 .then(response => response.json())
@@ -247,4 +246,3 @@ ${catSpanHTML}<br>のアイテムを好きなポケモンが喜びます。</p>
 </div>
 `);
 });
-//]]>
