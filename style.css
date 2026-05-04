@@ -1,4 +1,33 @@
 <style>
+    :root {
+      --primary: #00b894;
+      --accent: #00a085;
+      --bg: #f8faf9;
+      --card: #ffffff;
+      --text: #2d3436;
+      --text-sub: #636e72;
+      --border: #e0e6e4;
+      --shadow: 0 10px 30px rgba(0,0,0,0.06);
+      --header-h: 70px;
+    }
+
+    * { box-sizing: border-box; font-size:16px;}
+    body { 
+      font-size:1rem;
+      background: var(--bg); 
+      color: var(--text); 
+      font-family: system-ui, sans-serif; 
+      line-height: 1.7;
+      letter-spacing:0.05em;
+      margin: 0; 
+    }
+    a { text-decoration: none; color: inherit; transition: color .3s; }
+    a:hover { color: var(--primary); }
+
+  .container {
+  max-width: 1280px; margin: 40px auto; padding: 0 20px;
+  display: grid; grid-template-columns: 1fr 340px; gap: 40px;
+  }
 body, p, div, span, h1, h2, h3, h4, h5, h6, .post-body, .entry-content {
 user-select: none !important;
 -webkit-user-select: none !important;
@@ -28,8 +57,8 @@ a, a i {
 .page-body img,
 img {
 background: transparent !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
+background-color: transparent !important;
+box-shadow: none !important;
 border: none !important;
 }
 .widget.Image img {
@@ -37,7 +66,7 @@ background: transparent !important;
 background-color: transparent !important;
 }
 img[alt] {
- background: transparent !important;
+background: transparent !important;
 }
 
 /* 装飾
@@ -53,13 +82,8 @@ p.other::after {margin-left: 8px;}
 
 /* Content
 ----------------------------------------------- */
-html, body {
-overflow-x: hidden;
-}
-img, iframe, video {
-max-width: 100%;
-height: auto;
-}
+html, body {overflow-x: hidden;}
+img, iframe, video {max-width: 100%;height: auto;}
 
 /* Header
 ----------------------------------------------- */
@@ -69,12 +93,11 @@ position: fixed;
 top: 0;
 margin:0;
 z-index: 100;
-background:transparent;
+background:#fff;
 transition:background-color 0.4s ease, color 0.3s ease;
 }
 header.scrolled {
 background-color: var(--bg)!important;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 .nav-container {
 width:100%;
@@ -88,11 +111,11 @@ height: 76px;
 }
 .logo {
 font-size: 1.65rem; 
-      font-weight: 900; 
-      letter-spacing: -0.5px;
-      color: var(--text);
+font-weight: 900; 
+letter-spacing: -0.5px;
+color: var(--text);
 }
- .logo span { color: var(--primary); }
+.logo span { color: var(--primary); }
 .nav-toggle {display: none;}
 .hamburger {
 display: none;
@@ -103,7 +126,7 @@ justify-content: space-between;
 width: 68px;
 height: 54px;
 padding:17px;
-background: rgba(102, 72, 38,0.9);
+background: rgba(0, 72, 0,0.9);
 border-radius:10px;
 cursor: pointer;
 z-index: 1200;
@@ -144,8 +167,8 @@ align-items: center;
 }
 .nav-toggle:focus + .hamburger,
 .hamburger:focus {
-  outline: 2px solid #fff;
-  outline-offset: 4px;
+outline: 2px solid #fff;
+ outline-offset: 4px;
 }
 
 /* 
