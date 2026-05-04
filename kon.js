@@ -60,46 +60,7 @@ alert("この端末では使えません");
 function copyLink() {   navigator.clipboard.writeText(location.href).then(() => {alert("URLのリンクをコピーしました");});
 }
 
-// カレンダー全体のスタイル
-#calendar-container {
-  font-family: sans-serif;
-  background: #fff;
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 8px;
-}
-#calendar-header {
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #333;
-}
-#calendar-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 14px;
-}
-#calendar-table th, #calendar-table td {
-  text-align: center;
-  padding: 5px 0;
-  width: 14.28%;
-}
-// 期間イベントの枠線・背景（4/1〜4/5など
-.event-period {
-  background-color: #ffeb3b;
-  color: #333;
-  font-weight: bold;
-  border-radius: 0;
-}
-// 発売日のマーク
-.release-day {
-  background-color: #ff5722;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 50%;
-}
-// 土日の色
-#calendar-table th:first-child, #calendar-table td:first-child { color: red; }
-#calendar-table th:last-child, #calendar-table td:last-child { color: blue; }
+// 
+
 
   </script>
