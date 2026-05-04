@@ -11,23 +11,25 @@
       --header-h: 70px;
     }
 
-    * { box-sizing: border-box; font-size:16px;}
-    body { 
-      font-size:1rem;
-      background: var(--bg); 
-      color: var(--text); 
-      font-family: system-ui, sans-serif; 
-      line-height: 1.7;
-      letter-spacing:0.05em;
-      margin: 0; 
-    }
-    a { text-decoration: none; color: inherit; transition: color .3s; }
-    a:hover { color: var(--primary); }
+* { box-sizing: border-box; font-size:16px;}
+body { 
+font-size:1rem;
+width:100%;
+background: var(--bg); 
+color: var(--text); 
+font-family: system-ui, sans-serif;
+line-height: 1.7;
+letter-spacing:0.05em;
+margin: 0;
+overflow:hidden;
+}
+a { text-decoration: none; color: inherit; transition: color .3s; }
+a:hover { color: var(--primary); }
 
-  .container {
-  max-width: 1280px; margin: 40px auto; padding: 0 20px;
-  display: grid; grid-template-columns: 1fr 340px; gap: 40px;
-  }
+.container {
+width:100%; max-width: 1280px; margin: 40px auto; padding: 0 20px;
+display: grid; grid-template-columns: 1fr 340px; gap: 40px;
+}
 body, p, div, span, h1, h2, h3, h4, h5, h6, .post-body, .entry-content {
 user-select: none !important;
 -webkit-user-select: none !important;
@@ -258,21 +260,21 @@ post grid 記事
 /* Footer
 ----------------------------------------------- */
 footer {
-      background: #2d3436; color: #ddd; padding: 60px 20px 30px; margin-top: 80px;
-    }
-    .footer-inner {
-      max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 40px;
-    }
-    .footer-col h3 { color: #fff; margin-bottom: 18px; }
-    .footer-col a { color: #bbb; display: block; margin-bottom: 8px; }
-    .copyright {
-      text-align: center; margin-top: 50px; padding-top: 25px; border-top: 1px solid #444; font-size: 0.85rem;
-    }
+background: #2d3436; color: #ddd; padding: 60px 20px 30px; margin-top: 80px;
+}
+.footer-inner {
+max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 40px;
+}
+.footer-col h3 { color: #fff; margin-bottom: 18px; }
+.footer-col a { color: #bbb; display: block; margin-bottom: 8px; }
+.copyright {
+text-align: center; margin-top: 50px; padding-top: 25px; border-top: 1px solid #444; font-size: 0.85rem;
+}
 
 /* SEO & Accessibility
 ----------------------------------------------- */
-    main { outline: none; }
-    .post-body { word-break: break-word; }
+main { outline: none; }
+.post-body { word-break: break-word; word-wrap: break-word; -webkit-font-smoothing: antialiased;}
 
 /* =====================
 Share シェアボタン 
