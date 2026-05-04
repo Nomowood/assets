@@ -181,7 +181,7 @@ post grid 記事
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
       gap: 28px;
     }
-    .card {
+.card {
       background: var(--card); 
       border-radius: 16px; 
       overflow: hidden; 
@@ -189,28 +189,28 @@ post grid 記事
       transition: all .4s cubic-bezier(0.4, 0, 0.2, 1);
       display: flex; flex-direction: column; height: 100%;
     }
-    .card:hover {
+.card:hover {
       transform: translateY(-8px); 
       box-shadow: 0 20px 40px rgba(0,184,148,0.12);
     }
-    .card-img {
+.card-img {
       width: 100%; aspect-ratio: 16/9; object-fit: cover;
     }
-    .card-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
-    .card-title {
+.card-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
+.card-title {
       font-size: 1.15rem; 
       font-weight: 700; 
       line-height: 1.45; 
       margin: 0 0 12px;
     }
-    .post-meta {
+.post-meta {
       display: flex; align-items: center; gap: 12px; font-size: 0.82rem; color: var(--text-sub); margin-bottom: 12px;
     }
-    .label-badge {
+.label-badge {
       background: var(--primary); color: #fff; padding: 3px 11px; border-radius: 9999px; font-size: 0.73rem; font-weight: 700;
     }
-    /* Article Page */
-    .article-wrap {
+/* Article Page */
+.article-wrap {
       background: var(--card); 
       padding: 45px; 
       border-radius: 20px; 
@@ -218,18 +218,18 @@ post grid 記事
       max-width: 860px; 
       margin: 0 auto;
     }
-    .entry-title { 
+.entry-title { 
       font-size: 2.35rem; 
       line-height: 1.35; 
       margin: 20px 0 35px; 
       font-weight: 900;
     }
-    .post-meta-single { margin-bottom: 35px; font-size: 0.9rem; color: var(--text-sub); }
-    .post-body {
+.post-meta-single { margin-bottom: 35px; font-size: 0.9rem; color: var(--text-sub); }
+.post-body {
       font-size: 1.05rem;
       line-height: 1.85;
     }
-    .post-body h2 {
+.post-body h2 {
       border-left: 7px solid var(--primary);
       background: #f0fdfa;
       padding: 14px 22px;
@@ -237,18 +237,18 @@ post grid 記事
       border-radius: 0 10px 10px 0;
       font-size: 1.45rem;
     }
-    .post-body img { max-width: 100%; height: auto; border-radius: 12px; margin: 30px 0; }
+.post-body img { max-width: 100%; height: auto; border-radius: 12px; margin: 30px 0; }
 
 /* sidebar
 ----------------------------------------------- */
 .sidebar { display: flex; flex-direction: column; gap: 32px; }
-  .widget {
+.widget {
       background: var(--card); 
       padding: 28px; 
       border-radius: 16px; 
       box-shadow: var(--shadow);
     }
-    .widget h2 {
+.widget h2 {
       font-size: 1.15rem; 
       margin: 0 0 18px; 
       padding-bottom: 12px; 
@@ -288,6 +288,7 @@ Share シェアボタン
     cursor: pointer;
     width: 340px;
     height: 72px;
+    margin:0 auto;
     background-color: #EEEEED;
     border-radius: 80px;
     padding: 0 18px;
