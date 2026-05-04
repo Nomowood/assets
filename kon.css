@@ -45,7 +45,7 @@ img {
   -webkit-user-drag: none;
   user-drag: none;
 }
-a, a i {
+a, a i, .btn_wrap {
   user-select: text;
   -webkit-user-select: text;
 }
