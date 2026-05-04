@@ -284,20 +284,17 @@ Share シェアボタン
     align-items: center;
     overflow: hidden;
     cursor: pointer;
-    width: 260px;
+    width: 340px;
     height: 72px;
     background-color: #EEEEED;
     border-radius: 80px;
     padding: 0 18px;
     transition: all .3s ease;
 }
-.btn_wrap.active {
-    width: 340px;
-}
 .btn_wrap span {
     position: absolute;
     z-index: 99;
-    width: 260px;
+    width: 340px;
     height: 72px;
     border-radius: 80px;
     font-size: 20px;
