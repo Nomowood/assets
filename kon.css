@@ -350,7 +350,7 @@ overflow:hidden;
     color: #EEEEED;
     background-color: #1F1E1E;
     transition: all .8s ease;
-}
+pointer-events: none;}
 .share_container {
     display: flex;
     align-items: center;
