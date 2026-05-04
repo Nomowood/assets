@@ -134,7 +134,6 @@ alert("この端末では使えません");
 function copyLink() {   navigator.clipboard.writeText(location.href).then(() => {alert("URLのリンクをコピーしました");});
 }
 
-  </script>
 
 // 投稿の簡易化
 document.querySelectorAll('.item-data').forEach(el => {
