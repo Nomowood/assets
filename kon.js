@@ -90,12 +90,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function addEventsToCell(cell, dateStr) {
         calendarEvents.ranges.forEach(range => {
-            if (dateStr >= range.start && dateStr <= range.end) {
-                const bar = document.createElement('div');
-                bar.className = `event-bar ${range.class}`;
-                if (dateStr === range.start) bar.textContent = range.label;
-                cell.appendChild(bar);
-            }
+    if (dateStr >= range.start && dateStr <= range.end) {
+        const bar = document.createElement('div');
+        let extraClass = '';
+        if (dateStr === range.start) {
+            extraClass = 'start';
+            bar.textContent = range.label;
+        } else if (dateStr === range.end) {
+            extraClass = 'end';
+        } else {
+            extraClass = 'continuation';
+        }
+        bar.className = `event-bar ${range.class} ${extraClass}`;
+        cell.appendChild(bar);
+    }
+});
         });
 
         calendarEvents.points.forEach(point => {
