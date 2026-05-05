@@ -339,6 +339,13 @@ background: var(--primary); color: #fff; padding: 3px 11px; border-radius: 9999p
 .highlight {
   background: #f3e3e6;
 }
+#calendar-table td:nth-child(1) {
+  background: #fff5f7;
+}
+
+#calendar-table td:nth-child(7) {
+  background: #f3fbff;
+}
 
 
 /* Footer
