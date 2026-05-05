@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentYear = new Date().getFullYear();
     let currentMonth = new Date().getMonth();
 
-    function generateCalendar(year, month) {
+        function generateCalendar(year, month) {
         const monthYearEl = document.getElementById('calendar-month-year');
         const calendarBody = document.getElementById('calendar-body');
         if (!monthYearEl || !calendarBody) return;
@@ -83,7 +83,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     dateNum.textContent = date;
                     cell.appendChild(dateNum);
 
-                    // イベント処理
                     addEventsToCell(cell, dateStr, year, month, date);
 
                     date++;
@@ -95,15 +94,13 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function addEventsToCell(cell, dateStr, year, month, day) {
-        // 期間イベント（長いバーで繋げる）
+        // 期間イベント
         calendarEvents.ranges.forEach(range => {
             if (dateStr >= range.start && dateStr <= range.end) {
-                // 期間の**最初の日**だけ長いバーを作成
-                if (dateStr === range.start) {
-                    const length = calculateEventLength(range.start, range.end, year, month);
-                    const longBar = createLongEventBar(range.label, range.class, length);
-                    cell.appendChild(longBar);
-                }
+                const bar = createEventBar(range.label, range.class);
+                // 期間の最初の日のみラベルを表示
+                if (dateStr !== range.start) bar.textContent = '';
+                cell.appendChild(bar);
             }
         });
 
@@ -115,21 +112,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // 期間の長さを計算
-    function calculateEventLength(start, end, year, month) {
-        const s = new Date(start);
-        const e = new Date(end);
-        return Math.ceil((e - s) / (1000 * 60 * 60 * 24)) + 1;
-    }
-
-    function createLongEventBar(text, className, length) {
-        const bar = document.createElement('div');
-        bar.className = `event-bar long-bar ${className}`;
-        bar.textContent = text;
-        bar.style.setProperty('--length', length);   // CSSで長さ制御
-        return bar;
-    }
-
     function createEventBar(text, className) {
         const bar = document.createElement('div');
         bar.className = `event-bar ${className}`;
@@ -138,10 +120,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // 矢印ボタン（省略 - 前のコードと同じ）
-
     generateCalendar(currentYear, currentMonth);
 });
-
 // ==================== イベントデータ ====================
 const calendarEvents = {
     ranges: [
