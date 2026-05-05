@@ -256,81 +256,56 @@ background: var(--primary); color: #fff; padding: 3px 11px; border-radius: 9999p
 /* ____________
 カレンダー
 ----------------------------------------------- */
-#calendar-container {
-  width: 100%;
-  max-width: 100%;
-  padding: 0;
-  overflow: hidden;
-}
-
-#calendar-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #e86b8a;
-  color: white;
-  padding: 12px 15px;
-  font-weight: bold;
-}
-
-#calendar-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-}
-
-#calendar-table th,
-#calendar-table td {
-  width: 14.2857%; /* 7等分 */
-  padding: 0;
-  border: 1px solid #f0e6e9;
-  vertical-align: top;
-}
-
 .calendar-cell {
-  height: 78px;
-  padding: 4px 2px 2px;
+  height: 82px;
+  padding: 4px 4px 2px;
   position: relative;
-  background: #fff;
+  vertical-align: top;
+  border: 1px solid #f0e6e9;
 }
 
 .date-number {
   font-size: 15px;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 }
 
 /* イベントバー */
 .event-bar {
   font-size: 11px;
-  padding: 3px 4px;
-  margin: 1px 1px 2px;
-  border-radius: 4px;
-  text-align: center;           /* 中央揃え */
+  padding: 4px 8px;
+  border-radius: 6px;
+  text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin: 3px 2px;
   font-weight: 500;
+  max-width: 100%;
 }
 
-/* 長期イベントの繋がり強化 */
+/* 長期イベントの連結バー */
 .event-period {
-  background-color: #c4b5ff;
-  color: #4330a0;
-  margin-left: -1px;   /* 隣のセルと繋げる */
-  margin-right: -1px;
-  border-radius: 0;    /* 角をなくして連続感を出す */
+  background-color: #a5b4ff;
+  color: #2f2f7f;
+  margin: 3px -2px;           /* セルを跨いで繋げる */
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-/* 単発イベント */
-.release-day {
-  background-color: #ff8a9e;
-  color: white;
-  display: inline-block;
-  width: calc(100% - 4px);
+/* 継続部分（2日目以降）はテキストなし・角丸調整 */
+.event-period.continuation {
+  border-radius: 0;
+  margin-left: -2px;
+  margin-right: -2px;
 }
 
+/* 週跨ぎ対応（次の行の最初の日） */
+.event-period.continuation:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
 
 /* Footer
 ----------------------------------------------- */
