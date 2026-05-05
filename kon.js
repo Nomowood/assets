@@ -48,6 +48,57 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentYear = new Date().getFullYear();
     let currentMonth = new Date().getMonth();
 
+    
+                    document.addEventListener("DOMContentLoaded", function() {
+
+    // ヘッダー
+    const header = document.getElementById('main-header');
+    if (header) {
+        const handleScroll = () => header.classList.toggle('scrolled', window.scrollY > 60);
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+    }
+
+    // 吹き出し
+    const targets = document.querySelectorAll(".inview_re");
+    if (targets.length) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => entry.target.classList.toggle("is-show", entry.isIntersecting));
+        }, { threshold: 0.2 });
+        targets.forEach(el => observer.observe(el));
+    }
+
+    // シェアボタン
+    const btn = document.getElementById('shareBtn');
+    if (btn) {
+        let isOpen = false;
+        btn.addEventListener('click', function(e) {
+            if (e.target.closest('a') || e.target.closest('.share_item') || e.target.tagName === 'I' || e.target.closest('i') || e.target.classList.contains('share_label')) return;
+            e.stopPropagation();
+            isOpen = !isOpen;
+            btn.classList.toggle('active', isOpen);
+        });
+    }
+
+    // シェアリンク
+    const url = encodeURIComponent(location.href);
+    const text = encodeURIComponent(document.title + "\n" + location.href);
+    const linkIds = ["x-link", "line-link", "threads-link", "reddit-link", "sms-link"];
+    linkIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            if (id === "x-link") el.href = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
+            if (id === "line-link") el.href = `https://social-plugins.line.me/lineit/share?url=${url}`;
+            if (id === "threads-link") el.href = `https://www.threads.net/intent/post?text=${text}`;
+            if (id === "reddit-link") el.href = `https://www.reddit.com/submit?url=${url}`;
+            if (id === "sms-link") el.href = `sms:?body=${text}`;
+        }
+    });
+
+    // ==================== カレンダー ====================
+    let currentYear = new Date().getFullYear();
+    let currentMonth = new Date().getMonth();
+
     function generateCalendar(year, month) {
         const monthYearEl = document.getElementById('calendar-month-year');
         const calendarBody = document.getElementById('calendar-body');
