@@ -259,43 +259,72 @@ background: var(--primary); color: #fff; padding: 3px 11px; border-radius: 9999p
 #calendar-container {
   font-family: sans-serif;
   background: #fff;
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 8px;
+  border: 1px solid #e0b0b0;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 #calendar-header {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #e86b8a;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px 8px 0 0;
+  margin: -12px -12px 12px -12px;
   font-weight: bold;
-  margin-bottom: 10px;
-  color: #333;
+}
+#calendar-header button {
+  background: rgba(255,255,255,0.3);
+  border: none;
+  color: white;
+  font-size: 18px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 #calendar-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 14px;
 }
-#calendar-table th, #calendar-table td {
-  text-align: center;
-  padding: 5px 0;
-  width: 14.28%; /* 7列均等 */
+#calendar-table th {
+  background: #f8e1e8;
+  color: #e86b8a;
+  padding: 8px 4px;
+  font-weight: bold;
 }
-/* 期間イベントの枠線・背景（4/1〜4/5など） */
+.calendar-cell {
+  height: 52px;
+  vertical-align: top;
+  padding: 4px;
+  border: 1px solid #f0f0f0;
+  position: relative;
+  font-size: 13px;
+}
+.event-label {
+  font-size: 10px;
+  line-height: 1.1;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* イベント色 */
 .event-period {
-  background-color: #ffeb3b;
-  color: #333;
-  font-weight: bold;
-  border-radius: 0;
+  background: #fff3b0 !important;
+  border-left: 3px solid #ffd700;
 }
-/* 発売日のマーク */
 .release-day {
-  background-color: #ff5722;
-  color: #fff;
+  background: #ff8a65 !important;
+  color: white;
   font-weight: bold;
-  border-radius: 50%;
 }
 /* 土日の色 */
-#calendar-table th:first-child, #calendar-table td:first-child { color: red; }
-#calendar-table th:last-child, #calendar-table td:last-child { color: blue; }
+#calendar-table td:first-child { color: #e86b8a; }
+#calendar-table td:last-child { color: #4a9eff; }
 
 
 /* Footer
