@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
     loadGuides();
 
     // 4. スクロール処理（ヘッダーの固定・表示切り替え）
-    const header = document.getElementById('main-header');
+    const header = document.getElementById('header');
     let lastScroll = 0;
     window.addEventListener('scroll', () => {
         const current = window.scrollY;
