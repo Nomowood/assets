@@ -80,7 +80,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 } else {
                     const dateStr = `${year}-${String(month+1).padStart(2,'0')}-${String(date).padStart(2,'0')}`;
 
-                    // 日付番号
                     const dateNum = document.createElement('div');
                     dateNum.className = 'date-number';
                     dateNum.textContent = date;
@@ -114,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function() {
         return bar;
     }
 
-    // 矢印ボタン
+    // 矢印
     const prevBtn = document.getElementById('prev-month');
     const nextBtn = document.getElementById('next-month');
 
@@ -130,19 +129,15 @@ document.addEventListener("DOMContentLoaded", function() {
         generateCalendar(currentYear, currentMonth);
     });
 
-    // 初回表示
     generateCalendar(currentYear, currentMonth);
 });
 
-// ========= イベント ===============
+// ==================== イベントデータ ====================
 const calendarEvents = {
     ranges: [
-        { start: '2026-04-01', end: '2026-04-05', class: 'event-period', label: '期間限定イベント' },
-        { start: '2026-05-10', end: '2026-05-15', class: 'event-period', label: '新イベント' }
+        { start: '2026-05-10', end: '2026-05-14', class: 'event-period', label: '新イベント' }
     ],
     points: [
-        { date: '2026-04-20', class: 'release-day', label: '新刊発売日' },
         { date: '2026-05-25', class: 'release-day', label: '新刊' }
-        // ← ここに新しい特定日のイベントを追加できます
     ]
 };
