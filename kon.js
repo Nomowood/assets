@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // ヘッダー
+    // ヘッダースクロール
     const header = document.getElementById('main-header');
     if (header) {
         const handleScroll = () => header.classList.toggle('scrolled', window.scrollY > 60);
@@ -32,58 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // シェアリンク
     const url = encodeURIComponent(location.href);
     const text = encodeURIComponent(document.title + "\n" + location.href);
-    const linkIds = ["x-link", "line-link", "threads-link", "reddit-link", "sms-link"];
-    linkIds.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) {
-            if (id === "x-link") el.href = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
-            if (id === "line-link") el.href = `https://social-plugins.line.me/lineit/share?url=${url}`;
-            if (id === "threads-link") el.href = `https://www.threads.net/intent/post?text=${text}`;
-            if (id === "reddit-link") el.href = `https://www.reddit.com/submit?url=${url}`;
-            if (id === "sms-link") el.href = `sms:?body=${text}`;
-        }
-    });
-
-    // ==================== カレンダー ====================
-    let currentYear = new Date().getFullYear();
-    let currentMonth = new Date().getMonth();
-
-    
-                    document.addEventListener("DOMContentLoaded", function() {
-
-    // ヘッダー
-    const header = document.getElementById('main-header');
-    if (header) {
-        const handleScroll = () => header.classList.toggle('scrolled', window.scrollY > 60);
-        window.addEventListener('scroll', handleScroll);
-        handleScroll();
-    }
-
-    // 吹き出し
-    const targets = document.querySelectorAll(".inview_re");
-    if (targets.length) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => entry.target.classList.toggle("is-show", entry.isIntersecting));
-        }, { threshold: 0.2 });
-        targets.forEach(el => observer.observe(el));
-    }
-
-    // シェアボタン
-    const btn = document.getElementById('shareBtn');
-    if (btn) {
-        let isOpen = false;
-        btn.addEventListener('click', function(e) {
-            if (e.target.closest('a') || e.target.closest('.share_item') || e.target.tagName === 'I' || e.target.closest('i') || e.target.classList.contains('share_label')) return;
-            e.stopPropagation();
-            isOpen = !isOpen;
-            btn.classList.toggle('active', isOpen);
-        });
-    }
-
-    // シェアリンク
-    const url = encodeURIComponent(location.href);
-    const text = encodeURIComponent(document.title + "\n" + location.href);
-    const linkIds = ["x-link", "line-link", "threads-link", "reddit-link", "sms-link"];
+    const linkIds = ["x-link","line-link","threads-link","reddit-link","sms-link"];
     linkIds.forEach(id => {
         const el = document.getElementById(id);
         if (el) {
@@ -128,24 +77,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     dateNum.textContent = date;
                     cell.appendChild(dateNum);
 
-                    // イベント
-                    calendarEvents.ranges.forEach(range => {
-                        if (dateStr >= range.start && dateStr <= range.end) {
-                            const bar = document.createElement('div');
-                            bar.className = `event-bar ${range.class}`;
-                            if (dateStr === range.start) bar.textContent = range.label;
-                            cell.appendChild(bar);
-                        }
-                    });
-
-                    calendarEvents.points.forEach(point => {
-                        if (dateStr === point.date) {
-                            const bar = document.createElement('div');
-                            bar.className = `event-bar ${point.class}`;
-                            bar.textContent = point.label;
-                            cell.appendChild(bar);
-                        }
-                    });
+                    // イベント追加
+                    addEventsToCell(cell, dateStr);
 
                     date++;
                 }
@@ -155,17 +88,51 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    function addEventsToCell(cell, dateStr) {
+        calendarEvents.ranges.forEach(range => {
+            if (dateStr >= range.start && dateStr <= range.end) {
+                const bar = document.createElement('div');
+                bar.className = `event-bar ${range.class}`;
+                if (dateStr === range.start) bar.textContent = range.label;
+                cell.appendChild(bar);
+            }
+        });
+
+        calendarEvents.points.forEach(point => {
+            if (dateStr === point.date) {
+                const bar = document.createElement('div');
+                bar.className = `event-bar ${point.class}`;
+                bar.textContent = point.label;
+                cell.appendChild(bar);
+            }
+        });
+    }
+
+    // 矢印
     const prevBtn = document.getElementById('prev-month');
     const nextBtn = document.getElementById('next-month');
 
-    if (prevBtn) prevBtn.addEventListener('click', () => { currentMonth--; if (currentMonth < 0) {currentMonth=11; currentYear--;} generateCalendar(currentYear, currentMonth); });
-    if (nextBtn) nextBtn.addEventListener('click', () => { currentMonth++; if (currentMonth > 11) {currentMonth=0; currentYear++;} generateCalendar(currentYear, currentMonth); });
+    if (prevBtn) prevBtn.addEventListener('click', () => {
+        currentMonth--;
+        if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+        generateCalendar(currentYear, currentMonth);
+    });
+
+    if (nextBtn) nextBtn.addEventListener('click', () => {
+        currentMonth++;
+        if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+        generateCalendar(currentYear, currentMonth);
+    });
 
     generateCalendar(currentYear, currentMonth);
 });
 
-// イベントデータ
+// ==================== イベントデータ ====================
 const calendarEvents = {
-    ranges: [{ start: '2026-05-09', end: '2026-05-13', class: 'event-period', label: 'chouchou' }],
-    points: [{ date: '2026-05-25', class: 'release-day', label: '新刊' }]
+    ranges: [
+        { start: '2026-05-09', end: '2026-05-13', class: 'event-period', label: 'chouchou' }
+    ],
+    points: [
+        { date: '2026-05-25', class: 'release-day', label: '新刊' }
+    ]
 };
