@@ -1,54 +1,65 @@
-document.addEventListener("DOMContentLoaded", function() {
-    alert("JSは読み込まれました");
+// ヘッダーのスクロール固定
+const header = document.getElementById('main-header');  
+function handleScroll() {
+if (window.scrollY > 60) {
+header.classList.add('scrolled');
+} else {
+header.classList.remove('scrolled');
+}}
+window.addEventListener('scroll', handleScroll);
+handleScroll();
 
-    // === シェアボタン確認 ===
-    const btn = document.getElementById('btn_wrap');
-    if (btn) {
-        alert("✅ btn_wrap が見つかりました");
-        let isOpen = false;
-        btn.addEventListener('click', function(e) {
-            if (e.target.tagName === 'I' || e.target.closest('a')) return;
-            isOpen = !isOpen;
-            btn.classList.toggle('active', isOpen);
-        });
-    } else {
-        alert("❌ btn_wrap が見つかりません");
-    }
-
-    // 各シェアリンクの確認
-    const links = ["x-link", "line-link", "threads-link", "reddit-link", "sms-link"];
-    links.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) {
-            console.log(`✅ ${id} が見つかりました`);
-        } else {
-            alert(`❌ ${id} が見つかりません`);
-        }
-    });
-
-    // === カレンダー確認 ===
-    const monthEl = document.getElementById('calendar-month-year');
-    const bodyEl = document.getElementById('calendar-body');
-
-    if (monthEl && bodyEl) {
-        alert("✅ カレンダー要素が見つかりました");
-        generateCalendar();
-    } else {
-        alert(`❌ カレンダー要素が見つかりません\nmonth-year: ${!!monthEl}\nbody: ${!!bodyEl}`);
-    }
+// 動く吹き出し
+document.addEventListener("DOMContentLoaded", () => {
+const targets = document.querySelectorAll(".inview_re");
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add("is-show");
+} else {
+entry.target.classList.remove("is-show");
+}
+});}, {
+threshold: 0.2
 });
-
-function generateCalendar() {
-    const now = new Date();
-    const year = now.getFullYear();
-    const month = now.getMonth();
+targets.forEach(el => observer.observe(el));
+});
     
-    const monthYearEl = document.getElementById('calendar-month-year');
-    const calendarBody = document.getElementById('calendar-body');
-    
-    if (!monthYearEl || !calendarBody) return;
+// シェアボタン
+const btn = document.getElementById('ShareBtn');
+let isOpen = false;
+// クリックで開閉
+btn.addEventListener('click', function(e) {
+// アイコンクリック時は閉じない
+ if (e.target.tagName === 'I' || e.target.closest('a')) {
+return;
+}
+isOpen = !isOpen;
+if (isOpen) {
+btn.classList.add('active');
+} else {
+btn.classList.remove('active');
+}
+});
+// URL設定
+const url = encodeURIComponent(location.href);
+const text = encodeURIComponent(document.title + "\n" + location.href);
+document.getElementById("x-link").href = "https://twitter.com/intent/tweet?amp;text=" + text + "&amp;url=" + url;
+document.getElementById("line-link").href = "https://social-plugins.line.me/lineit/share?amp;url=" + url;
+document.getElementById("threads-link").href = "https://www.threads.net/intent/post?amp;text=" + text;
+document.getElementById("reddit-link").href = "https://www.reddit.com/submit?amp;url=" + url;
+document.getElementById("sms-link").href = "sms:?amp;body=" + text;
+// 機能
+function nativeShare() {
+if (navigator.share) {
+navigator.share({ title: document.title, text: document.title, url: location.href });
+} else {
+alert("この端末では使えません");
+}}
+function copyLink() {   navigator.clipboard.writeText(location.href).then(() => {alert("URLのリンクをコピーしました");});
+}
 
-    monthYearEl.innerText = year + '年 ' + (month + 1) + '月';
+// カレンダー
 const calendarEvents = {
 // 期間イベント（開始日, 終了日, クラス名, ラベル）
 ranges: [{ start: '2026-04-01', end: '2026-04-05', class: 'event-period', label: '期間限定イベント' }],
@@ -102,4 +113,3 @@ function generateCalendar() {
           }
         }
         generateCalendar();
-}
