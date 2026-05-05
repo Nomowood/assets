@@ -1,4 +1,17 @@
-<style>
+root: {
+      --primary: #00b894;
+      --accent: #00a085;
+      --bg: #8f6d5b;
+  --bg-body:#c49e87;
+      --card: #ffffff;
+      --text-main: #856655;
+      --text-sub: #636e72;
+  --text-st:#b55e2b;
+  --border-color:#e0ca67;
+    }
+
+
+
 body, p, div, span, h1, h2, h3, h4, h5, h6, .post-body, .entry-content {
 user-select: none !important;
 -webkit-user-select: none !important;
@@ -975,4 +988,3 @@ ol.material-listY li:before{margin-top:-0.3rem;margin-left:0.5rem;}
 .db-grid, .guides-grid {grid-template-columns: 1fr;}
 .hero-description {font-size:0.8em;right:8px;bottom:20px;padding:10px 8px;border:double 5px #f1f1f1;}
 }
-</style>
