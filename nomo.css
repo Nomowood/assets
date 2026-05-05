@@ -57,6 +57,11 @@ img[alt] {
 .st {font-weight:bold; color:var(--text-st)}
 .marker {background: linear-gradient(transparent 60%, #f5e687 60%);font-weight:bold;padding:0 0.5em;}
 .markerL {background: linear-gradient(transparent 60%, #fcf2ae 80%);font-weight:bold;padding:0 0.5em;}
+p.other {text-align: center;margin-top:3rem;}
+p.other::before,
+p.other::after {content: ''; display: inline-block; width: 50px; height: 1px; background: var(--text-main); vertical-align: middle;}
+p.other::before {margin-right: 8px;}
+p.other::after {margin-left: 8px;}
 
 /* Content
 ----------------------------------------------- */
@@ -338,21 +343,11 @@ position: relative;
 margin:15px auto !important;
 padding:10px 12px!important;
 }
-p.other {text-align: center;margin-top:3rem;}
-p.other::before,
-p.other::after {content: ''; display: inline-block; width: 50px; height: 1px; background: var(--text-main); vertical-align: middle;}
-p.other::before {margin-right: 8px;}
-p.other::after {margin-left: 8px;}
-
 
 /* ============= 
 レイアウト調整
 ------------------------ */
 .column-center-outer {padding:0!important;margin:0!important;}
-
-
-
-
 
 /* Footer
 ----------------------------------------------- */
