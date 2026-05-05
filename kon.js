@@ -1,11 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // ヘッダースクロール
+    // ヘッダーのスクロール固定
     const header = document.getElementById('main-header');
     if (header) {
-        const handleScroll = () => {
-            header.classList.toggle('scrolled', window.scrollY > 60);
-        };
+        const handleScroll = () => header.classList.toggle('scrolled', window.scrollY > 60);
         window.addEventListener('scroll', handleScroll);
         handleScroll();
     }
@@ -21,15 +19,13 @@ document.addEventListener("DOMContentLoaded", function() {
         targets.forEach(el => observer.observe(el));
     }
 
-    // ==================== シェアボタン（スマホ対策強化） ====================
+    // ==================== シェアボタン ====================
     const btn = document.getElementById('shareBtn');
     if (btn) {
         let isOpen = false;
         btn.addEventListener('click', function(e) {
-            if (e.target.closest('a') || 
-                e.target.closest('.share_item') || 
-                e.target.tagName === 'I' || 
-                e.target.closest('i') || 
+            if (e.target.closest('a') || e.target.closest('.share_item') || 
+                e.target.tagName === 'I' || e.target.closest('i') || 
                 e.target.classList.contains('share_label')) {
                 return;
             }
@@ -42,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // シェアリンク設定
     const url = encodeURIComponent(location.href);
     const text = encodeURIComponent(document.title + "\n" + location.href);
-
     const links = {
         "x-link": `https://twitter.com/intent/tweet?text=${text}&url=${url}`,
         "line-link": `https://social-plugins.line.me/lineit/share?url=${url}`,
@@ -50,14 +45,13 @@ document.addEventListener("DOMContentLoaded", function() {
         "reddit-link": `https://www.reddit.com/submit?url=${url}`,
         "sms-link": `sms:?body=${text}`
     };
-
     Object.keys(links).forEach(id => {
         const el = document.getElementById(id);
         if (el) el.href = links[id];
     });
 
-    // ==================== カレンダー（月切り替え対応） ====================
-        let currentYear = new Date().getFullYear();
+    // ==================== カレンダー ====================
+    let currentYear = new Date().getFullYear();
     let currentMonth = new Date().getMonth();
 
     function generateCalendar(year, month) {
@@ -80,37 +74,30 @@ document.addEventListener("DOMContentLoaded", function() {
                 cell.className = 'calendar-cell';
 
                 if (i === 0 && j < firstDay) {
-                    cell.innerText = '';
+                    cell.innerHTML = '<div class="date-number"></div>';
                 } else if (date > daysInMonth) {
-                    cell.innerText = '';
+                    cell.innerHTML = '<div class="date-number"></div>';
                 } else {
                     const dateStr = `${year}-${String(month+1).padStart(2,'0')}-${String(date).padStart(2,'0')}`;
-                    cell.innerText = date;
 
-                    // イベント処理
-                    let eventLabel = '';
+                    // 日付番号
+                    const dateNum = document.createElement('div');
+                    dateNum.className = 'date-number';
+                    dateNum.textContent = date;
+                    cell.appendChild(dateNum);
 
+                    // イベントバー
                     calendarEvents.ranges.forEach(range => {
                         if (dateStr >= range.start && dateStr <= range.end) {
-                            cell.classList.add(range.class);
-                            eventLabel = range.label;
+                            cell.appendChild(createEventBar(range.label, range.class));
                         }
                     });
 
                     calendarEvents.points.forEach(point => {
                         if (dateStr === point.date) {
-                            cell.classList.add(point.class);
-                            eventLabel = point.label;
+                            cell.appendChild(createEventBar(point.label, point.class));
                         }
                     });
-
-                    // セル内にラベルを追加（画像風）
-                    if (eventLabel) {
-                        const label = document.createElement('div');
-                        label.className = 'event-label';
-                        label.textContent = eventLabel;
-                        cell.appendChild(label);
-                    }
 
                     date++;
                 }
@@ -120,7 +107,14 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // 矢印
+    function createEventBar(text, className) {
+        const bar = document.createElement('div');
+        bar.className = `event-bar ${className}`;
+        bar.textContent = text;
+        return bar;
+    }
+
+    // 矢印ボタン
     const prevBtn = document.getElementById('prev-month');
     const nextBtn = document.getElementById('next-month');
 
@@ -136,11 +130,19 @@ document.addEventListener("DOMContentLoaded", function() {
         generateCalendar(currentYear, currentMonth);
     });
 
+    // 初回表示
     generateCalendar(currentYear, currentMonth);
 });
 
-// イベントデータ
+// ========= イベント ===============
 const calendarEvents = {
-    ranges: [{ start: '2026-04-01', end: '2026-04-05', class: 'event-period', label: '期間限定' }],
-    points: [{ date: '2026-04-20', class: 'release-day', label: '新刊' }]
+    ranges: [
+        { start: '2026-04-01', end: '2026-04-05', class: 'event-period', label: '期間限定イベント' },
+        { start: '2026-05-10', end: '2026-05-15', class: 'event-period', label: '新イベント' }
+    ],
+    points: [
+        { date: '2026-04-20', class: 'release-day', label: '新刊発売日' },
+        { date: '2026-05-25', class: 'release-day', label: '新刊' }
+        // ← ここに新しい特定日のイベントを追加できます
+    ]
 };
