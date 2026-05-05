@@ -157,11 +157,6 @@ document.addEventListener("DOMContentLoaded", function() {
         layer.appendChild(bar);
     });
 
-    // 単発イベントも同様に...
-    // （省略）
-}
-}
-
     // 月送り
     const prevBtn = document.getElementById('prev-month');
     const nextBtn = document.getElementById('next-month');
