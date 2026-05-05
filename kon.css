@@ -256,46 +256,88 @@ background: var(--primary); color: #fff; padding: 3px 11px; border-radius: 9999p
 /* ____________
 カレンダー
 ----------------------------------------------- */
-.calendar-cell {
-  height: 82px;
-  padding: 4px 3px 2px;
-  position: relative;
-  border: 1px solid #eee;
+/* 全体 */
+#calendar-container {
+  font-family: "Helvetica", "Arial", sans-serif;
 }
 
-.date-number {
-  font-size: 15px;
+/* ヘッダー（ピンク帯） */
+#calendar-header {
+  background: #d85c73;
+  border-radius: 20px 20px 0 0;
+}
+
+/* 曜日ヘッダー */
+#calendar-table thead th {
+  background: #d85c73;
+  color: white;
+  border: none;
+  padding: 10px 0;
   font-weight: bold;
-  text-align: center;
-  margin-bottom: 4px;
 }
 
+/* 各セル */
+.calendar-cell {
+  height: 90px;
+  background: #fafafa;
+  padding: 6px;
+}
+
+/* 日付 */
+.date-number {
+  font-size: 14px;
+  text-align: left;
+  padding-left: 4px;
+}
+
+/* 日曜 */
+#calendar-table td:nth-child(1) .date-number {
+  color: #d85c73;
+}
+
+/* 土曜 */
+#calendar-table td:nth-child(7) .date-number {
+  color: #5aaecf;
+}
+
+/* イベント共通 */
 .event-bar {
   font-size: 11px;
-  padding: 4px 8px;
-  border-radius: 6px;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin: 3px 1px;
+  padding: 4px 6px;
+  border-radius: 10px;
+  margin-top: 4px;
 }
 
-/* 長い連結バー */
-.long-bar {
-  background-color: #a5b4ff;
-  color: #2f2f7f;
-  width: calc(var(--length) * 100% + (var(--length) - 1) * 2px);
-  margin-left: 0;
-  z-index: 2;
-  position: relative;
+/* 横長イベント（画像の青） */
+.event-period {
+  background: #8db9d6;
+  color: white;
+  border-radius: 10px;
 }
 
-/* 継続部分 */
-.continuation {
-  background-color: #a5b4ff;
-  margin: 3px -1px;
+/* 継続部分（真ん中） */
+.event-period.continuation {
   border-radius: 0;
+}
+
+/* 開始 */
+.event-period.start {
+  border-radius: 10px 0 0 10px;
+}
+
+/* 終了 */
+.event-period.end {
+  border-radius: 0 10px 10px 0;
+}
+
+/* 単発イベント例 */
+.release-day {
+  background: #e8d48c;
+  color: #7a5d00;
+}
+/* 特定日の背景 */
+.highlight {
+  background: #f3e3e6;
 }
 
 
