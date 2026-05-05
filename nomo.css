@@ -102,7 +102,7 @@ flex-direction: column;
 min-height: 100vh;
 margin: 90px 0 20px 0;
 padding:0;
-background:var(--bg);
+background:transparent;
 }
 .content-inner {
 padding: 10px 0;
