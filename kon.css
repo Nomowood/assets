@@ -275,7 +275,11 @@ background: var(--primary); color: #fff; padding: 3px 11px; border-radius: 9999p
   padding: 10px 0;
   font-weight: bold;
 }
-
+#calendar-table th, #calendar-table td {
+  text-align: center;
+  padding: 5px 0;
+  width: 14.28%; /* 7列均等 */
+}
 /* 各セル */
 .calendar-cell {
   height: 90px;
