@@ -258,12 +258,13 @@ background: var(--primary); color: #fff; padding: 3px 11px; border-radius: 9999p
 ----------------------------------------------- */
 /* 全体 */
 #calendar-container {
-  font-family: "Helvetica", "Arial", sans-serif;
+  font-family: "Helvetica", "Arial", sans-serif; width:100%;
 }
 
 /* ヘッダー（ピンク帯） */
 #calendar-header {
   background: #d85c73;
+      width:100%;
   border-radius: 20px 20px 0 0;
 }
 
@@ -276,6 +277,7 @@ background: var(--primary); color: #fff; padding: 3px 11px; border-radius: 9999p
   font-weight: bold;
 }
 #calendar-table th, #calendar-table td {
+      width:100%;
   text-align: center;
   padding: 5px 0;
   width: 14.28%; /* 7列均等 */
@@ -284,7 +286,7 @@ background: var(--primary); color: #fff; padding: 3px 11px; border-radius: 9999p
 .calendar-cell {
   height: 90px;
   background: #fafafa;
-  padding: 6px;
+  padding:8px 0;
 }
 
 /* 日付 */
