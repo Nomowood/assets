@@ -385,6 +385,49 @@ background: #f3fbff;
 }
 
 
+
+#calendar-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+#calendar-container {
+    width: 100%;
+    position: relative;
+}
+
+#event-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+    overflow: hidden;
+}
+
+/* === テーブル関連（崩れ防止）=== */
+#calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+#calendar-table td, #calendar-table th {
+    width: 14.2857%;
+    box-sizing: border-box;
+}
+
+.calendar-cell {
+    height: 90px;
+    background: #fafafa;
+    padding: 8px;
+    vertical-align: top;
+    position: relative;
+    border: none;
+}
+
 /* Footer
 ----------------------------------------------- */
 footer {
