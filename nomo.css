@@ -6,7 +6,7 @@
       --card: #ffffff;
       --text-main: #a37b65;
       --text-sub: #636e72;
---text-st:#b55e2b;
+--text-st:#edae66;
 --border-color:#e0ca67;
 --link-color: #3498db;
     }
@@ -165,12 +165,12 @@ display: none;
 .hamburger {
 display: none;
 margin-top:8px;
-margin-right:12px;
+margin-right:20px;
 flex-direction: column;
 justify-content: space-between;
 width: 35px;
-height: 22px;
-padding:18px;
+height: 18px;
+padding:15px;
 background: rgba(102, 72, 38,0.9);
 border-radius:10px;
 cursor: pointer;
@@ -331,9 +331,7 @@ div.widget h2.title {
       margin: 5rem 1rem 3rem 1rem;
     }
 .entry-title { 
-      font-size: 2.35rem; 
       line-height: 1.35; 
-      margin: 20px 0 35px; 
       font-weight: 900;
     }
 .post-meta-single { margin-bottom: 35px; font-size: 0.9rem; color: var(--text-sub); }
@@ -990,7 +988,7 @@ body {font-size:0.9em;letter-spacing:0.08em;line-height:1.8;}
 .default-box {max-width: 94%;padding: 1.4em 1.3em 1.2em;}
 .nav-container {width:100%;max-width:767px;}
 .hero {padding: 80px 16px 60px;}
-.article-wrap {padding:12px;}
+.article-wrap {padding:12px 5px;}
 .cta-buttons {flex-direction: column;align-items: center;}
 .btn {width: 100%;max-width: 280px;text-align: center;}
 .hamburger {display: flex;}
