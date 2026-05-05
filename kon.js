@@ -26,7 +26,7 @@ targets.forEach(el => observer.observe(el));
 });
     
 // シェアボタン
-const btn = document.getElementById('.btn_wrap');
+const btn = document.getElementById('btn_wrap');
 let isOpen = false;
 // クリックで開閉
 btn.addEventListener('click', function(e) {
@@ -44,11 +44,11 @@ btn.classList.remove('active');
 // URL設定
 const url = encodeURIComponent(location.href);
 const text = encodeURIComponent(document.title + "\n" + location.href);
-document.getElementById("x-link").href = "https://twitter.com/intent/tweet?text=" + text + "&amp;url=" + url;
-document.getElementById("line-link").href = "https://social-plugins.line.me/lineit/share?url=" + url;
-document.getElementById("threads-link").href = "https://www.threads.net/intent/post?text=" + text;
-document.getElementById("reddit-link").href = "https://www.reddit.com/submit?url=" + url;
-document.getElementById("sms-link").href = "sms:?body=" + text;
+document.getElementById("x-link").href = "https://twitter.com/intent/tweet?amp;text=" + text + "&amp;url=" + url;
+document.getElementById("line-link").href = "https://social-plugins.line.me/lineit/share?amp;url=" + url;
+document.getElementById("threads-link").href = "https://www.threads.net/intent/post?amp;text=" + text;
+document.getElementById("reddit-link").href = "https://www.reddit.com/submit?amp;url=" + url;
+document.getElementById("sms-link").href = "sms:?amp;body=" + text;
 // 機能
 function nativeShare() {
 if (navigator.share) {
