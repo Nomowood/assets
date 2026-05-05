@@ -1,4 +1,3 @@
-<script>
 // ヘッダーのスクロール固定
 const header = document.getElementById('main-header');  
 function handleScroll() {
@@ -114,6 +113,3 @@ function generateCalendar() {
           }
         }
         generateCalendar();
-
-
-  </script>
