@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
-    alert("JSは読み込まれました");   // ← これが出るか確認
+    alert("JSは読み込まれました");
 
-    // シェアボタン確認
+    // === シェアボタン確認 ===
     const btn = document.getElementById('btn_wrap');
     if (btn) {
-        alert("シェアボタン(btn_wrap)が見つかりました");
+        alert("✅ btn_wrap が見つかりました");
         let isOpen = false;
         btn.addEventListener('click', function(e) {
             if (e.target.tagName === 'I' || e.target.closest('a')) return;
@@ -12,26 +12,43 @@ document.addEventListener("DOMContentLoaded", function() {
             btn.classList.toggle('active', isOpen);
         });
     } else {
-        alert("シェアボタン(btn_wrap)が見つかりません");
+        alert("❌ btn_wrap が見つかりません");
     }
 
-    // カレンダー確認
+    // 各シェアリンクの確認
+    const links = ["x-link", "line-link", "threads-link", "reddit-link", "sms-link"];
+    links.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            console.log(`✅ ${id} が見つかりました`);
+        } else {
+            alert(`❌ ${id} が見つかりません`);
+        }
+    });
+
+    // === カレンダー確認 ===
     const monthEl = document.getElementById('calendar-month-year');
     const bodyEl = document.getElementById('calendar-body');
+
     if (monthEl && bodyEl) {
-        alert("カレンダー要素が見つかりました");
-        // ここにカレンダー生成処理（前のコードと同じ）
+        alert("✅ カレンダー要素が見つかりました");
         generateCalendar();
     } else {
-        alert("カレンダー要素が見つかりません");
+        alert(`❌ カレンダー要素が見つかりません\nmonth-year: ${!!monthEl}\nbody: ${!!bodyEl}`);
     }
 });
 
 function generateCalendar() {
-    // 前の回答と同じカレンダー関数をここに貼り付けてください
     const now = new Date();
     const year = now.getFullYear();
     const month = now.getMonth();
-    document.getElementById('calendar-month-year').innerText = year + '年 ' + (month + 1) + '月';
-    // ...（残りのカレンダー処理は前のコードと同じ）
+    
+    const monthYearEl = document.getElementById('calendar-month-year');
+    const calendarBody = document.getElementById('calendar-body');
+    
+    if (!monthYearEl || !calendarBody) return;
+
+    monthYearEl.innerText = year + '年 ' + (month + 1) + '月';
+    // ...（ここは前のカレンダー処理をそのまま貼ってください）
+    // 省略せず、以前送ったgenerateCalendar関数全体をここに貼り付けてください
 }
