@@ -65,9 +65,6 @@ document.addEventListener("DOMContentLoaded", function() {
     if (smsLink) smsLink.href = "sms:?body=" + text;
 
     // ==================== カレンダー ====================
-    document.addEventListener("DOMContentLoaded", function() {
-    // （他の機能：ヘッダー、吹き出し、シェアボタンなどはそのまま残す）
-
     let currentYear = new Date().getFullYear();
     let currentMonth = new Date().getMonth();   // 0〜11
 
@@ -157,4 +154,3 @@ const calendarEvents = {
     ranges: [{ start: '2026-04-01', end: '2026-04-05', class: 'event-period', label: '期間限定イベント' }],
     points: [{ date: '2026-04-20', class: 'release-day', label: '新刊発売日' }]
 };
-
