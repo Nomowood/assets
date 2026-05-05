@@ -81,9 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     dateNum.textContent = date;
                     cell.appendChild(dateNum);
                     cell.dataset.date = dateStr;
-
-                    
-
+                    addEventsToCell(cell, dateStr);
                     date++;
                 }
 
