@@ -257,43 +257,46 @@ background: var(--primary); color: #fff; padding: 3px 11px; border-radius: 9999p
 カレンダー
 ----------------------------------------------- */
 /* 全体 */
-#calendar-container {
-  font-family: "Helvetica", "Arial", sans-serif; width:100%;
-}
+#calendar-container {width:100%;}
 
-/* ヘッダー（ピンク帯） */
+/* ヘッダー */
 #calendar-header {
-  background: #d85c73;
-      width:100%;
-  border-radius: 20px 20px 0 0;
+background: #d85c73;
+width:100%;
+border-radius: 20px 20px 0 0;
+text-align:center;
+font-awesome:bold;
+padding:10px;
 }
 
 /* 曜日ヘッダー */
 #calendar-table thead th {
-  background: #d85c73;
-  color: white;
-  border: none;
-  padding: 10px 0;
-  font-weight: bold;
+background: #d10000;
+color: #333;
+border: none;
+padding: 7px 0;
+font-weight: bold;
+margin:0;
+gap:0;
 }
 #calendar-table th, #calendar-table td {
-      width:100%;
-  text-align: center;
-  padding: 5px 0;
-  width: 14.28%; /* 7列均等 */
+width:100%;
+text-align: center;
+padding: 5px 0;
+width: 14.28%; /* 7列均等 */
 }
 /* 各セル */
 .calendar-cell {
-  height: 90px;
-  background: #fafafa;
-  padding:8px 0;
+height: 90px;
+background: #fafafa;
+padding:8px 0;
 }
 
 /* 日付 */
 .date-number {
-  font-size: 14px;
-  text-align: left;
-  padding-left: 4px;
+font-size: 14px;
+text-align: left;
+padding-left: 4px;
 }
 
 /* 日曜 */
@@ -308,18 +311,18 @@ background: var(--primary); color: #fff; padding: 3px 11px; border-radius: 9999p
 
 /* イベント共通 */
 .event-bar {
-  font-size: 11px;
-  padding: 4px 6px;
-  border-radius: 10px;
-  margin: 5px 0 0 0;
+font-size: 13px;
+padding: 4px 6px;
+border-radius: 10px;
+margin: 15px 0 0 0;
 border-radius: 0;
 }
 
-/* 横長イベント（画像の青） */
+/* 横長イベント */
 .event-period {
-  background: #8db9d6;
-  color: white;
-  border-radius: 10px 0 0 10px;
+background: #8db9d6;
+color: white;
+border-radius: 10px 0 0 10px;
 }
 
 /* 継続部分（真ん中） */
@@ -329,29 +332,29 @@ border-radius: 0;
 
 /* 開始 */
 .event-period.start {
-  border-radius: 10px 0 0 10px;
+border-radius: 10px 0 0 10px;
 }
 
 /* 終了 */
 .event-period.end {
-  border-radius: 0 10px 10px 0;
+border-radius: 0 10px 10px 0;
 }
 
-/* 単発イベント例 */
+/* 単発イベント */
 .release-day {
-  background: #e8d48c;
-  color: #7a5d00;
+background: #e8d48c;
+color: #7a5d00;
 }
 /* 特定日の背景 */
 .highlight {
-  background: #f3e3e6;
+background: #f3e3e6;
 }
 #calendar-table td:nth-child(1) {
-  background: #fff5f7;
+background: #fff5f7;
 }
 
 #calendar-table td:nth-child(7) {
-  background: #f3fbff;
+background: #f3fbff;
 }
 
 #calendar-wrapper {
