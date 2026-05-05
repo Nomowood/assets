@@ -65,9 +65,75 @@ document.addEventListener("DOMContentLoaded", function() {
     if (smsLink) smsLink.href = "sms:?body=" + text;
 
     // ==================== カレンダー ====================
+    document.addEventListener("DOMContentLoaded", function() {
+
+    // ヘッダーのスクロール固定
+    const header = document.getElementById('main-header');
+    if (header) {
+        function handleScroll() {
+            if (window.scrollY > 60) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+    }
+
+    // 動く吹き出し
+    const targets = document.querySelectorAll(".inview_re");
+    if (targets.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-show");
+                } else {
+                    entry.target.classList.remove("is-show");
+                }
+            });
+        }, { threshold: 0.2 });
+        targets.forEach(el => observer.observe(el));
+    }
+
+    // ==================== シェアボタン ====================
+    const btn = document.getElementById('shareBtn');   // 正しいID
+    if (btn) {
+        let isOpen = false;
+        btn.addEventListener('click', function(e) {
+            // リンクやシェアアイテムをクリックした場合はトグルしない
+            if (e.target.closest('a') || e.target.closest('.share_item') || 
+                e.target.tagName === 'I' || e.target.closest('i')) {
+                return;
+            }
+            isOpen = !isOpen;
+            btn.classList.toggle('active', isOpen);
+        });
+    }
+
+    // ==================== シェアリンク設定 ====================
+    const url = encodeURIComponent(location.href);
+    const text = encodeURIComponent(document.title + "\n" + location.href);
+
+    // 各リンクを設定
+    const xLink = document.getElementById("x-link");
+    if (xLink) xLink.href = "https://twitter.com/intent/tweet?text=" + text + "&url=" + url;
+
+    const lineLink = document.getElementById("line-link");
+    if (lineLink) lineLink.href = "https://social-plugins.line.me/lineit/share?url=" + url;
+
+    const threadsLink = document.getElementById("threads-link");
+    if (threadsLink) threadsLink.href = "https://www.threads.net/intent/post?text=" + text;
+
+    const redditLink = document.getElementById("reddit-link");
+    if (redditLink) redditLink.href = "https://www.reddit.com/submit?url=" + url;
+
+    const smsLink = document.getElementById("sms-link");
+    if (smsLink) smsLink.href = "sms:?body=" + text;
+
+    // ==================== カレンダー ====================
     generateCalendar();
 });
-
 // カレンダー関数
 function generateCalendar() {
     const now = new Date();
