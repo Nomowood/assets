@@ -94,20 +94,14 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function addEventsToCell(cell, dateStr) {
-        // 期間イベント（全日バー作成）
         calendarEvents.ranges.forEach(range => {
             if (dateStr >= range.start && dateStr <= range.end) {
                 const bar = createEventBar(range.label, range.class);
-                // 最初の日のみテキストを表示
-                if (dateStr !== range.start) {
-                    bar.textContent = '';
-                    bar.classList.add('event-continuation'); // 連結用クラス
-                }
+                if (dateStr !== range.start) bar.textContent = '';
                 cell.appendChild(bar);
             }
         });
 
-        // 単発イベント
         calendarEvents.points.forEach(point => {
             if (dateStr === point.date) {
                 cell.appendChild(createEventBar(point.label, point.class));
@@ -126,19 +120,25 @@ document.addEventListener("DOMContentLoaded", function() {
     const prevBtn = document.getElementById('prev-month');
     const nextBtn = document.getElementById('next-month');
 
-    if (prevBtn) prevBtn.addEventListener('click', () => {
-        currentMonth--;
-        if (currentMonth < 0) { currentMonth = 11; currentYear--; }
-        generateCalendar(currentYear, currentMonth);
-    });
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            currentMonth--;
+            if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+            generateCalendar(currentYear, currentMonth);
+        });
+    }
 
-    if (nextBtn) nextBtn.addEventListener('click', () => {
-        currentMonth++;
-        if (currentMonth > 11) { currentMonth = 0; currentYear++; }
-        generateCalendar(currentYear, currentMonth);
-    });
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            currentMonth++;
+            if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+            generateCalendar(currentYear, currentMonth);
+        });
+    }
 
     generateCalendar(currentYear, currentMonth);
+});
+
 // ==================== イベントデータ ====================
 const calendarEvents = {
     ranges: [
