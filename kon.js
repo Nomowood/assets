@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentYear = new Date().getFullYear();
     let currentMonth = new Date().getMonth();
 
-        function generateCalendar(year, month) {
+    function generateCalendar(year, month) {
         const monthYearEl = document.getElementById('calendar-month-year');
         const calendarBody = document.getElementById('calendar-body');
         if (!monthYearEl || !calendarBody) return;
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     dateNum.textContent = date;
                     cell.appendChild(dateNum);
 
-                    addEventsToCell(cell, dateStr, year, month, date);
+                    addEventsToCell(cell, dateStr);
 
                     date++;
                 }
@@ -93,13 +93,16 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    function addEventsToCell(cell, dateStr, year, month, day) {
-        // 期間イベント
+    function addEventsToCell(cell, dateStr) {
+        // 期間イベント（全日バー作成）
         calendarEvents.ranges.forEach(range => {
             if (dateStr >= range.start && dateStr <= range.end) {
                 const bar = createEventBar(range.label, range.class);
-                // 期間の最初の日のみラベルを表示
-                if (dateStr !== range.start) bar.textContent = '';
+                // 最初の日のみテキストを表示
+                if (dateStr !== range.start) {
+                    bar.textContent = '';
+                    bar.classList.add('event-continuation'); // 連結用クラス
+                }
                 cell.appendChild(bar);
             }
         });
@@ -119,9 +122,23 @@ document.addEventListener("DOMContentLoaded", function() {
         return bar;
     }
 
-    // 矢印ボタン（省略 - 前のコードと同じ）
+    // 矢印ボタン
+    const prevBtn = document.getElementById('prev-month');
+    const nextBtn = document.getElementById('next-month');
+
+    if (prevBtn) prevBtn.addEventListener('click', () => {
+        currentMonth--;
+        if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+        generateCalendar(currentYear, currentMonth);
+    });
+
+    if (nextBtn) nextBtn.addEventListener('click', () => {
+        currentMonth++;
+        if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+        generateCalendar(currentYear, currentMonth);
+    });
+
     generateCalendar(currentYear, currentMonth);
-});
 // ==================== イベントデータ ====================
 const calendarEvents = {
     ranges: [
