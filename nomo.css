@@ -19,6 +19,7 @@ user-select: none !important;
 -webkit-touch-callout: none !important;
 }
 img {
+max-width:100%;
   pointer-events: none;
   -webkit-touch-callout: none;
   user-select: none;
