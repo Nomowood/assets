@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function() {
         cell.appendChild(bar);
     }
 });
-        });
+        }
 
         calendarEvents.points.forEach(point => {
             if (dateStr === point.date) {
