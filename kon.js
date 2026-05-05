@@ -131,30 +131,35 @@ document.addEventListener("DOMContentLoaded", function() {
     function renderEventBars(year, month) {
     const layer = document.getElementById("event-layer");
     if (!layer) return;
-
     layer.innerHTML = "";
 
-    calendarEvents.ranges.forEach(range => {
+    const wrapper = document.getElementById('calendar-wrapper');
+    if (!wrapper) return;
+    
+    const wrapperRect = wrapper.getBoundingClientRect();
 
+    // 期間イベント
+    calendarEvents.ranges.forEach(range => {
         const startCell = document.querySelector(`[data-date="${range.start}"]`);
         const endCell = document.querySelector(`[data-date="${range.end}"]`);
-
         if (!startCell || !endCell) return;
 
-        const rect1 = startCell.getBoundingClientRect();
-        const rect2 = endCell.getBoundingClientRect();
-        const parentRect = layer.getBoundingClientRect();
+        const sRect = startCell.getBoundingClientRect();
 
         const bar = document.createElement("div");
         bar.className = "event-bar-absolute";
         bar.textContent = range.label;
 
-        bar.style.left = (rect1.left - parentRect.left) + "px";
-        bar.style.top = (rect1.top - parentRect.top + 20) + "px";
-        bar.style.width = (rect2.right - rect1.left) + "px";
+        bar.style.left = (sRect.left - wrapperRect.left) + "px";
+        bar.style.top = (sRect.top - wrapperRect.top + 35) + "px";  // 日付の下の位置を調整
+        bar.style.width = (endCell.getBoundingClientRect().right - sRect.left - 8) + "px";
 
         layer.appendChild(bar);
     });
+
+    // 単発イベントも同様に...
+    // （省略）
+}
 }
 
     // 月送り
