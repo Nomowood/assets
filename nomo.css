@@ -10,8 +10,6 @@ root: {
   --border-color:#e0ca67;
     }
 
-
-
 body, p, div, span, h1, h2, h3, h4, h5, h6, .post-body, .entry-content {
 user-select: none !important;
 -webkit-user-select: none !important;
@@ -166,7 +164,7 @@ flex-direction: column;
 justify-content: space-between;
 width: 52px;
 height: 40px;
-padding:12px;
+padding:25px;
 background: rgba(102, 72, 38,0.9);
 border-radius:10px;
 cursor: pointer;
