@@ -287,16 +287,19 @@ width: 14.28%; /* 7列均等 */
 }
 /* 各セル */
 .calendar-cell {
-height: 90px;
-background: #fafafa;
-padding:8px 0;
+  height: 90px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+align-items: flex-start;
+position: relative;
 }
 
 /* 日付 */
 .date-number {
-font-size: 14px;
-text-align: left;
-padding-left: 4px;
+flex-shrink: 0;
+margin-bottom: 4px;
+position: absolute; top: 8px; left: 8px;
 }
 
 /* 日曜 */
