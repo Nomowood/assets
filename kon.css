@@ -406,7 +406,6 @@ background: #f3fbff;
     z-index: 10;
     overflow: hidden;
 }
-
 /* === テーブル関連（崩れ防止）=== */
 #calendar-table {
     width: 100%;
