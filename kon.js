@@ -94,14 +94,19 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function addEventsToCell(cell, dateStr) {
+        // 期間イベント（連結バー）
         calendarEvents.ranges.forEach(range => {
             if (dateStr >= range.start && dateStr <= range.end) {
                 const bar = createEventBar(range.label, range.class);
-                if (dateStr !== range.start) bar.textContent = '';
+                if (dateStr !== range.start) {
+                    bar.textContent = '';           // 2日目以降はテキスト非表示
+                    bar.classList.add('continuation');
+                }
                 cell.appendChild(bar);
             }
         });
 
+        // 単発イベント
         calendarEvents.points.forEach(point => {
             if (dateStr === point.date) {
                 cell.appendChild(createEventBar(point.label, point.class));
@@ -142,9 +147,8 @@ document.addEventListener("DOMContentLoaded", function() {
 // ==================== イベントデータ ====================
 const calendarEvents = {
     ranges: [
-        { start: '2026-05-10', end: '2026-05-14', class: 'event-period', label: '新イベント' }
+        { start: '2026-05-09', end: '2026-05-13', class: 'event-period', label: 'chouchou' }
+        // ここに新しい期間イベントを追加できます
     ],
     points: [
-        { date: '2026-05-25', class: 'release-day', label: '新刊' }
-    ]
-};
+        { date: '2026-05-25', class: 'release-day​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
