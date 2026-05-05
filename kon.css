@@ -256,39 +256,79 @@ background: var(--primary); color: #fff; padding: 3px 11px; border-radius: 9999p
 /* ____________
 カレンダー
 ----------------------------------------------- */
-.calendar-cell {
-  height: 68px;
-  vertical-align: top;
-  padding: 4px 6px;
-  border: 1px solid #f0e6e9;
-  position: relative;
-  font-size: 13px;
+#calendar-container {
+  width: 100%;
+  max-width: 100%;
   background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+#calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #e86b8a;
+  color: white;
+  padding: 12px 15px;
+  font-weight: bold;
+}
+
+#calendar-header button {
+  background: rgba(255,255,255,0.25);
+  border: none;
+  color: white;
+  font-size: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+#calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;   /* ← これで7等分 */
+}
+
+#calendar-table th, #calendar-table td {
+  width: 14.2857%;   /* 7等分 */
+  text-align: center;
+  padding: 0;
+  border: 1px solid #f0e6e9;
+}
+
+.calendar-cell {
+  height: 72px;
+  vertical-align: top;
+  padding: 4px 4px 2px;
+  background: #fff;
+  position: relative;
 }
 
 .date-number {
-  font-weight: bold;
   font-size: 15px;
+  font-weight: bold;
   margin-bottom: 4px;
   color: #333;
 }
 
 /* イベントバー */
 .event-bar {
-  font-size: 10.5px;
-  padding: 1px 6px;
-  margin: 2px 0;
+  font-size: 11px;
+  padding: 2px 6px;
+  margin: 1px 0;
   border-radius: 4px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-weight: normal;
+  font-weight: 500;
 }
 
-/* イベントごとの色 */
+/* 色 */
 .event-period {
   background-color: #c4b5ff;
-  color: #4a2c9b;
+  color: #4330a0;
 }
 
 .release-day {
@@ -296,11 +336,9 @@ background: var(--primary); color: #fff; padding: 3px 11px; border-radius: 9999p
   color: white;
 }
 
-/* 土日の色 */
+/* 土日色 */
 #calendar-table td:first-child .date-number { color: #e86b8a; }
-#calendar-table td:last-child .date-number { color: #4a9eff; }
-
-
+#calendar-table td:last-child .date-number  { color: #4a9eff; }
 /* Footer
 ----------------------------------------------- */
 footer {
