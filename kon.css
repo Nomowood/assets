@@ -256,44 +256,80 @@ background: var(--primary); color: #fff; padding: 3px 11px; border-radius: 9999p
 /* ____________
 カレンダー
 ----------------------------------------------- */
+#calendar-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  overflow: hidden;
+}
+
+#calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #e86b8a;
+  color: white;
+  padding: 12px 15px;
+  font-weight: bold;
+}
+
+#calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+#calendar-table th,
+#calendar-table td {
+  width: 14.2857%; /* 7等分 */
+  padding: 0;
+  border: 1px solid #f0e6e9;
+  vertical-align: top;
+}
+
 .calendar-cell {
   height: 78px;
-  vertical-align: top;
-  padding: 4px;
+  padding: 4px 2px 2px;
   position: relative;
-  border: 1px solid #f0e6e9;
+  background: #fff;
 }
 
 .date-number {
   font-size: 15px;
   font-weight: bold;
-  margin-bottom: 4px;
+  text-align: center;
+  margin-bottom: 3px;
 }
 
-/* イベントバー基本 */
+/* イベントバー */
 .event-bar {
   font-size: 11px;
-  padding: 3px 8px;
+  padding: 3px 4px;
+  margin: 1px 1px 2px;
   border-radius: 4px;
+  text-align: center;           /* 中央揃え */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-top: 2px;
+  font-weight: 500;
 }
 
-/* 長期イベントの長いバー */
-.long-bar {
-  position: relative;
-  z-index: 2;
-  width: calc(var(--length) * 100% + (var(--length) - 1) * 1px); /* セルを跨ぐ */
-  margin-left: 0;
-  border-radius: 4px;
+/* 長期イベントの繋がり強化 */
+.event-period {
+  background-color: #c4b5ff;
+  color: #4330a0;
+  margin-left: -1px;   /* 隣のセルと繋げる */
+  margin-right: -1px;
+  border-radius: 0;    /* 角をなくして連続感を出す */
 }
 
-/* 色 */
-.event-period { background-color: #c4b5ff; color: #4330a0; }
-.release-day   { background-color: #ff8a9e; color: white; }
-
+/* 単発イベント */
+.release-day {
+  background-color: #ff8a9e;
+  color: white;
+  display: inline-block;
+  width: calc(100% - 4px);
+}
 
 
 /* Footer
