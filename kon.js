@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
         handleScroll();
     }
 
-    // 吹き出し
+    // 吹き出し（IntersectionObserver）
     const targets = document.querySelectorAll(".inview_re");
     if (targets.length) {
         const observer = new IntersectionObserver((entries) => {
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
         targets.forEach(el => observer.observe(el));
     }
 
-    // シェアボタン
+    // シェアボタンの開閉
     const btn = document.getElementById('shareBtn');
     if (btn) {
         let isOpen = false;
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // シェアリンク
+    // シェアリンクの設定
     const url = encodeURIComponent(location.href);
     const text = encodeURIComponent(document.title + "\n" + location.href);
     const linkIds = ["x-link","line-link","threads-link","reddit-link","sms-link"];
@@ -51,10 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function generateCalendar(year, month) {
         const monthYearEl = document.getElementById('calendar-month-year');
         const calendarBody = document.getElementById('calendar-body');
-        if (!monthYearEl || !calendarBody) {
-            console.log("カレンダー要素が見つからない");
-            return;
-        }
+        if (!monthYearEl || !calendarBody) return;
 
         monthYearEl.innerText = `${year}年 ${month + 1}月`;
 
@@ -66,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
         let date = 1;
         for (let i = 0; i < 6; i++) {
             let row = document.createElement('tr');
+            let hasDate = false;
 
             for (let j = 0; j < 7; j++) {
                 let cell = document.createElement('td');
@@ -75,48 +73,29 @@ document.addEventListener("DOMContentLoaded", function() {
                     cell.innerHTML = '<div class="date-number"></div>';
                 } else {
                     const dateStr = `${year}-${String(month+1).padStart(2,'0')}-${String(date).padStart(2,'0')}`;
-
                     const dateNum = document.createElement('div');
                     dateNum.className = 'date-number';
                     dateNum.textContent = date;
                     cell.appendChild(dateNum);
                     cell.dataset.date = dateStr;
-                    addEventsToCell(cell, dateStr);
+                    
+                    // 単発イベントのみセル内に描画（期間バーはrenderEventBarsで描画）
+                    addPointsToCell(cell, dateStr);
+                    
                     date++;
+                    hasDate = true;
                 }
-
                 row.appendChild(cell);
             }
-
             calendarBody.appendChild(row);
+            if (date > daysInMonth && !hasDate) break; // 余分な空行を作らない
         }
+        // カレンダー描画後にバーを再計算
+        setTimeout(() => renderEventBars(), 10); 
     }
 
-    function addEventsToCell(cell, dateStr) {
-
-        // 期間イベント
-        calendarEvents.ranges.forEach(range => {
-            if (dateStr >= range.start && dateStr <= range.end) {
-
-                const bar = document.createElement('div');
-
-                let extraClass = '';
-
-                if (dateStr === range.start) {
-                    extraClass = 'start';
-                    bar.textContent = range.label;
-                } else if (dateStr === range.end) {
-                    extraClass = 'end';
-                } else {
-                    extraClass = 'continuation';
-                }
-
-                bar.className = `event-bar ${range.class} ${extraClass}`;
-                cell.appendChild(bar);
-            }
-        });
-
-        // 単発イベント
+    // 単発イベント用
+    function addPointsToCell(cell, dateStr) {
         calendarEvents.points.forEach(point => {
             if (dateStr === point.date) {
                 const bar = document.createElement('div');
@@ -127,47 +106,46 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // 追加
-    function renderEventBars(year, month) {
-    const layer = document.getElementById("event-layer");
-    if (!layer) return;
-    layer.innerHTML = "";
+    // 期間イベント（絶対配置バー）の描画
+    function renderEventBars() {
+        const layer = document.getElementById("event-layer");
+        const wrapper = document.getElementById('calendar-wrapper');
+        if (!layer || !wrapper) return;
+        
+        layer.innerHTML = "";
+        const wrapperRect = wrapper.getBoundingClientRect();
 
-    const wrapper = document.getElementById('calendar-wrapper');
-    if (!wrapper) return;
-    
-    const wrapperRect = wrapper.getBoundingClientRect();
+        calendarEvents.ranges.forEach(range => {
+            const startCell = document.querySelector(`[data-date="${range.start}"]`);
+            const endCell = document.querySelector(`[data-date="${range.end}"]`);
+            
+            // 今の月に表示されている範囲だけ描画
+            if (!startCell && !endCell) return;
 
-    // 期間イベント
-    calendarEvents.ranges.forEach(range => {
-        const startCell = document.querySelector(`[data-date="${range.start}"]`);
-        const endCell = document.querySelector(`[data-date="${range.end}"]`);
-        if (!startCell || !endCell) return;
+            // 月を跨ぐ場合の考慮（簡易版）
+            const sRect = startCell ? startCell.getBoundingClientRect() : null;
+            const eRect = endCell ? endCell.getBoundingClientRect() : null;
 
-        const sRect = startCell.getBoundingClientRect();
+            if (startCell && endCell) {
+                const bar = document.createElement("div");
+                bar.className = "event-bar-absolute " + range.class;
+                bar.textContent = range.label;
+                bar.style.left = (sRect.left - wrapperRect.left) + "px";
+                bar.style.top = (sRect.top - wrapperRect.top + 35) + "px";
+                bar.style.width = (eRect.right - sRect.left - 8) + "px";
+                layer.appendChild(bar);
+            }
+        });
+    }
 
-        const bar = document.createElement("div");
-        bar.className = "event-bar-absolute";
-        bar.textContent = range.label;
-
-        bar.style.left = (sRect.left - wrapperRect.left) + "px";
-        bar.style.top = (sRect.top - wrapperRect.top + 35) + "px";  // 日付の下の位置を調整
-        bar.style.width = (endCell.getBoundingClientRect().right - sRect.left - 8) + "px";
-
-        layer.appendChild(bar);
-    });
-
-    // 月送り
+    // 月送りボタン
     const prevBtn = document.getElementById('prev-month');
     const nextBtn = document.getElementById('next-month');
 
     if (prevBtn) {
         prevBtn.addEventListener('click', () => {
             currentMonth--;
-            if (currentMonth < 0) {
-                currentMonth = 11;
-                currentYear--;
-            }
+            if (currentMonth < 0) { currentMonth = 11; currentYear--; }
             generateCalendar(currentYear, currentMonth);
         });
     }
@@ -175,19 +153,17 @@ document.addEventListener("DOMContentLoaded", function() {
     if (nextBtn) {
         nextBtn.addEventListener('click', () => {
             currentMonth++;
-            if (currentMonth > 11) {
-                currentMonth = 0;
-                currentYear++;
-            }
+            if (currentMonth > 11) { currentMonth = 0; currentYear++; }
             generateCalendar(currentYear, currentMonth);
         });
     }
 
+    // 初期表示
     generateCalendar(currentYear, currentMonth);
-renderEventBars(currentYear, currentMonth);
-});
 
-// イベント
+}); // ここでDOMContentLoadedを閉じる
+
+// イベントデータ
 const calendarEvents = {
     ranges: [
         { start: '2026-05-09', end: '2026-05-13', class: 'event-period', label: 'chouchou' }
