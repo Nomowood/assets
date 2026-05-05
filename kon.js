@@ -80,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     dateNum.className = 'date-number';
                     dateNum.textContent = date;
                     cell.appendChild(dateNum);
+                    cell.dataset.date = dateStr;
 
                     addEventsToCell(cell, dateStr);
 
@@ -128,6 +129,37 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // 追加
+    function renderEventBars(year, month) {
+    const layer = document.getElementById("event-layer");
+    if (!layer) return;
+
+    layer.innerHTML = "";
+
+    calendarEvents.ranges.forEach(range => {
+
+        const startCell = document.querySelector(`[data-date="${range.start}"]`);
+        const endCell = document.querySelector(`[data-date="${range.end}"]`);
+
+        if (!startCell || !endCell) return;
+
+        const rect1 = startCell.getBoundingClientRect();
+        const rect2 = endCell.getBoundingClientRect();
+        const parentRect = layer.getBoundingClientRect();
+
+        const bar = document.createElement("div");
+        bar.className = "event-bar-absolute";
+        bar.textContent = range.label;
+
+        bar.style.left = (rect1.left - parentRect.left) + "px";
+        bar.style.top = (rect1.top - parentRect.top + 20) + "px";
+        bar.style.width = (rect2.right - rect1.left) + "px";
+
+        layer.appendChild(bar);
+    });
+}
+
+    // 月送り
     const prevBtn = document.getElementById('prev-month');
     const nextBtn = document.getElementById('next-month');
 
@@ -154,6 +186,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     generateCalendar(currentYear, currentMonth);
+renderEventBars(currentYear, currentMonth);
 });
 
 // イベント
