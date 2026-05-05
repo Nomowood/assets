@@ -353,6 +353,28 @@ background: var(--primary); color: #fff; padding: 3px 11px; border-radius: 9999p
   background: #f3fbff;
 }
 
+#calendar-wrapper {
+  position: relative;
+}
+
+#event-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.event-bar-absolute {
+  position: absolute;
+  height: 20px;
+  background: #8db9d6;
+  border-radius: 10px;
+  color: white;
+  font-size: 11px;
+  padding: 2px 6px;
+}
+
 
 /* Footer
 ----------------------------------------------- */
