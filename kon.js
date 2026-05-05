@@ -94,19 +94,14 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function addEventsToCell(cell, dateStr) {
-        // 期間イベント（連結バー）
         calendarEvents.ranges.forEach(range => {
             if (dateStr >= range.start && dateStr <= range.end) {
                 const bar = createEventBar(range.label, range.class);
-                if (dateStr !== range.start) {
-                    bar.textContent = '';           // 2日目以降はテキスト非表示
-                    bar.classList.add('continuation');
-                }
+                if (dateStr !== range.start) bar.textContent = '';
                 cell.appendChild(bar);
             }
         });
 
-        // 単発イベント
         calendarEvents.points.forEach(point => {
             if (dateStr === point.date) {
                 cell.appendChild(createEventBar(point.label, point.class));
@@ -121,37 +116,31 @@ document.addEventListener("DOMContentLoaded", function() {
         return bar;
     }
 
-    // 矢印ボタン
+    // 矢印
     const prevBtn = document.getElementById('prev-month');
     const nextBtn = document.getElementById('next-month');
 
-    if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-            currentMonth--;
-            if (currentMonth < 0) { currentMonth = 11; currentYear--; }
-            generateCalendar(currentYear, currentMonth);
-        });
-    }
+    if (prevBtn) prevBtn.addEventListener('click', () => {
+        currentMonth--;
+        if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+        generateCalendar(currentYear, currentMonth);
+    });
 
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            currentMonth++;
-            if (currentMonth > 11) { currentMonth = 0; currentYear++; }
-            generateCalendar(currentYear, currentMonth);
-        });
-    }
+    if (nextBtn) nextBtn.addEventListener('click', () => {
+        currentMonth++;
+        if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+        generateCalendar(currentYear, currentMonth);
+    });
 
     generateCalendar(currentYear, currentMonth);
 });
 
-// ==================== イベントデータ ====================
+// イベントデータ
 const calendarEvents = {
     ranges: [
         { start: '2026-05-09', end: '2026-05-13', class: 'event-period', label: 'chouchou' }
-        // ここに新しい期間イベントを追加できます
     ],
     points: [
         { date: '2026-05-25', class: 'release-day', label: '新刊' }
-        // ここに新しい単発イベントを追加できます
     ]
 };
