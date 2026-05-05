@@ -142,7 +142,7 @@ function renderPokedexItems() {
 <span class="red"></span>
 <span class="yellow"></span>
 <span class="green"></span>
-</div></div>
+</div>
             <div class="pokedex-header"><span class="name">${name}</span></div>
             <div class="item-visual"><img class="dex" src="${img}" alt="${name}"></div>
             <p class="pokedex-description">${d.desc || ""}</p>
@@ -150,7 +150,7 @@ function renderPokedexItems() {
                 <span>${d.howtoget || ""}</span>
                 <span class="rating">${starHTML}</span>
             </div>
-        </div>`;
+        </div></div>`;
 
         // 2. 入手方法リスト
         let getHTML = "";
