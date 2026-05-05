@@ -513,6 +513,7 @@ flex-direction: column;align-items: flex-start;padding: 100px 30px 30px;gap: 24p
 .share_box {padding: 8px;}
 .btn_wrap {width:100%;}
 .article-wrap {padding: 10px;}
+.sidebar {margin:auto 10px;}
 }
 @media (max-width: 480px) {
 .nav-container {padding: 0 16px;}
