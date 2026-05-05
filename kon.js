@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // ==================== カレンダー（月切り替え対応） ====================
-    let currentYear = new Date().getFullYear();
+        let currentYear = new Date().getFullYear();
     let currentMonth = new Date().getMonth();
 
     function generateCalendar(year, month) {
@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
             let row = document.createElement('tr');
             for (let j = 0; j < 7; j++) {
                 let cell = document.createElement('td');
+                cell.className = 'calendar-cell';
 
                 if (i === 0 && j < firstDay) {
                     cell.innerText = '';
@@ -86,18 +87,31 @@ document.addEventListener("DOMContentLoaded", function() {
                     const dateStr = `${year}-${String(month+1).padStart(2,'0')}-${String(date).padStart(2,'0')}`;
                     cell.innerText = date;
 
+                    // イベント処理
+                    let eventLabel = '';
+
                     calendarEvents.ranges.forEach(range => {
                         if (dateStr >= range.start && dateStr <= range.end) {
                             cell.classList.add(range.class);
-                            cell.title = range.label;
+                            eventLabel = range.label;
                         }
                     });
+
                     calendarEvents.points.forEach(point => {
                         if (dateStr === point.date) {
                             cell.classList.add(point.class);
-                            cell.title = point.label;
+                            eventLabel = point.label;
                         }
                     });
+
+                    // セル内にラベルを追加（画像風）
+                    if (eventLabel) {
+                        const label = document.createElement('div');
+                        label.className = 'event-label';
+                        label.textContent = eventLabel;
+                        cell.appendChild(label);
+                    }
+
                     date++;
                 }
                 row.appendChild(cell);
@@ -106,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // 矢印ボタン設定
+    // 矢印
     const prevBtn = document.getElementById('prev-month');
     const nextBtn = document.getElementById('next-month');
 
@@ -122,12 +136,11 @@ document.addEventListener("DOMContentLoaded", function() {
         generateCalendar(currentYear, currentMonth);
     });
 
-    // 初回表示
     generateCalendar(currentYear, currentMonth);
 });
 
-// カレンダーイベントデータ
+// イベントデータ
 const calendarEvents = {
-    ranges: [{ start: '2026-04-01', end: '2026-04-05', class: 'event-period', label: '期間限定イベント' }],
-    points: [{ date: '2026-04-20', class: 'release-day', label: '新刊発売日' }]
+    ranges: [{ start: '2026-04-01', end: '2026-04-05', class: 'event-period', label: '期間限定' }],
+    points: [{ date: '2026-04-20', class: 'release-day', label: '新刊' }]
 };
