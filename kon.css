@@ -311,14 +311,15 @@ background: var(--primary); color: #fff; padding: 3px 11px; border-radius: 9999p
   font-size: 11px;
   padding: 4px 6px;
   border-radius: 10px;
-  margin-top: 4px;
+  margin: 5px 0 0 0;
+border-radius: 0;
 }
 
 /* 横長イベント（画像の青） */
 .event-period {
   background: #8db9d6;
   color: white;
-  border-radius: 10px;
+  border-radius: 10px 0 0 10px;
 }
 
 /* 継続部分（真ん中） */
