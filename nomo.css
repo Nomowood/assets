@@ -1002,7 +1002,6 @@ flex-direction: column;align-items: flex-start;padding: 100px 30px 30px;gap: 24p
 #nav-toggle:checked + .hamburger span:nth-child(1) {transform: rotate(45deg) translate(5px, 5px);}
 #nav-toggle:checked + .hamburger span:nth-child(2) {opacity: 0;}
 #nav-toggle:checked + .hamburger span:nth-child(3) {transform: rotate(-45deg) translate(6px, -6px);}
-.index-header.scrolled .logo {#FFFFFF;}
 table.item-list {width: calc(100% + 2rem);border-collapse: collapse;margin: 2rem auto;margin-left:-1rem;}
 .col-img img {width: 100%; height: auto;}
 ol.material-listY li:before{margin-top:-0.3rem;margin-left:0.5rem;}
