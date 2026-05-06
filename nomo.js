@@ -44,18 +44,20 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // 5. 動く吹き出し（IntersectionObserver）
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            entry.target.classList.toggle("is-show", entry.isIntersecting);
-        });
-    }, { threshold: 0.2 });
-    document.querySelectorAll(".inview_re").forEach(el => observer.observe(el));
+const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("is-show");
+            obs.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.2 });
 
     // 6. シェアボタン・リンク設定
     setupShareButtons();
 
     // 7. 投稿の簡易化（図鑑ボックス & 詳細セクション生成）
-    renderPokedexItems();
+    renderPokedexItems(observer);
 
     // 8. カレンダー初期化
     if (typeof generateCalendar === "function") {
@@ -87,7 +89,7 @@ async function loadGuides() {
         });
     } catch (err) { console.error("ガイドの取得に失敗:", err); }
 }
-
+       
 // シェアボタン
 function setupShareButtons() {
     const btn = document.getElementById('shareBtn');
@@ -114,7 +116,7 @@ function setupShareButtons() {
     }
 }
 
-function renderPokedexItems() {
+function renderPokedexItems(observer) {
     const categorySlugMap = {
         "炎を感じる":"fire","水を感じる":"water","海を感じる":"ocean","自然を感じる":"nature","風を感じる":"nicebreezes","土を感じる":"dirt","電気で動く":"electronics","花ざかり":"prettyflowers","せいけつ":"cleanliness","キズをいやす":"healing","見て楽しむ":"watching","木製":"wooden","石づくり":"stone","布仕立て":"fabric","ガラス入り":"glass","かたい":"hard","やわらかい":"soft","四角い":"blocky","まんまる":"round","ほっそり":"slender","とがっている":"sharp","ゆれる":"wobbly","まわる":"spinning","いれもの":"container","けんせつ":"construction","乗りもの":"rides","キュート":"cute","カラフル":"colorful","ゴージャス":"luxury","メタリック":"metal","シンボル":"symbol","キラキラしてる":"shiny","音が鳴る":"noisy","トレーニングできる":"exercise","みんなで使う":"groupactivities","あそびば":"playspaces","食べものそっくり":"likefood","難しそうなもの":"complicated","文字がある":"letter","フシギ":"strange","ブキミ":"spooky","ゴミ":"garbage","あつまり":"gatherings","あまい":"sweet","すっぱい":"sour","からい":"spicy","にがい":"bitter","しぶい":"dry"
     };
@@ -153,6 +155,9 @@ function renderPokedexItems() {
                 <span class="rating">${starHTML}</span>
             </div>
         </div></div>`;
+
+const target = el.querySelector('.inview_re');
+if (target) observer.observe(target);
 
         // 2. 入手方法リスト
         let getHTML = "";
