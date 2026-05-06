@@ -1,26 +1,15 @@
-// --- グローバル ---
-let observer;
-
-// --- 初期化 ---
 document.addEventListener("DOMContentLoaded", function() {
 
-    // 1. ローディング解除
+    // 1. レイアウト調整（ローディング解除）
     setTimeout(() => {
         document.body.classList.remove('loading');
     }, 10);
 
-    // 2. IntersectionObserver 初期化（先に作る）
-    observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            entry.target.classList.toggle("is-show", entry.isIntersecting);
-        });
-    }, { threshold: 0.2 });
-
-    // 3. 最新記事
+    // 2. 最新記事を表示（ゆめしまラベル）
     const newpost = document.getElementById("pokoa-posts");
     if (newpost) {
         fetch("https://nomowood.blogspot.com/feeds/posts/default/-/ゆめしま?alt=json")
-            .then(res => res.json())
+            .then(response => response.json())
             .then(data => {
                 const entries = data.feed.entry;
                 if (!entries) return;
@@ -32,85 +21,78 @@ document.addEventListener("DOMContentLoaded", function() {
                     div.innerHTML = `<a href="${link}"><img src="${media}" alt="">${title}</a>`;
                     newpost.appendChild(div);
                 });
-            })
-            .catch(err => console.error("最新記事の取得に失敗:", err));
+            }).catch(err => console.error("最新記事の取得に失敗しました:", err));
     }
 
-    // 4. guide
+    // 3. guideラベルの記事を表示
     loadGuides();
 
-    // 5. スクロール
+    // 4. スクロール処理（ヘッダーの固定・表示切り替え）
     const header = document.getElementById('header');
     let lastScroll = 0;
     window.addEventListener('scroll', () => {
         const current = window.scrollY;
         if (header) {
             header.classList.toggle('scrolled', current > 60);
-            header.style.transform =
-                (current > lastScroll && current > 100)
-                    ? 'translateY(-100%)'
-                    : 'translateY(0)';
+            if (current > lastScroll && current > 100) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
         }
         lastScroll = current;
     });
 
-    // 6. シェア
+    // 5. 動く吹き出し（IntersectionObserver）
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            entry.target.classList.toggle("is-show", entry.isIntersecting);
+        });
+    }, { threshold: 0.2 });
+    document.querySelectorAll(".inview_re").forEach(el => observer.observe(el));
+
+    // 6. シェアボタン・リンク設定
     setupShareButtons();
 
-    // 7. 図鑑生成（ここで observer 適用も行う）
+    // 7. 投稿の簡易化（図鑑ボックス & 詳細セクション生成）
     renderPokedexItems();
 
-    // 8. カレンダー
+    // 8. カレンダー初期化
     if (typeof generateCalendar === "function") {
         generateCalendar(currentYear, currentMonth);
     }
-}
+});
 
+// --- 各種関数 ---
 
-// --- ガイド ---
 async function loadGuides() {
     const newguide = document.getElementById('guidesGrid');
     if (!newguide) return;
-
     const url = 'https://nomowood.blogspot.com/feeds/posts/default/-/guide?alt=json&max-results=5&orderby=published';
-
     try {
-        const res = await fetch(url);
-        const data = await res.json();
+        const response = await fetch(url);
+        const data = await response.json();
         if (!data.feed.entry) return;
-
         newguide.innerHTML = '';
-
         data.feed.entry.forEach(post => {
             const link = post.link.find(l => l.rel === 'alternate').href;
             const title = post.title.$t;
             const date = new Date(post.published.$t).toLocaleDateString('ja-JP', {
                 year: 'numeric', month: 'long', day: 'numeric'
             });
-
             const card = document.createElement('div');
             card.className = 'guide-card';
-            card.innerHTML =
-                `<div class='guide-date'>${date}</div>
-                 <div class='guide-content'>
-                 <h3><a href="${link}">${title}</a></h3></div>`;
-
+            card.innerHTML = `<div class='guide-date'>${date}</div><div class='guide-content'><h3><a href="${link}">${title}</a></h3></div>`;
             newguide.appendChild(card);
         });
-
-    } catch (err) {
-        console.error("ガイドの取得に失敗:", err);
-    }
+    } catch (err) { console.error("ガイドの取得に失敗:", err); }
 }
 
-
-// --- シェア ---
+// シェアボタン
 function setupShareButtons() {
     const btn = document.getElementById('shareBtn');
     if (!btn) return;
-
     let isOpen = false;
-
     btn.addEventListener('click', (e) => {
         if (e.target.tagName === 'I' || e.target.closest('a')) return;
         isOpen = !isOpen;
@@ -119,7 +101,6 @@ function setupShareButtons() {
 
     const url = encodeURIComponent(location.href);
     const text = encodeURIComponent(document.title + "\n" + location.href);
-
     const links = {
         "x-link": `https://twitter.com/intent/tweet?text=${text}&url=${url}`,
         "line-link": `https://social-plugins.line.me/lineit/share?url=${url}`,
@@ -127,40 +108,36 @@ function setupShareButtons() {
         "reddit-link": `https://www.reddit.com/submit?url=${url}`,
         "sms-link": `sms:?body=${text}`
     };
-
     for (const [id, href] of Object.entries(links)) {
         const el = document.getElementById(id);
         if (el) el.href = href;
     }
 }
 
-
-// --- 図鑑 ---
 function renderPokedexItems() {
-
-    const categorySlugMap = { /* ← 元のまま（省略せずそのまま貼る） */
+    const categorySlugMap = {
         "炎を感じる":"fire","水を感じる":"water","海を感じる":"ocean","自然を感じる":"nature","風を感じる":"nicebreezes","土を感じる":"dirt","電気で動く":"electronics","花ざかり":"prettyflowers","せいけつ":"cleanliness","キズをいやす":"healing","見て楽しむ":"watching","木製":"wooden","石づくり":"stone","布仕立て":"fabric","ガラス入り":"glass","かたい":"hard","やわらかい":"soft","四角い":"blocky","まんまる":"round","ほっそり":"slender","とがっている":"sharp","ゆれる":"wobbly","まわる":"spinning","いれもの":"container","けんせつ":"construction","乗りもの":"rides","キュート":"cute","カラフル":"colorful","ゴージャス":"luxury","メタリック":"metal","シンボル":"symbol","キラキラしてる":"shiny","音が鳴る":"noisy","トレーニングできる":"exercise","みんなで使う":"groupactivities","あそびば":"playspaces","食べものそっくり":"likefood","難しそうなもの":"complicated","文字がある":"letter","フシギ":"strange","ブキミ":"spooky","ゴミ":"garbage","あつまり":"gatherings","あまい":"sweet","すっぱい":"sour","からい":"spicy","にがい":"bitter","しぶい":"dry"
     };
 
     document.querySelectorAll('.item-data').forEach(el => {
-
         const d = el.dataset;
         const name = d.name || "";
         const img = d.img || "";
         const isLeft = (d.dir || "left") === "left";
         const stars = Number(d.stars) || 0;
 
+        // 星の生成
         let starHTML = "";
         for (let i = 1; i <= 5; i++) {
             starHTML += `<svg class="star ${i > stars ? 'empty' : ''}" viewBox="0 0 24 24"><path d="M12 2l3.1 6.3L22 9.3l-5 4.9L18.2 22 12 18.3 5.8 22 7 14.2 2 9.3l6.9-1z"/></svg>`;
         }
 
+        // 1. 図鑑ボックスの描画
         el.innerHTML = `
 <div class="fukidashi ${isLeft ? "LeftToRight" : "RightToLeft"} inview_re">
-<div class="faceicon"><img src="${img}" alt="${name}"></div>
-<div class="chatting"><div class="says">
-<p>ぽこあポケモンに登場する『<span class="st">${name}</span>』の入手方法・レシピ・使い道をまとめたよ！</p>
-</div></div></div>
+<div class="faceicon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcgi537e8devoopI5LkSdV0veR08UoJuoA3NmCOcXNRohXDb05kCHKktudFV5uUuaqDMWYJTAYcork2_kbOscMna2hlt50VFcpHALNmCWvkTa60VeGfHhq6_9i65Oq_wh0P1CPZ5ibxLGuYXgYKXndBzvmC3hzHpWniqXY0AxW_yDc0jSsozBWagEg0Kbw/s1600/%E7%84%A1%E9%A1%8C829_20260410232336.png" alt="メタモン"></div>
+<div class="chatting"><div class="says"><p>ぽこあポケモンに登場する『<span class="st">${name}</span>』の入手方法・レシピ・使い道をまとめたよ！</p></div></div>
+</div>
 <div class="pokedex-box">
 <div class="pokedex-btn"></div>
 <div class="after">
@@ -234,13 +211,10 @@ function renderPokedexItems() {
             <h2><img src="${img}" alt="">${name}の分類</h2>
             <ul class="material-list">${catHTML}</ul>
         </div>`);
-         // ⭐ ここが最重要（追加）
-        const target = el.querySelector(".inview_re");
-        if (target && observer) observer.observe(target);
     });
 }
 
-// --- カレンダー（そのまま維持） ---
+// --- カレンダーロジック（前回の修正を統合） ---
 let currentYear = new Date().getFullYear();
 let currentMonth = new Date().getMonth();
 
@@ -314,5 +288,3 @@ function renderEventBars() {
         layer.appendChild(bar);
     });
 }
-
-    });
