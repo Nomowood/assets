@@ -1,15 +1,16 @@
 :root {
-      --primary: #00b894;
-      --accent: #00a085;
-      --bg: #8f6d5b;
-  --bg-body:#c49e87;
-      --card: #ffffff;
-      --text-main: #a37b65;
-      --text-sub: #636e72;
+--primary: #00b894;
+--accent: #00a085;
+--bg: #8f6d5b;
+--bg-body:#c49e87;
+--dot:#8c5d5d;
+--card: #ffffff;
+--text-main: #a37b65;
+--text-sub: #636e72;
 --text-st:#edae66;
 --border-color:#e0ca67;
 --link-color: #3498db;
-    }
+}
 
 body, p, div, span, h1, h2, h3, h4, h5, h6, .post-body, .entry-content {
 user-select: none !important;
