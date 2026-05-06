@@ -349,7 +349,7 @@ div.widget h2.title {
       border-radius: 0 10px 10px 0;
       font-size: 1.45rem;
     }
-post-body h3 {padding:10px 0;margin:3rem 0 1rem 0;font-size:1.3rem; border-bottom:solid 1px var(--text-main);}
+.post-body h3 {padding:10px 0;margin:3rem 0 1rem 0;font-size:1.3rem; border-bottom:solid 1px var(--text-main);}
 
 /* Posts
 ----------------------------------------------- */
