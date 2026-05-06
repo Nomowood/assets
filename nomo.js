@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (typeof generateCalendar === "function") {
         generateCalendar(currentYear, currentMonth);
     }
-});
+}
 
 
 // --- ガイド ---
@@ -177,11 +177,6 @@ function renderPokedexItems() {
             </div>
         </div></div>`;
 
-        // ⭐ ここが最重要（追加）
-        const target = el.querySelector(".inview_re");
-        if (target && observer) observer.observe(target);
-    });
-}
         // 2. 入手方法リスト
         let getHTML = "";
         const getCount = Number(d.get) || 0;
@@ -241,9 +236,6 @@ function renderPokedexItems() {
         </div>`);
     });
 }
-
-
-
 
 // --- カレンダー（そのまま維持） ---
 let currentYear = new Date().getFullYear();
@@ -319,3 +311,8 @@ function renderEventBars() {
         layer.appendChild(bar);
     });
 }
+
+ // ⭐ ここが最重要（追加）
+        const target = el.querySelector(".inview_re");
+        if (target && observer) observer.observe(target);
+    });
