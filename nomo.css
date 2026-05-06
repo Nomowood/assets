@@ -272,6 +272,7 @@ font-weight:bold;
 color: var(--text-main);
 bottom:10px;
 }
+h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
 .subtitle {
       color: #64748b;
       font-size: 1.1rem;
@@ -783,7 +784,7 @@ text-align: center;
 transition: all 0.3s;
 margin: 0 auto;
 padding:0 10px;
-border:solid 2px var(--text-sub);
+border:solid 2px var(--text-main);
 background:#e3d6bf;
 }
 .blog-card p {margin:0;font-size:0.9em;}
