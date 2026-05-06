@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
         lastScroll = current;
     });
 
-    // 5. 動く吹き出し（IntersectionObserver）
+    // 5. 動く吹き出し
 const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -52,6 +52,16 @@ const observer = new IntersectionObserver((entries, obs) => {
         }
     });
 }, { threshold: 0.2 });
+
+// 静的 + 動的の両方に対応
+function observeInviewElements() {
+    document.querySelectorAll('.inview_re:not(.observed)').forEach(el => {
+        observer.observe(el);
+        el.classList.add('observed'); // 二重登録防止
+    });
+}
+// 初回実行
+observeInviewElements();
 
     // 6. シェアボタン・リンク設定
     setupShareButtons();
@@ -156,9 +166,6 @@ function renderPokedexItems(observer) {
             </div>
         </div></div>`;
 
-const target = el.querySelector('.inview_re');
-if (target) observer.observe(target);
-
         // 2. 入手方法リスト
         let getHTML = "";
         const getCount = Number(d.get) || 0;
@@ -217,6 +224,8 @@ if (target) observer.observe(target);
             <ul class="material-list">${catHTML}</ul>
         </div>`);
     });
+// 監視対象に追加
+observeInviewElements();
 }
 
 // --- カレンダーロジック（前回の修正を統合） ---
