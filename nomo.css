@@ -1101,7 +1101,7 @@ table.item-list {width: calc(100% + 2rem);border-collapse: collapse;margin: 2rem
 .col-img img {width: 100%; height: auto;}
 ol.material-listY li:before{margin-top:-0.3rem;margin-left:0.5rem;}
 }
-.btn_wrap {width:100%;max-width:340px;}
+.btn_wrap {width:90%;max-width:340px;}
 .btn_wrap span {width:100%;left:0;}
 .btn_wrap:hover span, .btn_wrap.active span {transform:translateX(-100%);}
 @media (max-width: 480px) {
