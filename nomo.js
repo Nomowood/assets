@@ -234,6 +234,9 @@ function renderPokedexItems() {
             <h2><img src="${img}" alt="">${name}の分類</h2>
             <ul class="material-list">${catHTML}</ul>
         </div>`);
+         // ⭐ ここが最重要（追加）
+        const target = el.querySelector(".inview_re");
+        if (target && observer) observer.observe(target);
     });
 }
 
@@ -312,7 +315,4 @@ function renderEventBars() {
     });
 }
 
- // ⭐ ここが最重要（追加）
-        const target = el.querySelector(".inview_re");
-        if (target && observer) observer.observe(target);
     });
