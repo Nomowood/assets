@@ -160,13 +160,89 @@ function renderPokedexItems() {
 <div class="faceicon"><img src="${img}" alt="${name}"></div>
 <div class="chatting"><div class="says">
 <p>ぽこあポケモンに登場する『<span class="st">${name}</span>』の入手方法・レシピ・使い道をまとめたよ！</p>
-</div></div></div>`;
+</div></div></div>
+<div class="pokedex-box">
+<div class="pokedex-btn"></div>
+<div class="after">
+<span class="red"></span>
+<span class="yellow"></span>
+<span class="green"></span>
+</div>
+            <div class="pokedex-header"><span class="name">${name}</span></div>
+            <div class="item-visual"><img class="dex" src="${img}" alt="${name}"></div>
+            <p class="pokedex-description">${d.desc || ""}</p>
+            <div class="pokedex-footer">
+                <span>${d.howtoget || ""}</span>
+                <span class="rating">${starHTML}</span>
+            </div>
+        </div></div>`;
 
         // ⭐ ここが最重要（追加）
         const target = el.querySelector(".inview_re");
         if (target && observer) observer.observe(target);
     });
 }
+        // 2. 入手方法リスト
+        let getHTML = "";
+        const getCount = Number(d.get) || 0;
+        for (let i = 1; i <= getCount; i++) {
+            getHTML += `<li><span class="markerL">${d[`get${i}Title`] || ""}</span><br>${d[`get${i}Body`] || ""}</li>`;
+        }
+
+        // 3. レシピリスト
+        let recipeHTML = "";
+        const recipeCount = Number(d.recipe) || 0;
+        for (let i = 1; i <= recipeCount; i++) {
+            recipeHTML += `<li><img src="${d[`recipeimg${i}`] || ""}" alt="">${d[`recipe${i}`] || ""}</li>`;
+        }
+
+        // 4. バリエーション(種類)
+        let typeHTML = "";
+        const typeCount = Number(d.type) || 0;
+        for (let i = 1; i <= typeCount; i++) {
+            typeHTML += `<li><img src="${d[`typeimg${i}`] || ""}" alt="">${d[`type${i}`] || ""}</li>`;
+        }
+
+        // 5. カテゴリー(使い道)
+        let catHTML = "";
+        let catSpanHTML = "";
+        const catCount = Number(d.category) || 0;
+        for (let i = 1; i <= catCount; i++) {
+            const cat = d[`category${i}`];
+            if (!cat) continue;
+            const slug = categorySlugMap[cat] || cat;
+            catSpanHTML += `<a href="/p/${slug}-items-pokopia.html" style="padding:0 0.5rem">${cat}</a>`;
+            catHTML += `<li><a href="/p/${slug}-items-pokopia.html">${cat}</a></li>`;
+        }
+
+        // 6. 詳細セクションの注入
+        el.insertAdjacentHTML("afterend", `
+        <div class="item-section">
+            <h2><img src="${img}" alt="">${name}の入手方法</h2>
+            ${d.getbody || ""}
+            <p style="font-size:1.1em;">＼ ゲットする${getCount}つの方法 ／</p>
+            <ol class="material-listY">${getHTML}</ol>
+            
+            ${recipeCount > 0 ? `
+            <h2><img src="${img}" alt="">${name}のレシピ</h2>
+            <ul class="material-list">${recipeHTML}</ul>
+            <h3 class="whoa-blue">レシピの入手方法</h3>
+            <p class="whoa-p">${d.recipebody || ""}</p>` : ""}
+
+            <h2><img src="${img}" alt="">${name}の種類</h2>
+            <ul class="material-list">${typeHTML}</ul>
+
+            <h2><img src="${img}" alt="">${name}の使い道</h2>
+            <p>${d.catbody || ""}ポケモンのすみかに設置すると<br>
+            ${catSpanHTML}<br>のアイテムを好きなポケモンが喜びます。</p>
+
+            <h2><img src="${img}" alt="">${name}の分類</h2>
+            <ul class="material-list">${catHTML}</ul>
+        </div>`);
+    });
+}
+
+
 
 
 // --- カレンダー（そのまま維持） ---
