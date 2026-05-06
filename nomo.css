@@ -446,6 +446,7 @@ top:-1px;
 .default-box {
 position: relative;
 padding: 3rem 1rem 0.5rem 1rem;
+margin:1rem auto;
 background:linear-gradient(177deg, transparent 1.5rem, #7bb34d 0 100%);
 }
 .default-box::before {
@@ -570,8 +571,8 @@ padding-top: 13px;
 .item-section h2 { font-size: 1.2rem; margin-bottom: 15px; color: var(--text-main); border-bottom: solid 2px var(--text-sub)!important;}
 .item-section h3 {margin:0;}
 .item-section img {width:25px; height:25px; margin-bottom:8px; margin-right:2px; padding:0; vertical-align:middle;}
-.item-section img.img-blog {display:block; margin:1rem auto; min-width:80%; width:100%; height:auto; border-radius:20px;}
-.item-section img.img-area {display:block; margin:0 auto 0.8rem auto;padding:2%;width:100%;height:auto;border-radius:12px;background:#858f8c!important;border:double 8px #fff!important;}
+.item-section img.img-blog {display:inline-block; margin:1rem auto; min-width:80%; width:100%; height:auto; border-radius:20px;}
+.item-section img.img-area {display:inline-block; margin:0 auto 0.8rem auto;padding:2%;width:100%;height:auto;border-radius:12px;background:#858f8c!important;border:double 8px #fff!important;}
 .item-section ul.material-list { list-style: none; border-top:none; border-bottom:none; margin:0; padding:0;}
 .item-section ul.material-list li { padding: 2px 0 6px 15px; font-size: 1rem; color: var(--text-main); }
 .fukidashi {
