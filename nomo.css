@@ -590,6 +590,7 @@ padding-top: 13px;
   width: 100%;
   height: auto;
   border-radius: 50%;
+  opacity: 0;transform:translateX(-50px);transition: .8s;
 }
 .fukidashi .chatting {
   width: 100%;
@@ -613,8 +614,7 @@ padding-top: 13px;
 }
 .says p {margin: 0;padding: 0;}
 .says img {width:18px;}
-.LeftToRight {opacity: 0;transform: translateX(-50px);transition: .8s;}
-.LeftToRight.is-show {opacity: 1;transform: translateX(0);}
+.fukidashi.is-show {opacity: 1;transform: translateX(0);}
 .fadein {opacity: 0;transform: translateY(100%);transition: .8s;}
 .fadein.is-show {opacity: 1;transform: translateY(0);}
 
