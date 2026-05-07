@@ -579,7 +579,7 @@ padding-top: 13px;
 .fukidashi {
   width: 100%;
   margin: 1.5em 0;
-  overflow: hidden;
+  overflow: visible;
 }
 .fukidashi .faceicon {
   float: left;
