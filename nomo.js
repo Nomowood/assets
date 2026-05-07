@@ -54,14 +54,13 @@ obs.unobserve(entry.target);
 }, { threshold: 0.2 });
 
 // 静的 + 動的の両方に対応
+observeInviewElements(); // 投稿記事の監視
 function observeInviewElements() {
 document.querySelectorAll('.inview_re:not(.observed)').forEach(el => {
 observer.observe(el);
 el.classList.add('observed'); // 二重登録防止
 });
 }
-// 初回実行
-renderPokedexItems();
 
 // 6. シェアボタン・リンク設定
 setupShareButtons();
@@ -212,8 +211,7 @@ document.querySelectorAll('.item-data').forEach(el => {
                 <span class="rating">${starHTML}</span>
             </div>
         </div>`;
-    const bubble = el.querySelector('.fukidashi');
-if (bubble) observer.observe(bubble);
+    
 
     // 2. 入手方法リスト
     let getHTML = "";
