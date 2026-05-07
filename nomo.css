@@ -580,6 +580,7 @@ padding-top: 13px;
   width: 100%;
   margin: 1.5em 0;
   overflow: visible;
+  opacity: 0;transform:translateX(-50px);transition: .8s;
 }
 .fukidashi .faceicon {
   float: left;
@@ -590,7 +591,6 @@ padding-top: 13px;
   width: 100%;
   height: auto;
   border-radius: 50%;
-  opacity: 0;transform:translateX(-50px);transition: .8s;
 }
 .fukidashi .chatting {
   width: 100%;
