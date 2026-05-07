@@ -67,10 +67,7 @@ renderPokedexItems();
 // 6. シェアボタン・リンク設定
 setupShareButtons();
 
-// 7. 投稿の簡易化（図鑑ボックス & 詳細セクション生成）
-renderPokedexItems();
-
-// 8. カレンダー初期化
+// 7. カレンダー初期化
 if (typeof generateCalendar === "function") {
     generateCalendar(currentYear, currentMonth);
 }
