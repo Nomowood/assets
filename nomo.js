@@ -222,6 +222,9 @@ document.querySelectorAll('.item-data').forEach(el => {
         getHTML += `<li><span class="markerL">${d[`get${i}Title`] || ""}</span><br>${d[`get${i}Body`] || ""}</li>`;
     }
 
+    // 2.5 3Dプリンタ
+    const 3DCount = Number(d.get) || 0;
+
     // 3. レシピリスト
     let recipeHTML = "";
     const recipeCount = Number(d.recipe) || 0;
@@ -255,6 +258,13 @@ document.querySelectorAll('.item-data').forEach(el => {
         ${d.getbody || ""}
         <p style="font-size:1.1em;">＼ ゲットする${getCount}つの方法 ／</p>
         <ol class="material-listY">${getHTML}</ol>
+
+        ${3DCount > 0 ? `
+        <h3>公式クラウド島でコピー</h3>
+        <p>Nintendo Online（有料）に加入している場合、公式のクラウド島『${3Dtitle}』に行って写真を撮ることでコピーすることができます。${3Ddeadline}
+        <ol class="material-listY"><li>${3Dsteps}</li></ol>
+        <img src="${3Dimg}" alt="${name}の3Dプリンタ用画像">
+        ` : ""}
         
         ${recipeCount > 0 ? `
         <h2><img src="${img}" alt="">${name}のレシピ</h2>
