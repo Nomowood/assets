@@ -1,4 +1,4 @@
-document.addEventListener(“DOMContentLoaded”, function() {
+document.addEventListener("DOMContentLoaded", function() {
 // 1. レイアウト調整（ローディング解除）
 setTimeout(() => {
     document.body.classList.remove('loading');
@@ -46,16 +46,16 @@ window.addEventListener('scroll', () => {
 const observer = new IntersectionObserver((entries, obs) => {
 entries.forEach(entry => {
 if (entry.isIntersecting) {
-entry.target.classList.add(“is-show”);
+entry.target.classList.add("is-show");
 obs.unobserve(entry.target);
 }
 });
 }, { threshold: 0.2 });
 // 静的 + 動的の両方に対応
 function observeInviewElements() {
-document.querySelectorAll(’.inview_re:not(.observed)’).forEach(el => {
+document.querySelectorAll('.inview_re:not(.observed)').forEach(el => {
 observer.observe(el);
-el.classList.add(‘observed’); // 二重登録防止
+el.classList.add('observed'); // 二重登録防止
 });
 }
 // 初回実行
@@ -76,35 +76,35 @@ if (typeof generateCalendar === "function") {
 // — 各種関数 —
 
 async function loadGuides() {
-const newguide = document.getElementById(‘guidesGrid’);
+const newguide = document.getElementById('guidesGrid');
 if (!newguide) return;
-const url = ‘https://nomowood.blogspot.com/feeds/posts/default/-/guide?alt=json&max-results=5&orderby=published’;
+const url = 'https://nomowood.blogspot.com/feeds/posts/default/-/guide?alt=json&max-results=5&orderby=published';
 try {
 const response = await fetch(url);
 const data = await response.json();
 if (!data.feed.entry) return;
-newguide.innerHTML = ‘’;
+newguide.innerHTML = '';
 data.feed.entry.forEach(post => {
-const link = post.link.find(l => l.rel === ‘alternate’).href;
+const link = post.link.find(l => l.rel === 'alternate').href;
 const title = post.title.$t;
-const date = new Date(post.published.$t).toLocaleDateString(‘ja-JP’, {
+const date = new Date(post.published.$t).toLocaleDateString('ja-JP', {
 year: ‘numeric’, month: ‘long’, day: ‘numeric’
 });
-const card = document.createElement(‘div’);
-card.className = ‘guide-card’;
+const card = document.createElement('div');
+card.className = 'guide-card';
 card.innerHTML = `<div class='guide-date'>${date}</div><div class='guide-content'><h3><a href="${link}">${title}</a></h3></div>`;
 newguide.appendChild(card);
 });
-} catch (err) { console.error(“ガイドの取得に失敗:”, err); }
+} catch (err) { console.error("ガイドの取得に失敗:", err); }
 }
 
 // シェアボタン
 function setupShareButtons() {
-const btn = document.getElementById(‘shareBtn’);
+const btn = document.getElementById('shareBtn');
 if (!btn) return;
 let isOpen = false;
-btn.addEventListener(‘click’, (e) => {
-if (e.target.tagName === ‘I’ || e.target.closest(‘a’)) return;
+btn.addEventListener('click', (e) => {
+if (e.target.tagName === 'I' || e.target.closest('a')) return;
 isOpen = !isOpen;
 btn.classList.toggle(‘active’, isOpen);
 });
@@ -126,7 +126,54 @@ for (const [id, href] of Object.entries(links)) {
 
 function renderPokedexItems(observer) {
 const categorySlugMap = {
-“炎を感じる”:“fire”,“水を感じる”:“water”,“海を感じる”:“ocean”,“自然を感じる”:“nature”,“風を感じる”:“nicebreezes”,“土を感じる”:“dirt”,“電気で動く”:“electronics”,“花ざかり”:“prettyflowers”,“せいけつ”:“cleanliness”,“キズをいやす”:“healing”,“見て楽しむ”:“watching”,“木製”:“wooden”,“石づくり”:“stone”,“布仕立て”:“fabric”,“ガラス入り”:“glass”,“かたい”:“hard”,“やわらかい”:“soft”,“四角い”:“blocky”,“まんまる”:“round”,“ほっそり”:“slender”,“とがっている”:“sharp”,“ゆれる”:“wobbly”,“まわる”:“spinning”,“いれもの”:“container”,“けんせつ”:“construction”,“乗りもの”:“rides”,“キュート”:“cute”,“カラフル”:“colorful”,“ゴージャス”:“luxury”,“メタリック”:“metal”,“シンボル”:“symbol”,“キラキラしてる”:“shiny”,“音が鳴る”:“noisy”,“トレーニングできる”:“exercise”,“みんなで使う”:“groupactivities”,“あそびば”:“playspaces”,“食べものそっくり”:“likefood”,“難しそうなもの”:“complicated”,“文字がある”:“letter”,“フシギ”:“strange”,“ブキミ”:“spooky”,“ゴミ”:“garbage”,“あつまり”:“gatherings”,“あまい”:“sweet”,“すっぱい”:“sour”,“からい”:“spicy”,“にがい”:“bitter”,“しぶい”:“dry”
+"炎を感じる":"fire",
+"水を感じる":"water",
+"海を感じる":"ocean",
+"自然を感じる":"nature",
+"風を感じる":"nicebreezes",
+"土を感じる":"dirt",
+"電気で動く":"electronics",
+"花ざかり":"prettyflowers",
+"せいけつ":"cleanliness",
+"キズをいやす":"healing",
+"見て楽しむ":"watching",
+"木製":"wooden",
+"石づくり":"stone",
+"布仕立て":"fabric",
+"ガラス入り":"glass",
+"かたい":"hard",
+"やわらかい":"soft",
+"四角い":"blocky",
+"まんまる":"round",
+"ほっそり":"slender",
+"とがっている":"sharp",
+"ゆれる":"wobbly",
+"まわる":"spinning",
+"いれもの":"container",
+"けんせつ":"construction",
+"乗りもの":"rides",
+"キュート":"cute",
+"カラフル":"colorful",
+"ゴージャス":"luxury",
+"メタリック":"metal",
+"シンボル":"symbol",
+"キラキラしてる":"shiny",
+"音が鳴る":"noisy",
+"トレーニングできる":"exercise",
+"みんなで使う":"groupactivities",
+"あそびば":"playspaces",
+"食べものそっくり":"likefood",
+"難しそうなもの":"complicated",
+"文字がある":"letter",
+"フシギ":"strange",
+"ブキミ":"spooky",
+"ゴミ":"garbage",
+"あつまり":"gatherings",
+"あまい":"sweet",
+"すっぱい":"sour",
+"からい":"spicy",
+"にがい":"bitter",
+"しぶい":"dry"
 };
 
 document.querySelectorAll('.item-data').forEach(el => {
@@ -232,16 +279,15 @@ let currentYear = new Date().getFullYear();
 let currentMonth = new Date().getMonth();
 
 const calendarEvents = {
-ranges: [{ start: ‘2026-05-09’, end: ‘2026-05-13’, class: ‘event-period’, label: ‘chouchou’ }],
-points: [{ date: ‘2026-05-25’, class: ‘release-day’, label: ‘新刊’ }]
+ranges: [{ start: '2026-05-09', end: '2026-05-13', class: 'event-period', label: 'chouchou' }],
+points: [{ date: '2026-05-25', class: 'release-day', label: '新刊' }]
 };
 
 function generateCalendar(year, month) {
-const monthYearEl = document.getElementById(‘calendar-month-year’);
-const calendarBody = document.getElementById(‘calendar-body’);
+const monthYearEl = document.getElementById('calendar-month-year');
+const calendarBody = document.getElementById('calendar-body');
 if (!monthYearEl || !calendarBody) return;
 
-```
 monthYearEl.innerText = `${year}年 ${month + 1}月`;
 const firstDay = new Date(year, month, 1).getDay();
 const daysInMonth = new Date(year, month + 1, 0).getDate();
@@ -278,18 +324,16 @@ for (let i = 0; i < 6; i++) {
     if (date > daysInMonth && !hasDate) break;
 }
 setTimeout(() => renderEventBars(), 50);
-```
 
 }
 
 function renderEventBars() {
-const layer = document.getElementById(“event-layer”);
-const wrapper = document.getElementById(‘calendar-wrapper’);
+const layer = document.getElementById("event-layer");
+const wrapper = document.getElementById('calendar-wrapper');
 if (!layer || !wrapper) return;
-layer.innerHTML = “”;
+layer.innerHTML = "";
 const wrapperRect = wrapper.getBoundingClientRect();
 
-```
 calendarEvents.ranges.forEach(range => {
     const startCell = document.querySelector(`[data-date="${range.start}"]`);
     const endCell = document.querySelector(`[data-date="${range.end}"]`);
@@ -304,6 +348,5 @@ calendarEvents.ranges.forEach(range => {
     bar.style.width = (eRect.right - sRect.left - 8) + "px";
     layer.appendChild(bar);
 });
-```
 
 }
