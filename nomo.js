@@ -1,3 +1,4 @@
+let observer;
 document.addEventListener("DOMContentLoaded", function() {
 // 1. レイアウト調整（ローディング解除）
 setTimeout(() => {
@@ -43,7 +44,7 @@ window.addEventListener('scroll', () => {
 });
 
 // 5. 動く吹き出し
-const observer = new IntersectionObserver((entries, obs) => {
+observer = new IntersectionObserver((entries, obs) => {
 entries.forEach(entry => {
 if (entry.isIntersecting) {
 entry.target.classList.add("is-show");
@@ -51,6 +52,7 @@ obs.unobserve(entry.target);
 }
 });
 }, { threshold: 0.2 });
+
 // 静的 + 動的の両方に対応
 function observeInviewElements() {
 document.querySelectorAll('.inview_re:not(.observed)').forEach(el => {
@@ -59,7 +61,7 @@ el.classList.add('observed'); // 二重登録防止
 });
 }
 // 初回実行
-observeInviewElements();
+renderPokedexItems();
 
 // 6. シェアボタン・リンク設定
 setupShareButtons();
@@ -124,7 +126,7 @@ for (const [id, href] of Object.entries(links)) {
 
 }
 
-function renderPokedexItems(observer) {
+function renderPokedexItems() {
 const categorySlugMap = {
 "炎を感じる":"fire",
 "水を感じる":"water",
@@ -210,6 +212,8 @@ document.querySelectorAll('.item-data').forEach(el => {
                 <span class="rating">${starHTML}</span>
             </div>
         </div>`;
+    const bubble = el.querySelector('.fukidashi');
+if (bubble) observer.observe(bubble);
 
     // 2. 入手方法リスト
     let getHTML = "";
