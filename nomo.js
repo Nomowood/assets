@@ -65,7 +65,7 @@ observeInviewElements();
 setupShareButtons();
 
 // 7. 投稿の簡易化（図鑑ボックス & 詳細セクション生成）
-renderPokedexItems(observer);
+renderPokedexItems();
 
 // 8. カレンダー初期化
 if (typeof generateCalendar === "function") {
