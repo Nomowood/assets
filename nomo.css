@@ -342,13 +342,22 @@ div.widget h2.title {
       line-height: 1.85;
     }
 .post-body h2 {
-      border-left: 7px solid var(--primary);
-      background: #f0fdfa;
-      padding: 14px 22px;
-      margin: 50px 0 25px;
-      border-radius: 0 10px 10px 0;
-      font-size: 1.45rem;
-    }
+    position: relative;
+    padding-left: 27px;
+}
+.post-body h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+top:-1px;
+    background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiMdczfajhU_sz8sGKtlg0DC7KSVMyAOdL6DVzLL-xcM8bhCU9B7erNLNqg7LgKeqKx-ah2_duEhM08kXQ1nXmuJcUI4N_1MNdGmAeOd2BvMfhHsXQ9TtLkKb_oUqVzzVbVmMIE0U88kB8xvgvzczlzE9wobPceivJcd3nSgNLRXAPP9YgVeWo2tyS8x3mM/s1600/%E7%84%A1%E9%A1%8C828_20260404010415.png") no-repeat center center;
+    background-size: contain;
+    opacity:0.5;
+}
 .post-body h3 {padding:40px 0 0 5px;font-size:1.15rem; border-bottom:solid 2px var(--text-main);}
 
 /* Posts
