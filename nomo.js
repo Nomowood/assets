@@ -88,7 +88,7 @@ data.feed.entry.forEach(post => {
 const link = post.link.find(l => l.rel === 'alternate').href;
 const title = post.title.$t;
 const date = new Date(post.published.$t).toLocaleDateString('ja-JP', {
-year: ‘numeric’, month: ‘long’, day: ‘numeric’
+year: 'numeric', month: 'long', day: 'numeric'
 });
 const card = document.createElement('div');
 card.className = 'guide-card';
@@ -106,7 +106,7 @@ let isOpen = false;
 btn.addEventListener('click', (e) => {
 if (e.target.tagName === 'I' || e.target.closest('a')) return;
 isOpen = !isOpen;
-btn.classList.toggle(‘active’, isOpen);
+btn.classList.toggle('active', isOpen);
 });
 const url = encodeURIComponent(location.href);
 const text = encodeURIComponent(document.title + "\n" + location.href);
@@ -209,7 +209,7 @@ document.querySelectorAll('.item-data').forEach(el => {
                 <span>${d.howtoget || ""}</span>
                 <span class="rating">${starHTML}</span>
             </div>
-        </div></div>`;
+        </div>`;
 
     // 2. 入手方法リスト
     let getHTML = "";
