@@ -1,4 +1,11 @@
 let observer;
+function observeInviewElements() {
+document.querySelectorAll('.inview_re:not(.observed)').forEach(el => {
+observer.observe(el);
+el.classList.add('observed');
+});
+}
+
 document.addEventListener("DOMContentLoaded", function() {
 // 1. レイアウト調整（ローディング解除）
 setTimeout(() => {
@@ -52,15 +59,10 @@ obs.unobserve(entry.target);
 }
 });
 }, { threshold: 0.2 });
-
-// 静的 + 動的の両方に対応
-observeInviewElements(); // 投稿記事の監視
-function observeInviewElements() {
-document.querySelectorAll('.inview_re:not(.observed)').forEach(el => {
-observer.observe(el);
-el.classList.add('observed'); // 二重登録防止
-});
-}
+// 静的HTML
+observeInviewElements();
+// 動的HTML生成
+renderPokedexItems();
 
 // 6. シェアボタン・リンク設定
 setupShareButtons();
