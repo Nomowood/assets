@@ -359,7 +359,6 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
 width: 100%; height:auto;
   aspect-ratio:16/9;
   overflow:hidden;
- object-fit: cover;
  display: block;
 }
 /* カード下部のテキストエリア */
