@@ -353,11 +353,10 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   height:auto;
 }
-.post-thumbnail {width:100%;background:#f4f4f4;}
+.post-thumbnail {width:100%;background:#f4f4f4;overflow:hidden;aspect-ratio:16/9;}
 .post-thumbnail img {
 width: 100%;
   height:auto;
-  overflow:hidden;
   object-fit:contain;
  display: block;
 }
