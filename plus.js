@@ -178,7 +178,7 @@ el.innerHTML = `
         <span>${d.howtoget || ""}</span>
         <span class="rating">${starHTML}</span></div></div></div>
 </div>
-<div style="margin:1rem 0">${freeHTML}</div>
+<div style="margin:1.7rem 0">${freeHTML}</div>
 `;
     
 // 2-3-4. 入手方法リスト
