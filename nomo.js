@@ -14,7 +14,7 @@ setTimeout(() => {
 
 // 2. スクロール処理（ヘッダーの固定・表示切り替え）
 const header = document.getElementById('header');
-if(!header)return;
+if(header){
   let lastScroll = window.scrollY || 0;
   let ticking = false;
   function onScroll() {
@@ -35,7 +35,7 @@ if(!header)return;
     }
   }, { passive: true });
   onScroll();
-});
+}
 
 // 3. 動く吹き出し
 observer = new IntersectionObserver((entries, obs) => {
