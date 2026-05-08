@@ -1189,7 +1189,8 @@ body {font-size:0.9em;letter-spacing:0.08em;line-height:1.8;}
 .content-outer{padding:0;}
 .content-inner {padding:0;}
 #main{margin:0;}
-.post-grid {grid-template-columns: repeat(2, 1fr);padding:10px;gap:8px;}
+.index-tabs {padding:8px 10px;}
+.post-grid {grid-template-columns: repeat(2, 1fr);padding:10px;gap:15px 7px;}
 .post-card h3 {letter-spacing:0.01em; line-height:1.1;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical; overflow: hidden;}
 .default-box {max-width: 94%;padding: 1.4em 1.3em 1.2em;}
 .nav-container {width:100%;max-width:767px;}
