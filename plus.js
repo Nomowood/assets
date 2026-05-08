@@ -1,3 +1,13 @@
+let observer;
+function observeInviewElements() {
+document.querySelectorAll('.inview_re:not(.observed)').forEach(el => {
+try {observer.observe(el);} catch (e) {
+console.warn("Observer error:", e);
+}
+el.classList.add('observed');
+});
+}
+
 document.addEventListener("DOMContentLoaded", function() {
 // 1-1. レイアウト調整（ローディング解除）
 setTimeout(() => {
