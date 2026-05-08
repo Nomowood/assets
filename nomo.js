@@ -36,18 +36,27 @@ loadGuides();
 
 // 4. スクロール処理（ヘッダーの固定・表示切り替え）
 const header = document.getElementById('header');
-let lastScroll = 0;
-window.addEventListener('scroll', () => {
-    const current = window.scrollY;
-    if (header) {
-        header.classList.toggle('scrolled', current > 60);
-        if (current > lastScroll && current > 100) {
-            header.style.transform = 'translateY(-100%)';
-        } else {
-            header.style.transform = 'translateY(0)';
-        }
+if(!header)return;
+  let lastScroll = window.scrollY || 0;
+  let ticking = false;
+  function onScroll() {
+    const current = window.scrollY || 0;
+    header.classList.toggle('scrolled', current > 60);
+    if (current > lastScroll && current > 100) {
+      header.style.transform = 'translateY(-100%)';
+    } else {
+      header.style.transform = 'translateY(0)';
     }
     lastScroll = current;
+    ticking = false;
+  }
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(onScroll);
+      ticking = true;
+    }
+  }, { passive: true });
+  onScroll();
 });
 
 // 5. 動く吹き出し
