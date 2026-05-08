@@ -171,7 +171,8 @@ document.querySelectorAll('.item-data').forEach(el => {
                 <span>${d.howtoget || ""}</span>
                 <span class="rating">${starHTML}</span>
             </div>
-        </div>`;
+        </div>
+        <p>${free}</p>`;
     
 // 2-3-4. 入手方法リスト
     let getHTML = "";
