@@ -176,7 +176,7 @@ el.innerHTML = `
 <div class="free"></div>
 `;
 el.querySelector(".free").textContent = d.free || "";
-});
+}
     
 // 2-3-4. 入手方法リスト
     let getHTML = "";
