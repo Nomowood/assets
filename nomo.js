@@ -7,12 +7,12 @@ el.classList.add('observed');
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-// 1. レイアウト調整（ローディング解除）
+// 1-1. レイアウト調整（ローディング解除）
 setTimeout(() => {
     document.body.classList.remove('loading');
 }, 10);
 
-// 2. スクロール処理（ヘッダーの固定・表示切り替え）
+// 1-2. スクロール処理（ヘッダーの固定・表示切り替え）
 const header = document.getElementById('header');
 if(header){
   let lastScroll = window.scrollY || 0;
@@ -34,12 +34,10 @@ if(header){
       ticking = true;
     }
   }, { passive: true });
-
   onScroll();
 }
 
-
-// 3. 動く吹き出し
+// 1-3. 動く吹き出し
 observer = new IntersectionObserver((entries, obs) => {
 entries.forEach(entry => {
 if (entry.isIntersecting) {
@@ -53,18 +51,16 @@ observeInviewElements();
 // 動的HTML生成
 renderPokedexItems();
 
-// 4. シェアボタン・リンク設定
+// 1-4. シェアボタン・リンク設定
 setupShareButtons();
 
-// 5. カレンダー初期化
+// 1-5. カレンダー初期化
 if (typeof generateCalendar === "function") {
     generateCalendar(currentYear, currentMonth);
 }
 });
 
-// — 各種関数 —
-
-// シェアボタン
+// 2-1. シェアボタン
 function setupShareButtons() {
 const btn = document.getElementById('shareBtn');
 if (!btn) return;
@@ -87,9 +83,9 @@ for (const [id, href] of Object.entries(links)) {
     const el = document.getElementById(id);
     if (el) el.href = href;
 }
-
 }
 
+// 2-2.template
 function renderPokedexItems() {
 const categorySlugMap = {
 "炎を感じる":"fire",
@@ -142,6 +138,7 @@ const categorySlugMap = {
 "しぶい":"dry"
 };
 
+// 2-3-1.Dex
 document.querySelectorAll('.item-data').forEach(el => {
     const d = el.dataset;
     const name = d.name || "";
@@ -149,13 +146,13 @@ document.querySelectorAll('.item-data').forEach(el => {
     const isLeft = (d.dir || "left") === "left";
     const stars = Number(d.stars) || 0;
 
-    // 星の生成
+// 2-3-2. 星の生成
     let starHTML = "";
     for (let i = 1; i <= 5; i++) {
         starHTML += `<svg class="star ${i > stars ? 'empty' : ''}" viewBox="0 0 24 24"><path d="M12 2l3.1 6.3L22 9.3l-5 4.9L18.2 22 12 18.3 5.8 22 7 14.2 2 9.3l6.9-1z"/></svg>`;
     }
 
-    // 1. 図鑑ボックスの描画
+// 2-3-3. 図鑑ボックスの描画
     el.innerHTML = `
 <div class="fukidashi inview_re">
 <div class="faceicon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcgi537e8devoopI5LkSdV0veR08UoJuoA3NmCOcXNRohXDb05kCHKktudFV5uUuaqDMWYJTAYcork2_kbOscMna2hlt50VFcpHALNmCWvkTa60VeGfHhq6_9i65Oq_wh0P1CPZ5ibxLGuYXgYKXndBzvmC3hzHpWniqXY0AxW_yDc0jSsozBWagEg0Kbw/s1600/%E7%84%A1%E9%A1%8C829_20260410232336.png" alt="メタモン"></div>
@@ -177,29 +174,28 @@ document.querySelectorAll('.item-data').forEach(el => {
             </div>
         </div>`;
     
-
-    // 2. 入手方法リスト
+// 2-3-4. 入手方法リスト
     let getHTML = "";
     const getCount = Number(d.get) || 0;
     for (let i = 1; i <= getCount; i++) {
         getHTML += `<li><span class="markerL">${d[`get${i}Title`] || ""}</span><br>${d[`get${i}Body`] || ""}</li>`;
     }
 
-    // 3. レシピリスト
+// 2-3-5. レシピリスト
     let recipeHTML = "";
     const recipeCount = Number(d.recipe) || 0;
     for (let i = 1; i <= recipeCount; i++) {
         recipeHTML += `<li><img src="${d[`recipeimg${i}`] || ""}" alt="">${d[`recipe${i}`] || ""}</li>`;
     }
 
-    // 4. バリエーション(種類)
+// 2-3-6. 分類
     let typeHTML = "";
     const typeCount = Number(d.type) || 0;
     for (let i = 1; i <= typeCount; i++) {
         typeHTML += `<li><img src="${d[`typeimg${i}`] || ""}" alt="">${d[`type${i}`] || ""}</li>`;
     }
 
-    // 5. カテゴリー(使い道)
+// 2-3-7. カテゴリー
     let catHTML = "";
     let catSpanHTML = "";
     const catCount = Number(d.category) || 0;
@@ -209,9 +205,9 @@ document.querySelectorAll('.item-data').forEach(el => {
         const slug = categorySlugMap[cat] || cat;
         catSpanHTML += `<a href="/p/${slug}-items-pokopia.html" style="padding:0 0.5rem">${cat}</a>`;
         catHTML += `<li><a href="/p/${slug}-items-pokopia.html">${cat}</a></li>`;
-    }
+}
 
-    // 6. 詳細セクションの注入
+// 2-3-8. 記述
     el.insertAdjacentHTML("afterend", `
     <div class="item-section">
         <h2>${name}の入手方法</h2>
@@ -237,11 +233,11 @@ document.querySelectorAll('.item-data').forEach(el => {
     </div>`);
 });
 
-// 監視対象に追加
+// 2-3-9. DOMContentLoaded 〆
 observeInviewElements();
-}
+});
 
-// — カレンダーロジック（前回の修正を統合） —
+// — カレンダーロジック —
 let currentYear = new Date().getFullYear();
 let currentMonth = new Date().getMonth();
 
@@ -291,7 +287,6 @@ for (let i = 0; i < 6; i++) {
     if (date > daysInMonth && !hasDate) break;
 }
 setTimeout(() => renderEventBars(), 50);
-
 }
 
 function renderEventBars() {
