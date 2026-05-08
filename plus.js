@@ -142,7 +142,6 @@ document.querySelectorAll('.item-data').forEach(el => {
     const d = el.dataset;
     const name = d.name || "";
     const img = d.img || "";
-    const isLeft = (d.dir || "left") === "left";
     const stars = Number(d.stars) || 0;
     let freeHTML = "";
     let starHTML = "";
@@ -151,7 +150,7 @@ document.querySelectorAll('.item-data').forEach(el => {
     }
 
 // 2-3-3. 図鑑ボックスの描画
-    el.innerHTML = `
+el.innerHTML = `
 <div class="fukidashi inview_re">
 <div class="faceicon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcgi537e8devoopI5LkSdV0veR08UoJuoA3NmCOcXNRohXDb05kCHKktudFV5uUuaqDMWYJTAYcork2_kbOscMna2hlt50VFcpHALNmCWvkTa60VeGfHhq6_9i65Oq_wh0P1CPZ5ibxLGuYXgYKXndBzvmC3hzHpWniqXY0AxW_yDc0jSsozBWagEg0Kbw/s1600/%E7%84%A1%E9%A1%8C829_20260410232336.png" alt="メタモン"></div>
 <div class="chatting"><div class="says"><p>ぽこあポケモンに登場する『<span class="st">${name}</span>』の入手方法・レシピ・使い道をまとめたよ！</p></div></div>
@@ -176,6 +175,7 @@ document.querySelectorAll('.item-data').forEach(el => {
         <span class="rating">${starHTML}</span></div></div></div>
 </div><p>${freeHTML}</p>
 `;
+});
     
 // 2-3-4. 入手方法リスト
     let getHTML = "";
