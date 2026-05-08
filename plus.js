@@ -55,7 +55,6 @@ renderPokedexItems();
 
 // 1-4. シェアボタン・リンク設定
 setupShareButtons();
-
 });
 
 // ここから違うスクリプト
@@ -233,6 +232,6 @@ document.querySelectorAll('.item-data').forEach(el => {
     </div>`);
 });
 
-// 2-3-9. DOMContentLoaded 〆
+// 2-3-9. 〆
 observeInviewElements();
-});
+}
