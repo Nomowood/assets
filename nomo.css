@@ -316,7 +316,7 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
 /* トップ記事一覧
 ----------------------------------------------- */
 
-.index-tabs {width:100%; padding:10px 50px; overflow:hidden;}
+.index-tabs {width:100%; padding:10px 50px; margin:auto; overflow:hidden;}
 .category-tabs {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
