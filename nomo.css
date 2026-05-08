@@ -355,9 +355,10 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
 }
 .post-thumbnail {width:100%;background:#f4f4f4;}
 .post-thumbnail img {
-width: 100%; height:auto;
-  aspect-ratio:16/9;
+width: 100%;
+  height:auto;
   overflow:hidden;
+  object-fit:contain;
  display: block;
 }
 /* カード下部のテキストエリア */
