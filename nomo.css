@@ -635,15 +635,6 @@ margin:0 0 0 0.5em;
 
 /* Item
 ----------------------------------------------- */
-.item-visual {
-position: relative;
-display: flex;
-align-items: center;
-justify-content: center;
-background:#b3b6ba;
-border-radius:8px;
-}
-.item-visual img { max-width: 80%; height: auto; }
 .item-status {display:flex;width:100%;align-items:center; flex-shrink:0;}
 h2.item-title {font-size: 1.3rem; color:var(--text-main);bottom:1.5rem;}
 .item-description-box {
@@ -1131,7 +1122,7 @@ flex-shrink: 0;
 position: relative;
 }
 .btn-main::after {
-content: ‘’;
+content: '';
 position: absolute;
 top: 8px; left: 10px;
 width: 16px; height: 10px;
@@ -1188,16 +1179,10 @@ overflow: hidden;
 position: relative;
 }
 .screen-inner::before {
-content: ‘’;
+content: '';
 position: absolute;
 inset: 0;
-background: repeating-linear-gradient(
-0deg,
-transparent,
-transparent 3px,
-rgba(0,0,0,0.04) 3px,
-rgba(0,0,0,0.04) 4px
-);
+background: repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.04) 3px,rgba(0,0,0,0.04) 4px);
 pointer-events: none;
 z-index: 2;
 }
@@ -1215,7 +1200,6 @@ font-size: 1.2em;
 font-weight: 900;
 color: #c8d8a0;
 letter-spacing: 0.08em;
-font-family: ‘Courier New’, monospace;
 text-shadow: 1px 1px 0 #000;
 }
 
@@ -1247,7 +1231,6 @@ line-height: 1.6;
 letter-spacing: 0.02em;
 margin: 0;
 padding: 8px 10px;
-font-family: ‘Courier New’, monospace;
 border-top: 2px solid #6a8a40;
 min-height: 60px;
 }
@@ -1263,7 +1246,6 @@ border-top: 2px solid #1a3000;
 .pokedex-footer span {
 font-size: 0.9em;
 color: #c8d8a0;
-font-family: ‘Courier New’, monospace;
 }
 .pokedex-footer span.rating {
 display: flex;
