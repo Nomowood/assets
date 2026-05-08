@@ -248,25 +248,25 @@ document.querySelectorAll('.item-data').forEach(el => {
     // 6. 詳細セクションの注入
     el.insertAdjacentHTML("afterend", `
     <div class="item-section">
-        <h2><img src="${img}" alt="">${name}の入手方法</h2>
+        <h2>${name}の入手方法</h2>
         ${d.getbody || ""}
         <p style="font-size:1.1em;">＼ ゲットする${getCount}つの方法 ／</p>
         <ol class="material-listY">${getHTML}</ol>
 
         ${recipeCount > 0 ? `
-        <h2><img src="${img}" alt="">${name}のレシピ</h2>
+        <h2>${name}のレシピ</h2>
         <ul class="material-list">${recipeHTML}</ul>
         <h3 class="whoa-blue">レシピの入手方法</h3>
         <p class="whoa-p">${d.recipebody || ""}</p>` : ""}
 
-        <h2><img src="${img}" alt="">${name}の種類</h2>
+        <h2>${name}の種類</h2>
         <ul class="material-list">${typeHTML}</ul>
 
-        <h2><img src="${img}" alt="">${name}の使い道</h2>
+        <h2>${name}の使い道</h2>
         <p>${d.catbody || ""}ポケモンのすみかに設置すると<br>
         ${catSpanHTML}<br>のアイテムを好きなポケモンが喜びます。</p>
 
-        <h2><img src="${img}" alt="">${name}の分類</h2>
+        <h2${name}の分類</h2>
         <ul class="material-list">${catHTML}</ul>
     </div>`);
 });
