@@ -5,9 +5,9 @@
 --bg-body:#c49e87;
 --dot:dotted 1px #8c5d5d;
 --card: #ffffff;
---text-main: #a37b65;
+--text-main: #965d3e;
 --text-sub: #636e72;
---text-st:#edae66;
+--text-st:#e89638;
 --border-color:#e0ca67;
 --link-color: #3498db;
 }
@@ -461,7 +461,6 @@ margin-bottom:5px;
 border-bottom:dotted 1px var(--text-sub);
 text-decoration:none!important;
 }
-h2.gen {margin-top:100px!important; margin-bottom:5px!important;border-bottom:solid 2px var(--text-sub);}
 .post-body {
 font-size: 100%;
 line-height: 1.4;
@@ -469,6 +468,8 @@ position: relative;
 margin:15px auto !important;
 padding:10px 12px!important;
 }
+.item-data {line-height:1.7; letter-spacing:0.05em;}
+
 
 /* ============= 
 レイアウト調整
