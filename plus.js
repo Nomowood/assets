@@ -147,8 +147,8 @@ document.querySelectorAll('.item-data').forEach(el => {
     for (let i = 1; i <= 5; i++) {
         starHTML += `<svg class="star ${i > stars ? 'empty' : ''}" viewBox="0 0 24 24"><path d="M12 2l3.1 6.3L22 9.3l-5 4.9L18.2 22 12 18.3 5.8 22 7 14.2 2 9.3l6.9-1z"/></svg>`;
     }
-    const freeCount = Number(d.free) || 0;
 let freeHTML = "";
+const freeCount = Number(d.free) || 0;
 for (let i = 1; i <= freeCount; i++) {
     freeHTML += `<p>${d[`free${i}`] || ""}</p>`;
 }
