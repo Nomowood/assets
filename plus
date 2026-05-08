@@ -1,0 +1,16 @@
+function convertShortcodes() {
+  const defaultImg = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcgi537e8devoopI5LkSdV0veR08UoJuoA3NmCOcXNRohXDb05kCHKktudFV5uUuaqDMWYJTAYcork2_kbOscMna2hlt50VFcpHALNmCWvkTa60VeGfHhq6_9i65Oq_wh0P1CPZ5ibxLGuYXgYKXndBzvmC3hzHpWniqXY0AxW_yDc0jSsozBWagEg0Kbw/s1600/%E7%84%A1%E9%A1%8C829_20260410232336.png";
+  document.querySelectorAll("p").forEach(p => {
+    const text = p.innerHTML.trim();
+    const match = text.match(/^\[balloon\](.*?)\[\/balloon\]$/s);
+    if (!match) return;
+    const content = match[1].trim();
+    const html = `
+      <div class="fukidashi inview_re">
+        <div class="faceicon"><img src="${defaultImg}"></div>
+        <div class="chatting"><div class="says"><p>${content}</p></div></div>
+      </div>
+    `;
+    p.outerHTML = html;
+  });
+}
