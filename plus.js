@@ -29,4 +29,49 @@ if(header){
   onScroll();
 }
 
+// 1-3. 動く吹き出し
+observer = new IntersectionObserver((entries, obs) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add("is-show");
+obs.unobserve(entry.target);
+}
 });
+}, { threshold: 0.2 });
+// 静的HTML
+observeInviewElements();
+// 動的HTML生成
+renderPokedexItems();
+
+// 1-4. シェアボタン・リンク設定
+setupShareButtons();
+
+});
+
+// ここから違うスクリプト
+
+// 2-1. シェアボタン
+function setupShareButtons() {
+const btn = document.getElementById('shareBtn');
+if (!btn) return;
+let isOpen = false;
+btn.addEventListener('click', (e) => {
+if (e.target.tagName === 'I' || e.target.closest('a')) return;
+isOpen = !isOpen;
+btn.classList.toggle('active', isOpen);
+});
+const url = encodeURIComponent(location.href);
+const text = encodeURIComponent(document.title + "\n" + location.href);
+const links = {
+    "x-link": `https://twitter.com/intent/tweet?text=${text}&url=${url}`,
+    "line-link": `https://social-plugins.line.me/lineit/share?url=${url}`,
+    "threads-link": `https://www.threads.net/intent/post?text=${text}`,
+    "reddit-link": `https://www.reddit.com/submit?url=${url}`,
+    "sms-link": `sms:?body=${text}`
+};
+for (const [id, href] of Object.entries(links)) {
+    const el = document.getElementById(id);
+    if (el) el.href = href;
+}}
+
+// ここから違うスクリプト
