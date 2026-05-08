@@ -359,11 +359,10 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
 .post-thumbnail img {
   inset: 0;
   aspect-ratio: 16/9;
-  width: 100%!important;
+  width: 100%;
   height: auto;
-  object-fit:none;
+  object-fit:cover;
   display: block;
-  background:#d10000;
 }
 /* カード下部のテキストエリア */
 .card-content {
