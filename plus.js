@@ -172,7 +172,7 @@ document.querySelectorAll('.item-data').forEach(el => {
                 <span class="rating">${starHTML}</span>
             </div>
         </div>
-        <p>${free}</p>`;
+        <p>${free}</p>
 
 <div class="pokedex-box">
 <!-- 上部：大ボタン＋インジケーター＋タイトル -->
@@ -195,6 +195,7 @@ document.querySelectorAll('.item-data').forEach(el => {
         <span class="rating">${starHTML}</span></div></div></div>
   <!-- 下部コントロール -->
 </div>
+`;
     
 // 2-3-4. 入手方法リスト
     let getHTML = "";
