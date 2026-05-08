@@ -1191,6 +1191,7 @@ body {font-size:0.9em;letter-spacing:0.08em;line-height:1.8;}
 .content-outer{padding:0;}
 .content-inner {padding:0;}
 #main{margin:0;}
+.post-grid {grid-template-columns: repeat(2, 1fr);padding:10px;}
 .default-box {max-width: 94%;padding: 1.4em 1.3em 1.2em;}
 .nav-container {width:100%;max-width:767px;}
 .hero {padding: 80px 16px 60px;}
