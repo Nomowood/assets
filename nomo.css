@@ -343,7 +343,6 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     padding: 20px;
-  grid-auto-rows:1fr;
 }
 .post-card {
     background: white;
@@ -364,7 +363,6 @@ width: 100%; height:auto;
 /* カード下部のテキストエリア */
 .card-content {
     padding: 10px;
-    flex-grow: 1;
 }
 .meta-date {
     font-size: 12px;
