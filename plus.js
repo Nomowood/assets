@@ -172,8 +172,10 @@ el.innerHTML = `
       <div class="pokedex-footer">
         <span>${d.howtoget || ""}</span>
         <span class="rating">${starHTML}</span></div></div></div>
-</div><p>${d.free || ""}</p>
+</div>
+<div class="free"></div>
 `;
+el.querySelector(".free").textContent = d.free || "";
 });
     
 // 2-3-4. 入手方法リスト
