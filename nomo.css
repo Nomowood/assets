@@ -641,7 +641,6 @@ display: flex;
 align-items: center;
 justify-content: center;
 background:#b3b6ba;
-border:solid 6px #853853;
 border-radius:8px;
 }
 .item-visual img { max-width: 80%; height: auto; }
