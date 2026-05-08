@@ -173,7 +173,7 @@ el.innerHTML = `
         <span>${d.howtoget || ""}</span>
         <span class="rating">${starHTML}</span></div></div></div>
 </div>
-<div class="free"></div>
+<div class="free" style="margin:1rem 0"></div>
 `;
 el.querySelector(".free").textContent = d.free || "";
     
