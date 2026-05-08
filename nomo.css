@@ -362,7 +362,7 @@ padding-bottom: 8px;
   height: 40px;
   background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiMdczfajhU_sz8sGKtlg0DC7KSVMyAOdL6DVzLL-xcM8bhCU9B7erNLNqg7LgKeqKx-ah2_duEhM08kXQ1nXmuJcUI4N_1MNdGmAeOd2BvMfhHsXQ9TtLkKb_oUqVzzVbVmMIE0U88kB8xvgvzczlzE9wobPceivJcd3nSgNLRXAPP9YgVeWo2tyS8x3mM/s1600/%E7%84%A1%E9%A1%8C828_20260404010415.png") no-repeat center center;
   background-size: contain;
-  opacity:0.3;
+  opacity:0.2;
 }
 .post-body h3 {padding:40px 0 0 5px;font-size:1.15rem; border-bottom:solid 2px var(--text-main);}
 
@@ -463,7 +463,7 @@ top:-1px;
 position: relative;
 padding: 3rem 1rem 0.5rem 1rem;
 margin:1rem auto;
-background:linear-gradient(177deg, transparent 1.5rem, #7bb34d 0 100%);
+background:linear-gradient(177deg, transparent 1.5rem, #f5bb0c 0 100%);
 }
 .default-box::before {
 position: absolute;
@@ -484,8 +484,8 @@ padding:0;
 line-height: 1.5;
 }
 ul, ol {
-  border-top: solid #1e366a 2px;
-  border-bottom: solid #1e366a 2px;
+  border-top: solid#f5bb0c 2px;
+  border-bottom: solid #f5bb0c 2px;
   padding: 0.5em 0 0.5em 1.5em;
 }
 ul li, ol li {
