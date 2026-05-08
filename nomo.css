@@ -350,13 +350,12 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   height:auto;
 }
 .post-thumbnail {
   width: 100%;
   overflow: hidden;
-  background:#f4f4f4;
+  background: #f4f4f4!important;
 }
 .post-thumbnail img {
   inset: 0;
@@ -368,12 +367,7 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
 }
 /* カード下部のテキストエリア */
 .card-content {
-    padding: 10px;
-}
-.meta-date {
-    font-size: 12px;
-    color: #666;
-    margin-bottom: 5px;
+  padding: 10px; background:#ff8800;
 }
 .label-badge {
     display: inline-block;
