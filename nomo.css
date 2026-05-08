@@ -1242,7 +1242,7 @@ filter: drop-shadow(2px 2px 0 rgba(0,50,0,0.3));
 p.pokedex-description {
 background: #b8cc90;
 color: #1a2a00;
-font-size: 0.78em;
+font-size: 1em;
 line-height: 1.6;
 letter-spacing: 0.02em;
 margin: 0;
@@ -1261,7 +1261,7 @@ padding: 5px 10px;
 border-top: 2px solid #1a3000;
 }
 .pokedex-footer span {
-font-size: 0.72em;
+font-size: 0.9em;
 color: #c8d8a0;
 font-family: ‘Courier New’, monospace;
 }
