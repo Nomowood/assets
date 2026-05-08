@@ -174,7 +174,7 @@ document.querySelectorAll('.item-data').forEach(el => {
       <div class="pokedex-footer">
         <span>${d.howtoget || ""}</span>
         <span class="rating">${starHTML}</span></div></div></div>
-</div><p>${free}</p>
+</div><p>${freeHTML}</p>
 `;
     
 // 2-3-4. 入手方法リスト
