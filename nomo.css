@@ -355,20 +355,19 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
 }
 .post-thumbnail {
   width: 100%;
-  overflow: hidden;
-  background: #f4f4f4!important;
-}
+  overflow: hidden;}
 .post-thumbnail img {
   inset: 0;
   aspect-ratio: 16/9;
-  width: 100%;
+  width: 100%!important;
   height: auto;
   object-fit:none;
   display: block;
+  background:#d10000;
 }
 /* カード下部のテキストエリア */
 .card-content {
-  padding: 10px; background:#ff8800;
+  padding: 10px;
 }
 .label-badge {
     display: inline-block;
