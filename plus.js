@@ -173,6 +173,28 @@ document.querySelectorAll('.item-data').forEach(el => {
             </div>
         </div>
         <p>${free}</p>`;
+
+<div class="pokedex-box">
+<!-- 上部：大ボタン＋インジケーター＋タイトル -->
+<div class="pokedex-top"><div class="btn-main"></div>
+<div class="indicator-lights"><div class="light-row"><div class="light red"></div>
+<div class="light yellow"></div><div class="light green"></div>
+</div></div></div>
+<!-- スクリーン -->
+<div class="screen-outer">
+<div class="screen-inner">
+      <div class="pokedex-header">
+        <span class="name">${name}</span>
+      </div>
+      <div class="item-visual">
+        <img class="dex" src="${img}" alt="${name}の画像">
+      </div>
+      <p class="pokedex-description">${d.desc || ""}</p>
+      <div class="pokedex-footer">
+        <span>${d.howtoget || ""}</span>
+        <span class="rating">${starHTML}</span></div></div></div>
+  <!-- 下部コントロール -->
+</div>
     
 // 2-3-4. 入手方法リスト
     let getHTML = "";
