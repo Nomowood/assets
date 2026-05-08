@@ -143,7 +143,6 @@ document.querySelectorAll('.item-data').forEach(el => {
     const name = d.name || "";
     const img = d.img || "";
     const stars = Number(d.stars) || 0;
-    let freeHTML = "";
     let starHTML = "";
     for (let i = 1; i <= 5; i++) {
         starHTML += `<svg class="star ${i > stars ? 'empty' : ''}" viewBox="0 0 24 24"><path d="M12 2l3.1 6.3L22 9.3l-5 4.9L18.2 22 12 18.3 5.8 22 7 14.2 2 9.3l6.9-1z"/></svg>`;
@@ -173,7 +172,7 @@ el.innerHTML = `
       <div class="pokedex-footer">
         <span>${d.howtoget || ""}</span>
         <span class="rating">${starHTML}</span></div></div></div>
-</div><p>${freeHTML}</p>
+</div><p>${d.free || ""}</p>
 `;
 });
     
