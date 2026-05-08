@@ -237,7 +237,7 @@ document.querySelectorAll('.item-data').forEach(el => {
 
 // 2-3-9. DOMContentLoaded 〆
 observeInviewElements();
-});
+};
 
 // — カレンダーロジック —
 let currentYear = new Date().getFullYear();
