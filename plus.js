@@ -144,8 +144,7 @@ document.querySelectorAll('.item-data').forEach(el => {
     const img = d.img || "";
     const isLeft = (d.dir || "left") === "left";
     const stars = Number(d.stars) || 0;
-
-// 2-3-2. 星の生成
+    let freeHTML = "";
     let starHTML = "";
     for (let i = 1; i <= 5; i++) {
         starHTML += `<svg class="star ${i > stars ? 'empty' : ''}" viewBox="0 0 24 24"><path d="M12 2l3.1 6.3L22 9.3l-5 4.9L18.2 22 12 18.3 5.8 22 7 14.2 2 9.3l6.9-1z"/></svg>`;
