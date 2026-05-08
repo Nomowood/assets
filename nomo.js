@@ -1,7 +1,9 @@
 let observer;
 function observeInviewElements() {
 document.querySelectorAll('.inview_re:not(.observed)').forEach(el => {
-observer.observe(el);
+try {observer.observe(el);} catch (e) {
+console.warn("Observer error:", e);
+}
 el.classList.add('observed');
 });
 }
@@ -201,7 +203,7 @@ document.querySelectorAll('.item-data').forEach(el => {
     const catCount = Number(d.category) || 0;
     for (let i = 1; i <= catCount; i++) {
         const cat = d[`category${i}`];
-        if (!cat) continue;
+        if (!cat || typeof cat !== "string") continue;
         const slug = categorySlugMap[cat] || cat;
         catSpanHTML += `<a href="/p/${slug}-items-pokopia.html" style="padding:0 0.5rem">${cat}</a>`;
         catHTML += `<li><a href="/p/${slug}-items-pokopia.html">${cat}</a></li>`;
@@ -228,7 +230,7 @@ document.querySelectorAll('.item-data').forEach(el => {
         <p>${d.catbody || ""}ポケモンのすみかに設置すると<br>
         ${catSpanHTML}<br>のアイテムを好きなポケモンが喜びます。</p>
 
-        <h2${name}の分類</h2>
+        <h2>${name}の分類</h2>
         <ul class="material-list">${catHTML}</ul>
     </div>`);
 });
