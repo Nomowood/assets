@@ -152,7 +152,6 @@ let freeHTML = "";
 for (let i = 1; i <= freeCount; i++) {
     freeHTML += `<p>${d[`free${i}`] || ""}</p>`;
 }
-    }
 
 // 2-3-3. 図鑑ボックスの描画
 el.innerHTML = `
