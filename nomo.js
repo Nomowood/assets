@@ -12,29 +12,7 @@ setTimeout(() => {
     document.body.classList.remove('loading');
 }, 10);
 
-// 2. 最新記事を表示（ゆめしまラベル）
-const newpost = document.getElementById("pokoa-posts");
-if (newpost) {
-    fetch("https://nomowood.blogspot.com/feeds/posts/default/-/ゆめしま?alt=json")
-        .then(response => response.json())
-        .then(data => {
-            const entries = data.feed.entry;
-            if (!entries) return;
-            entries.slice(0, 5).forEach(entry => {
-                const title = entry.title.$t;
-                const link = entry.link.find(l => l.rel === "alternate").href;
-                const media = entry.media$thumbnail?.url || "";
-                const div = document.createElement("div");
-                div.innerHTML = `<a href="${link}"><img src="${media}" alt="">${title}</a>`;
-                newpost.appendChild(div);
-            });
-        }).catch(err => console.error("最新記事の取得に失敗しました:", err));
-}
-
-// 3. guideラベルの記事を表示
-loadGuides();
-
-// 4. スクロール処理（ヘッダーの固定・表示切り替え）
+// 2. スクロール処理（ヘッダーの固定・表示切り替え）
 const header = document.getElementById('header');
 if(!header)return;
   let lastScroll = window.scrollY || 0;
@@ -59,7 +37,7 @@ if(!header)return;
   onScroll();
 });
 
-// 5. 動く吹き出し
+// 3. 動く吹き出し
 observer = new IntersectionObserver((entries, obs) => {
 entries.forEach(entry => {
 if (entry.isIntersecting) {
@@ -73,39 +51,16 @@ observeInviewElements();
 // 動的HTML生成
 renderPokedexItems();
 
-// 6. シェアボタン・リンク設定
+// 4. シェアボタン・リンク設定
 setupShareButtons();
 
-// 7. カレンダー初期化
+// 5. カレンダー初期化
 if (typeof generateCalendar === "function") {
     generateCalendar(currentYear, currentMonth);
 }
 });
 
 // — 各種関数 —
-
-async function loadGuides() {
-const newguide = document.getElementById('guidesGrid');
-if (!newguide) return;
-const url = 'https://nomowood.blogspot.com/feeds/posts/default/-/guide?alt=json&max-results=5&orderby=published';
-try {
-const response = await fetch(url);
-const data = await response.json();
-if (!data.feed.entry) return;
-newguide.innerHTML = '';
-data.feed.entry.forEach(post => {
-const link = post.link.find(l => l.rel === 'alternate').href;
-const title = post.title.$t;
-const date = new Date(post.published.$t).toLocaleDateString('ja-JP', {
-year: 'numeric', month: 'long', day: 'numeric'
-});
-const card = document.createElement('div');
-card.className = 'guide-card';
-card.innerHTML = `<div class='guide-date'>${date}</div><div class='guide-content'><h3><a href="${link}">${title}</a></h3></div>`;
-newguide.appendChild(card);
-});
-} catch (err) { console.error("ガイドの取得に失敗:", err); }
-}
 
 // シェアボタン
 function setupShareButtons() {
