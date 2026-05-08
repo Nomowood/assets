@@ -341,7 +341,7 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
 .post-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+    gap: 20px 10px;
     padding: 20px;
 }
 .post-card {
@@ -1176,8 +1176,8 @@ border:solid 1px var(--text-sub);
 /* Tablet
 ----------------------------------------------- */
 @media (min-width: 768px) {
-    .post-grid { grid-template-columns: repeat(3, 1fr); }
-    .category-tabs { grid-template-columns: repeat(3, 1fr); width: 600px; margin: 20px auto; }
+    .post-grid { grid-template-columns: repeat(4, 1fr); }
+    .category-tabs { grid-template-columns: repeat(6, 1fr); margin: 20px auto; }
 }
 
 
