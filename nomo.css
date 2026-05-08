@@ -341,10 +341,9 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
 .post-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    padding: 10px;
+    gap: 16px;
+    padding: 20px;
 }
-
 .post-card {
     background: white;
     border-radius: 8px;
@@ -359,7 +358,6 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
  object-fit: cover;
  display: block;
 }
-
 /* カード下部のテキストエリア */
 .card-content {
     padding: 10px;
