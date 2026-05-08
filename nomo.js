@@ -30,12 +30,14 @@ if(header){
   }
   window.addEventListener('scroll', function() {
     if (!ticking) {
-      window.requestAnimationFrame(onScroll);
+      requestAnimationFrame(onScroll);
       ticking = true;
     }
   }, { passive: true });
+
   onScroll();
 }
+
 
 // 3. 動く吹き出し
 observer = new IntersectionObserver((entries, obs) => {
