@@ -1235,6 +1235,8 @@ filter: drop-shadow(2px 2px 0 rgba(0,50,0,0.3));
 /* 説明テキスト */
 p.pokedex-description {
 font-family: "DotGothic16", sans-serif;
+width:100%;
+min-height: 4.8em;
 background: #b8cc90;
 color: #4c701c;
 font-size: 0.95em;
