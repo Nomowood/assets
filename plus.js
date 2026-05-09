@@ -269,21 +269,14 @@ async function act(id, btn) {
   const map = {
     copy: async () => {
       const ok = await copyText(raw);
-      if (!ok) {
-        alert('コピーできませんでした');
-        return;
-      }
+      if (!ok) {alert('コピーできませんでした');return;}
       btn.classList.add('copied');
       const label = btn.querySelector('.sBtn-label');
-      if (label) {
-        label.textContent = 'コピーしました';
-      }
+      if (label) {label.textContent = 'コピーしました';}
       showToast();
       setTimeout(() => {
         btn.classList.remove('copied');
-        if (label) {
-          label.textContent = 'URLをコピー';
-        }
+        if (label) {label.textContent = 'URLをコピー';}
       }, 2000);
     },
     native: async () => {
@@ -292,35 +285,16 @@ async function act(id, btn) {
         return;
       }
       try {
-        await navigator.share({
-          title: document.title,
-          url: raw
-        });
-      } catch (err) {
-        console.error('Share canceled or failed:', err);
-      }
-    },
-    x: () => {
-      openShare(`https://twitter.com/intent/tweet?url=${u}&text=${t}`);
-    },
-    line: () => {
-      openShare(`https://social-plugins.line.me/lineit/share?url=${u}`);
-    },
-    threads: () => {
-      openShare(`https://www.threads.net/intent/post?url=${u}`);
-    },
-    sms: () => {
-      location.href = `sms:?body=${t}%20${u}`;
-    },
-    reddit: () => {
-      openShare(`https://www.reddit.com/submit?url=${u}&title=${t}`);
-    },
-    hatena: () => {
-      openShare(`https://b.hatena.ne.jp/entry?url=${u}`);
-    },
-    note: () => {
-      openShare(`https://note.com/intent/post?url=${u}`);
-    },
+        await navigator.share({title: document.title,url: raw});
+      } catch (err) {if (err.name !== 'AbortError') {console.error(err);}
+},
+    x: () => {openShare(`https://x.com/intent/tweet?url=${u}&text=${t}`);},
+    line: () => {openShare(`https://social-plugins.line.me/lineit/share?url=${u}`);},
+    threads: () => {openShare(`https://www.threads.net/intent/post?text=${t}%20${u}`);},
+    sms: () => {location.href = `sms:?&body=${t}%20${u}`;},
+    reddit: () => {openShare(`https://www.reddit.com/submit?url=${u}&title=${t}`);},
+    hatena: () => {openShare(`https://b.hatena.ne.jp/entry?url=${u}`);},
+    note: async () => {const ok = await copyText(raw);if (ok) {window.open('https://note.com/', '_blank');}},
   };
   if (map[id]) {
     map[id]();
