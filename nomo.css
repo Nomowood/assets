@@ -938,7 +938,7 @@ width:auto;
   color: #FFF;
   font-size: 0.9em;
   font-weight: bold;
-  background: #a58eff;
+  background: #846ce6;
   border-radius: 25px;
 box-sizing: border-box;
 word-break: break-all;
@@ -954,7 +954,7 @@ left:30%;
 bottom:-16px;
 transform: translateX(-50%);
 border: 8px solid transparent;
-border-top: 10px solid #a58eff;
+border-top: 10px solid #846ce6;
 z-index: 20;
 }
 .whoa-p{
