@@ -243,16 +243,3 @@ el.innerHTML = `
 // 2-3-9. 〆
 observeInviewElements();
 }
-
-// typing
-function typeText(el, text, speed = 80) {
-  el.textContent = '';
-  let i = 0;
-  const timer = setInterval(() => {
-    el.textContent += text[i];
-    i++;
-    if (i >= text.length) clearInterval(timer);
-  }, speed);
-}
-const descEl = el.querySelector('.pokedex-description');
-typeText(descEl, d.desc || '');
