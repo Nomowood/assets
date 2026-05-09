@@ -1243,32 +1243,9 @@ padding: 8px 10px;
 border-top: 2px solid #6a8a40;
 min-height: 60px;
 overflow: hidden;
-white-space: nowrap;
+white-space: pre-wrap;
 animation: typing 0.6s steps(22, end) both;
 }
-.corner-bl,
-.corner-br {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background: #1a1a36;
-    border: 2px solid #e0e4ff;
-    pointer-events: none;
-}
-  .corner-bl { bottom: -2px; left: -2px; }
-  .corner-br { bottom: -2px; right: -2px; }
-.pokecursor {
-    display: inline-block;
-    width: 10px;
-    height: 1em;
-    background: #e8e8ff;
-    vertical-align: middle;
-    margin-left: 4px;
-    animation: blink 1s step-end infinite;
-  }
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50%       { opacity: 0; }}
   @keyframes typing  { from { width: 0; } to { width: 100%; } }
 /* フッター */
 .pokedex-footer {
