@@ -954,7 +954,7 @@ left:30%;
 bottom:-16px;
 transform: translateX(-50%);
 border: 8px solid transparent;
-border-top: 10px solid #a58eff;
+border-top: 10px solid #23294a;
 z-index: 20;
 }
 .whoa-p{
@@ -963,7 +963,7 @@ background:#23294a;
 color:#fff;
 border-top: solid 2px #C9A84C;
 border-right: solid 4px #C9A84C;
-border-bottom: solid 6px #C9A84C;
+border-bottom: solid 6px #b5953c;
 border-left: solid 2px #C9A84C;
 padding: 1rem;
 z-index: 1;
@@ -988,7 +988,7 @@ right: -40px;
 bottom: -40px;
 width: 70px;
 height: 70px;
-background: #1A1F3C;
+background: #a58eff;
 border-radius: 50%;
 z-index:-1;
 }
