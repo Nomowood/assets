@@ -213,6 +213,8 @@ el.innerHTML = `
 // 2-3-9. 〆
 observeInviewElements();
 }
+});
+    
 
 // 3-1. シェアボタン
 const ITEMS = [
