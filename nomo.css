@@ -1246,7 +1246,7 @@ border-top: 2px solid #6a8a40;
 min-height: 60px;
 overflow: hidden;
 white-space: pre-wrap;
-animation: typing 0.6s steps(22, end) both;
+animation: typing 3s steps(22, end) both;
 }
   @keyframes typing  { from { width: 0; } to { width: 100%; } }
 /* フッター */
