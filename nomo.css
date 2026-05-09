@@ -1254,7 +1254,7 @@ font-size: 0.95em;
 line-height: 1.6;
 letter-spacing: 0.01em;
 margin: 0 auto;
-padding: 8px 20px;
+padding: 8px 0;
 border-top: 2px solid #6a8a40;
 overflow: hidden;
 white-space: pre-wrap;
@@ -1335,7 +1335,6 @@ ol.material-listY li:before{margin-top:-0.3rem;margin-left:0.5rem;}
 .btn_wrap {width:90%;max-width:340px;}
 .btn_wrap span {width:100%;left:0;}
 .btn_wrap:hover span, .btn_wrap.active span {transform:translateX(-100%);}
-p.pokedex-description {padding:8px 12px;}
 }
 @media (max-width: 480px) {
 .nav-container {padding: 0 16px;}
