@@ -1242,6 +1242,9 @@ margin: 0;
 padding: 8px 10px;
 border-top: 2px solid #6a8a40;
 min-height: 60px;
+overflow: hidden;
+white-space: nowrap;
+animation: typing 1.2s steps(22, end) both;
 }
 .corner-bl,
 .corner-br {
@@ -1265,20 +1268,8 @@ min-height: 60px;
   }
   @keyframes blink {
     0%, 100% { opacity: 1; }
-    50%       { opacity: 0; }
-  }
-.typetext {
-    overflow: hidden;
-    white-space: nowrap;
-    animation: typing 1.2s steps(22, end) both;
-  }
-  .typetext2 {
-    overflow: hidden;
-    white-space: nowrap;
-    animation: typing2 0.8s 1.1s steps(12, end) both;
-  }
+    50%       { opacity: 0; }}
   @keyframes typing  { from { width: 0; } to { width: 100%; } }
-  @keyframes typing2 { from { width: 0; } to { width: 100%; } }
 /* フッター */
 .pokedex-footer {
 background: #2a4a00;
