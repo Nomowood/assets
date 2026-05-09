@@ -1118,7 +1118,7 @@ Share シェアボタン
 
 /* Dex
 ---------------------- */
-.pokédex-box {
+.pokedex-box {
 width: 100%;
 max-width: 380px;
 background: linear-gradient(160deg, #e8001a 0%, #c0001a 40%, #a00018 100%);
@@ -1195,18 +1195,6 @@ color:rgba(80,0,0,0.45);
 letter-spacing:4px;
 padding-right:4px;
 }
-.pokedex-top::before{
-content:'';
-position:absolute;
-right:-14px;
-top:-4px;
-width:60px;
-height:80px;
-background:rgba(0,0,0,0.12);
-border-radius:0 0 0 50px;
-pointer-events:none;
-}
-
 .pokedex-title {
 font-size: 0.65em;
 font-weight: 900;
