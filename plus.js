@@ -180,7 +180,7 @@ el.innerHTML = `
         const cat = d[`category${i}`];
         if (!cat || typeof cat !== "string") continue;
         const slug = categorySlugMap[cat] || cat;
-        catSpanHTML += `<a href="/p/${slug}-items-pokopia.html" style="padding:0 0.5rem">${cat}</a>`;
+        catSpanHTML += `<a href="/p/${slug}-items-pokopia.html" style="padding:0 0.5rem; text-decoration:none; color:var(--text-st);">${cat}</a>`;
         catHTML += `<li><a href="/p/${slug}-items-pokopia.html">${cat}</a></li>`;
 }
 
@@ -203,7 +203,7 @@ el.innerHTML = `
 
         <h2>${name}の使い道</h2>
         <p>${d.catbody || ""}ポケモンのすみかに設置すると<br>
-        ${catSpanHTML}<br>のアイテムを好きなポケモンが喜びます。</p>
+        ${catSpanHTML}のアイテムを好きなポケモンが喜びます。</p>
 
         <h2>${name}の分類</h2>
         <ul class="material-list">${catHTML}</ul>
