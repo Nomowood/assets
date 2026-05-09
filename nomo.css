@@ -560,7 +560,7 @@ content: "よく取れるもの";
 }
 .default-box p {
 margin:1.5rem 0 0 0;
-color:#fff;
+color:var(--text-main);
 padding:0;
 line-height: 1.5;
 }
