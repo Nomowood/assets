@@ -1118,7 +1118,7 @@ Share シェアボタン
 
 /* Dex
 ---------------------- */
-.pokedex-box {
+.pokédex-box {
 width: 100%;
 max-width: 380px;
 background: linear-gradient(160deg, #e8001a 0%, #c0001a 40%, #a00018 100%);
