@@ -286,7 +286,7 @@ async function act(id, btn) {
       }
       try {
         await navigator.share({title: document.title,url: raw});
-      } catch (err) {if (err.name !== 'AbortError') {console.error(err);}
+      } catch (err) {if (err.name !== 'AbortError') {console.error(err);}}
 },
     x: () => {openShare(`https://x.com/intent/tweet?url=${u}&text=${t}`);},
     line: () => {openShare(`https://social-plugins.line.me/lineit/share?url=${u}`);},
