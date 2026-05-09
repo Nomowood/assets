@@ -1188,11 +1188,11 @@ border: 1px solid rgba(0,0,0,0.2);
 .light.yellow { background: radial-gradient(circle at 35% 30%, #ffee99, #ddaa00); box-shadow: 0 0 6px rgba(255,200,0,0.6);}
 .light.green  { background: radial-gradient(circle at 35% 30%, #aaffaa, #22bb33); box-shadow: 0 0 6px rgba(0,200,50,0.6);}
 .pokedex-top::after {
-content:'•　•　•';
+content:'• • •';
 margin-left:auto;
-font-size:1.3em;
+font-size:1.5em;
 color:rgba(80,0,0,0.45);
-letter-spacing:4px;
+letter-spacing:2px;
 padding-right:4px;
 }
 .pokedex-title {
