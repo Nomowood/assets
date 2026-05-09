@@ -16,7 +16,7 @@
   --sage:  #5a7a5e;
   --dust:  #b5a990;
 }
-* {overflow-wrap: anywhere; line-break: strict;}
+* {overflow-wrap:anywhere;line-break:strict;font-size:16px;}
 
 body, p, div, span, h1, h2, h3, h4, h5, h6, .post-body, .entry-content {
 user-select: none !important;
@@ -1259,6 +1259,7 @@ filter: drop-shadow(2px 2px 0 rgba(0,50,0,0.3));
 
 /* 説明テキスト */
 p.pokedex-description {
+position:relative;
 font-family: "DotGothic16", sans-serif;
 width:100%;
 min-height: 4.8em;
@@ -1274,11 +1275,12 @@ overflow: hidden;
 white-space: pre-wrap;
 }
 p.pokedex-description::after {
+position:absolute;
 content: '▼';
 font-family: "DotGothic16", sans-serif;
 color: #4c701c;
-left:0;
-bottom:0;
+left:0%;
+bottom:0%;
 }
 /* フッター */
 .pokedex-footer {
