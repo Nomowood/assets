@@ -173,7 +173,7 @@ el.innerHTML = `
       <div class="item-visual">
         <img class="dex" src="${img}" alt="${name}の画像">
       </div>
-      <p class="pokedex-description">${d.desc || ""}</p><span class="pokecursor"></span><div class="corner-bl"></div><div class="corner-br"></div>
+      <p class="pokedex-description">${d.desc || ""}</p>
       <div class="pokedex-footer">
         <span>${d.howtoget || ""}</span>
         <span class="rating">${starHTML}</span></div></div></div>
@@ -243,3 +243,16 @@ el.innerHTML = `
 // 2-3-9. 〆
 observeInviewElements();
 }
+
+// typing
+function typeText(el, text, speed = 80) {
+  el.textContent = '';
+  let i = 0;
+  const timer = setInterval(() => {
+    el.textContent += text[i];
+    i++;
+    if (i >= text.length) clearInterval(timer);
+  }, speed);
+}
+const descEl = el.querySelector('.pokedex-description');
+typeText(descEl, d.desc || '');
