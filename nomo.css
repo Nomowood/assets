@@ -1151,7 +1151,7 @@ height: 68px;
 border-radius: 50%;
 background: radial-gradient(circle at 35% 30%, #e8f8ff 0%, #99ddee 35%, #259db3 70%, #0846c2 100%);
 border: 5px solid #ddeeff;
-box-shadow: 0 0 0 2px rgba(200,0,0,0.45), 0 3px 8px rgba(0,80,100,0.35), inset 0 -3px 6px rgba(0,80,100,0.35);
+box-shadow: 0 0 0 2px rgba(200,0,0,0.45), 0 3px 8px rgba(0,80,100,0.35), inset 0 -3px 6px rgba(0,80,100,0.5);
 flex-shrink: 0;
 position: relative;
 }
