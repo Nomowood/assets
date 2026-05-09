@@ -1270,7 +1270,7 @@ font-size: 0.95em;
 line-height: 1.6;
 letter-spacing: 0.01em;
 margin: 0 auto;
-padding: 8px 0;
+padding: 8px 1px;
 border-top: 2px solid #6a8a40;
 overflow: hidden;
 white-space: pre-wrap;
@@ -1280,9 +1280,9 @@ position:absolute;
 content: '▼';
 font-family: "DotGothic16", sans-serif;
 color: #4c701c;
-right:0%;
-bottom:0%;
-animation: blinking 1s ease-in-out infinite alternate;
+right:2%;
+bottom:5%;
+animation: blinking 3s ease-in-out infinite alternate;
 }
 @keyframes blinking {0% { opacity:0;}100% { opacity: 1; }}
 /* フッター */
