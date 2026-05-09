@@ -956,9 +956,9 @@ z-index: 0;
 .whoa-p{
 position: relative;
 border-top: solid 2px #d9cf4a;
-border-right: solid 4px #d9cf4a;
+border-right: solid 4px #787feb;
 border-bottom: solid 6px #787feb;
-border-bottom: left 2px #787feb;
+border-left: solid 2px #d9cf4a;
 padding: 1rem;
 z-index: 1;
 overflow: hidden;
