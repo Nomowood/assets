@@ -938,7 +938,7 @@ width:auto;
   color: #FFF;
   font-size: 0.9em;
   font-weight: bold;
-  background: #787feb;
+  background: #a58eff;
   border-radius: 25px;
 box-sizing: border-box;
 word-break: break-all;
@@ -950,8 +950,8 @@ left:30%;
 bottom:-16px;
 transform: translateX(-50%);
 border: 8px solid transparent;
-border-top: 10px solid #787feb;
-z-index: 0;
+border-top: 10px solid #a58eff;
+z-index: 20;
 }
 .whoa-p{
 position: relative;
@@ -972,7 +972,7 @@ width: 55px;
 height: 55px;
 background: transparent;
 border-radius: 50%;
-border:double 6px #d9cf4a;
+border:double 6px #fff891;
 z-index:0;
 }
 .whoa-p::after {
