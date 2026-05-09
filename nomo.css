@@ -1235,6 +1235,7 @@ filter: drop-shadow(2px 2px 0 rgba(0,50,0,0.3));
 /* 説明テキスト */
 p.pokedex-description {
 font-family: "DotGothic16", sans-serif;
+min-width:100%;
 width:100%;
 min-height: 4.8em;
 background: #b8cc90;
@@ -1245,7 +1246,6 @@ letter-spacing: 0.01em;
 margin: 0;
 padding: 8px 10px;
 border-top: 2px solid #6a8a40;
-min-height: 60px;
 overflow: hidden;
 white-space: pre-wrap;
 animation: typing 3s steps(22, end) both;
