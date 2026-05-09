@@ -674,8 +674,8 @@ padding-top: 13px;
 .item-section h2 { font-size: 1.2rem; margin-bottom: 15px; color: var(--text-main);}
 .item-section h3 {margin:0;}
 .item-section img {width:25px; height:25px; margin-bottom:8px; margin-right:2px; padding:0; vertical-align:middle;}
-.item-section img.img-blog {display:block; margin:1rem auto; min-width:80%; width:100%; max-width:100%;height:auto; max-height:200px; border-radius:20px;}
-.item-section img.img-area {display:block; margin:0 auto 0.8rem auto;padding:2%;width:100%;max-width:100%;height:auto;border-radius:12px;background:#858f8c!important;border:double 8px #fff!important;box-sizing:border-box;}
+img.img-blog {display:block; margin:1rem auto; min-width:80%; width:100%; max-width:100%;height:auto; max-height:200px; border-radius:20px;}
+img.img-area {display:block; margin:0 auto 0.8rem auto;padding:2%;width:100%;max-width:100%;height:auto;border-radius:12px;background:#858f8c!important;border:double 8px #fff!important;box-sizing:border-box;}
 .item-section ul.material-list { list-style: none; border-top:none; border-bottom:none; margin:15px 0; padding:0;}
 .item-section ul.material-list li { padding: 2px 0 6px 15px; font-size: 1rem; color: var(--text-main); }
 .fukidashi {
