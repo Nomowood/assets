@@ -1259,10 +1259,6 @@ border-top: 2px solid #6a8a40;
 overflow: hidden;
 white-space: pre-wrap;
 }
-p.pokedex-description::before {
-content: '▼';
-font-family: "DotGothic16", sans-serif;
-top:-2px;right:3px;}
 /* フッター */
 .pokedex-footer {
 background: #2a4a00;
