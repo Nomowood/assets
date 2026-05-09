@@ -202,8 +202,7 @@ el.innerHTML = `
         <ul class="material-list">${typeHTML}</ul>
 
         <h2>${name}の使い道</h2>
-        <p>${d.catbody || ""}ポケモンのすみかに設置すると<br>
-        ${catSpanHTML}のアイテムを好きなポケモンが喜びます。</p>
+        <p>${d.catbody || ""}ポケモンのすみかに設置すると、${catSpanHTML}のアイテムを好きなポケモンが喜びます。</p>
 
         <h2>${name}の分類</h2>
         <ul class="material-list">${catHTML}</ul>
