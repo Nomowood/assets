@@ -173,7 +173,7 @@ el.innerHTML = `
       <div class="item-visual">
         <img class="dex" src="${img}" alt="${name}の画像">
       </div>
-      <p class="pokedex-description">${d.desc || ""}</p><span class="cursor"></span><div class="corner-bl"></div><div class="corner-br"></div>
+      <p class="pokedex-description">${d.desc || ""}</p><span class="pokecursor"></span><div class="corner-bl"></div><div class="corner-br"></div>
       <div class="pokedex-footer">
         <span>${d.howtoget || ""}</span>
         <span class="rating">${starHTML}</span></div></div></div>
