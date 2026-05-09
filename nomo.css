@@ -1013,7 +1013,7 @@ z-index:-1;
 /* =====================
 Share シェアボタン 
 ======================= */
-.share-wrap { width: 100%; max-width: 460px; }
+.share-wrap { width: 100%; max-width: 460px; margin:auto;}
 .share-heading {
   font-size: clamp(.9rem, 2.5vw, 1.1rem);
   color: var(--dust);
