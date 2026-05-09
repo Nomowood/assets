@@ -943,7 +943,11 @@ width:auto;
 box-sizing: border-box;
 word-break: break-all;
 }
-.whoa-blue:before {
+.whoa-blue::before {
+content: '✦';
+font-size: 0.6rem;
+}
+.whoa-blue:after {
 content: "";
 position: absolute;
 left:30%;
@@ -955,10 +959,10 @@ z-index: 20;
 }
 .whoa-p{
 position: relative;
-border-top: solid 2px #d9cf4a;
-border-right: solid 4px #787feb;
-border-bottom: solid 6px #787feb;
-border-left: solid 2px #d9cf4a;
+border-top: solid 2px #C9A84C;
+border-right: solid 4px #1A1F3C;
+border-bottom: solid 6px #C9A84C;
+border-left: solid 2px #C9A84C;
 padding: 1rem;
 z-index: 1;
 overflow: hidden;
@@ -972,7 +976,7 @@ width: 55px;
 height: 55px;
 background: transparent;
 border-radius: 50%;
-border:double 6px #fff891;
+border:double 6px #f5e9c8;
 z-index:0;
 }
 .whoa-p::after {
@@ -982,7 +986,7 @@ right: -40px;
 bottom: -40px;
 width: 70px;
 height: 70px;
-background: #787feb;
+background: #C9A84C;
 border-radius: 50%;
 z-index:-1;
 }
@@ -1239,6 +1243,42 @@ padding: 8px 10px;
 border-top: 2px solid #6a8a40;
 min-height: 60px;
 }
+.corner-bl,
+.corner-br {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #1a1a36;
+    border: 2px solid #e0e4ff;
+    pointer-events: none;
+}
+  .corner-bl { bottom: -2px; left: -2px; }
+  .corner-br { bottom: -2px; right: -2px; }
+.pokecursor {
+    display: inline-block;
+    width: 10px;
+    height: 1em;
+    background: #e8e8ff;
+    vertical-align: middle;
+    margin-left: 4px;
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+  }
+.typetext {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 1.2s steps(22, end) both;
+  }
+  .typetext2 {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing2 0.8s 1.1s steps(12, end) both;
+  }
+  @keyframes typing  { from { width: 0; } to { width: 100%; } }
+  @keyframes typing2 { from { width: 0; } to { width: 100%; } }
 /* フッター */
 .pokedex-footer {
 background: #2a4a00;
