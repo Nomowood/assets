@@ -7,7 +7,7 @@
 --card: #ffffff;
 --text-main: #965d3e;
 --text-sub: #636e72;
---text-st:#d1c000;
+--text-st:#d16c06;
 --border-color:#e0ca67;
 --link-color: #3498db;
 }
@@ -972,7 +972,7 @@ width: 55px;
 height: 55px;
 background: transparent;
 border-radius: 50%;
-border:double 6px #e9f7f7;
+border:double 6px #d9cf4a;
 z-index:0;
 }
 .whoa-p::after {
@@ -1254,6 +1254,7 @@ font-size: 0.9em;
 color: #c8d8a0;
 }
 .pokedex-footer span.rating {
+font-family: "DotGothic16", sans-serif;
 display: flex;
 gap: 3px;
 align-items: center;
