@@ -225,7 +225,7 @@ el.innerHTML = `
         ${recipeCount > 0 ? `
         <h2>${name}のレシピ</h2>
         <ul class="material-list">${recipeHTML}</ul>
-        <h3 class="whoa-blue">レシピの入手方法</h3>
+        <div class="whoa-blue">レシピの入手方法</div>
         <p class="whoa-p">${d.recipebody || ""}</p>` : ""}
 
         <h2>${name}の種類</h2>
