@@ -938,7 +938,7 @@ width:auto;
   color: #FFF;
   font-size: 0.9em;
   font-weight: bold;
-  background: #23294a;
+  background: #a58eff;
   border-radius: 25px;
 box-sizing: border-box;
 word-break: break-all;
@@ -954,7 +954,7 @@ left:30%;
 bottom:-16px;
 transform: translateX(-50%);
 border: 8px solid transparent;
-border-top: 10px solid #23294a;
+border-top: 10px solid #a58eff;
 z-index: 20;
 }
 .whoa-p{
@@ -1246,7 +1246,7 @@ margin: 0;
 padding: 8px 10px;
 border-top: 2px solid #6a8a40;
 overflow: hidden;
-white-space: nowrap;
+white-space: pre-wrap;
 }
 p.pokedex-description::before {
 content: '▼';
