@@ -1196,7 +1196,8 @@ align-items: center;
 }
 .pokedex-header .name {
 font-size: 1.2em;
-font-weight: 900;
+font-family:"DotGothic16", sans-serif;
+font-weight:bold;
 color: #c8d8a0;
 letter-spacing: 0.08em;
 text-shadow: 1px 1px 0 #000;
@@ -1226,9 +1227,9 @@ p.pokedex-description {
 font-family: "DotGothic16", sans-serif;
 background: #b8cc90;
 color: #4c701c;
-font-size: 1em;
+font-size: 0.95em;
 line-height: 1.6;
-letter-spacing: 0.02em;
+letter-spacing: 0.01em;
 margin: 0;
 padding: 8px 10px;
 border-top: 2px solid #6a8a40;
@@ -1244,6 +1245,7 @@ padding: 5px 10px;
 border-top: 2px solid #1a3000;
 }
 .pokedex-footer span {
+font-family: "DotGothic16", sans-serif;
 font-size: 0.9em;
 color: #c8d8a0;
 }
@@ -1252,7 +1254,7 @@ display: flex;
 gap: 3px;
 align-items: center;
 }
-.star { width: 0.9rem; height: 0.9rem; fill: #c8d8a0; stroke: none; }
+.star { width: 0.9rem; height: 0.9rem; fill: #c8d8a0; stroke: #c8d8a0; }
 .star.empty { fill: transparent; stroke: #c8d8a0; stroke-width: 2; }
 /* ======= 下部コントロールパネル ======= */
 .pokedex-controls {
