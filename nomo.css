@@ -469,7 +469,7 @@ position: relative;
 margin:15px auto !important;
 padding:10px 12px!important;
 }
-.item-data {line-height:1.7; letter-spacing:0.05em;}
+.item-data {line-height:1.7; letter-spacing:0.05em;font-size:1rem;}
 
 
 /* ============= 
@@ -952,14 +952,14 @@ border: 8px solid transparent;
 border-top: 10px solid #787feb;
 z-index: 0;
 }
-.whoa-p{
+h2.whoa-p{
 position: relative;
 border: solid 2px #787feb;
 padding: 1rem;
 z-index: 1;
 overflow: hidden;
 }
-.whoa-p::before {
+h2.whoa-p::before {
 content: "";
 position: absolute;
 right: -40px;
@@ -971,7 +971,7 @@ border-radius: 50%;
 border:double 6px #e9f7f7;
 z-index:0;
 }
-.whoa-p::after {
+h2.whoa-p::after {
 content: "";
 position: absolute;
 right: -40px;
@@ -1223,6 +1223,7 @@ filter: drop-shadow(2px 2px 0 rgba(0,50,0,0.3));
 
 /* 説明テキスト */
 p.pokedex-description {
+font-family: "DotGothic16", sans-serif;
 background: #b8cc90;
 color: #4c701c;
 font-size: 1em;
