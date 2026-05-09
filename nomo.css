@@ -419,6 +419,7 @@ div.widget h2.title {
 .post-body {
       font-size: 1.05rem;
       line-height: 1.85;
+  border-bottom:dotted 1px var(--dot);
     }
 .post-body h2 {
 position: relative;
