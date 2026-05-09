@@ -166,11 +166,77 @@ el.innerHTML = `
     }
 
 // 2-3-6. 分類
+const typeDATA = {
+かぐ: {
+icon: "",
+slug: "furniture"
+},
+ざっか:{
+icon: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEij2xsTGfqU3by2ocZnG4PJw8xB8OqIKXOfztgavo0z9tYsyfvwb0xcb115HQvghBDMxPj9DSoOVY8aYeOHS2kSUzeRp4Klz3Xuwoq-9XhOT2mm2DMoKRj7HEYkbirrmYKOQmC4eJHyGRcQcJxTaci34t9vOp8bAeDN9-nScGzOXQiqpKQ8HDcvvwtN9EOm/s1600/IMG_3943.png",
+slug:"mist"
+},
+おくがい: {
+icon: "",
+slug: "outdoor"
+},
+べんり: {
+icon: "",
+slug: "utilities"
+},
+けんちく: {
+icon: "",
+slug: "buildings"
+},
+ブロック: {
+icon: "",
+slug: "blocks"
+},
+キット: {
+icon: "",
+slug: "kits"
+},
+しぜん: {
+icon: "",
+slug: "nature
+},
+食べもの: {
+icon: "",
+slug: "food
+},
+ざいりょう: {
+icon: "",
+slug: "materials"
+},
+キーアイテム: {
+icon: "",
+slug: "keyitems"
+},
+そのた: {
+icon: "",
+slug: "other"
+},
+オモチャ: {
+icon: "",
+slug: "toy"
+},
+かざりつけ: {
+icon: "",
+slug: "decoration"
+},
+きゅうけい: {
+icon: "",
+slug: "relaxation"
+}
+};
     let typeHTML = "";
-    const typeCount = Number(d.type) || 0;
-    for (let i = 1; i <= typeCount; i++) {
-        typeHTML += `<li><img src="${d[`typeimg${i}`] || ""}" alt="">${d[`type${i}`] || ""}</li>`;
-    }
+const typeCount = Number(d.type) || 0;
+for (let i = 1; i <= typeCount; i++) {
+    const typeName = d[`type${i}`];
+    if (!typeName) continue;
+    const typeInfo = typeDATA[typeName];
+    typeHTML += `
+    <li><img src="${typeInfo?.icon || ""}" alt="${typeName}">${typeName}</li>`;
+}
 
 // 2-3-7. カテゴリー
     let catHTML = "";
