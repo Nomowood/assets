@@ -960,7 +960,7 @@ z-index: 20;
 .whoa-p{
 position: relative;
 border-top: solid 2px #C9A84C;
-border-right: solid 4px #1A1F3C;
+border-right: solid 4px #C9A84C;
 border-bottom: solid 6px #C9A84C;
 border-left: solid 2px #C9A84C;
 padding: 1rem;
@@ -986,7 +986,7 @@ right: -40px;
 bottom: -40px;
 width: 70px;
 height: 70px;
-background: #C9A84C;
+background: #1A1F3C;
 border-radius: 50%;
 z-index:-1;
 }
@@ -1244,7 +1244,7 @@ border-top: 2px solid #6a8a40;
 min-height: 60px;
 overflow: hidden;
 white-space: nowrap;
-animation: typing 1.2s steps(22, end) both;
+animation: typing 0.6s steps(22, end) both;
 }
 .corner-bl,
 .corner-br {
