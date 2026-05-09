@@ -414,12 +414,12 @@ div.widget h2.title {
 .entry-title { 
       line-height: 1.35; 
       font-weight: 900;
+  border-bottom:dotted 1px var(--dot);
     }
 .post-meta-single { margin-bottom: 35px; font-size: 0.9rem; color: var(--text-sub); }
 .post-body {
       font-size: 1.05rem;
       line-height: 1.85;
-  border-bottom:dotted 1px var(--dot);
     }
 .post-body h2 {
 position: relative;
@@ -544,7 +544,7 @@ top:-1px;
 position: relative;
 padding: 3rem 1rem 0.5rem 1rem;
 margin:1rem auto;
-background:linear-gradient(177deg, transparent 1.5rem, #f5bb0c 0 100%);
+background:linear-gradient(177deg, transparent 1.5rem, #e3aa00 0 100%);
 }
 .default-box::before {
 position: absolute;
@@ -560,7 +560,7 @@ content: "よく取れるもの";
 }
 .default-box p {
 margin:1.5rem 0 0 0;
-color:var(--text-main);
+color:#fff;
 padding:0;
 line-height: 1.5;
 }
