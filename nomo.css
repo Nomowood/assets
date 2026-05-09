@@ -542,27 +542,37 @@ top:-1px;
 }
 .default-box {
 position: relative;
-padding: 3rem 1rem 0.5rem 1rem;
-margin:1rem auto;
-background:linear-gradient(177deg, transparent 1.5rem, #e3aa00 0 100%);
+  padding: 2.8rem 1.5rem 1.4rem 1.5rem;
+  margin: 1rem auto;
+  background: #fdf8f0;
+  border-left: 4px solid #e8a020;
+  border-radius: 0 12px 12px 0;
+  max-width: 320px;
+  border-style: none;
+  border-left: 4px solid #e8a020;
 }
 .default-box::before {
 position: absolute;
-font-size:1rem;
-top: 0;
-left: -13px;
-padding: 0.4rem 1rem;
-border-style: solid;
-border-width: 0 3px 3px 0;
-background-color: #555;
-color: white;
-content: "よく取れるもの";
+  font-size: 0.72rem;
+  top: 0;
+  left: -4px;
+  padding: 0.35rem 1rem;
+  background-color: #e8a020;
+  color: #fff;
+  content: "よく取れるもの";
+  border-radius: 0 6px 6px 0;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border-style: none;
+  border-width: 0;
 }
 .default-box p {
-margin:1.5rem 0 0 0;
-color:#fff;
-padding:0;
-line-height: 1.5;
+margin: 0;
+  color: #3a3028;
+  padding: 0;
+  line-height: 2.1;
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 ul, ol {
   border-top: solid#f5bb0c 2px;
