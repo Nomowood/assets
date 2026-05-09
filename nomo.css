@@ -1211,7 +1211,7 @@ font-family:"DotGothic16", sans-serif;
 font-weight:bold;
 color: #c8d8a0;
 letter-spacing: 0.08em;
-text-shadow: 1px 1px 1px #c8d8a0;
+text-shadow: 1px 1px 0 #000;
 }
 
 /* 画像エリア */
