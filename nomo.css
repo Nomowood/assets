@@ -6,10 +6,15 @@
 --dot:dotted 1px #8c5d5d;
 --card: #ffffff;
 --text-main: #965d3e;
---text-sub: #636e72;
 --text-st:#d16c06;
 --border-color:#e0ca67;
 --link-color: #3498db;
+--cream: #f5f0e8;
+  --paper: #ede8dc;
+  --ink:   #2c2416;
+  --rust:  #c4522a;
+  --sage:  #5a7a5e;
+  --dust:  #b5a990;
 }
 * {overflow-wrap: anywhere; line-break: strict;}
 
