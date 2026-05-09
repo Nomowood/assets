@@ -1280,9 +1280,11 @@ position:absolute;
 content: '▼';
 font-family: "DotGothic16", sans-serif;
 color: #4c701c;
-left:0%;
+right:0%;
 bottom:0%;
+animation: blinking 1s ease-in-out infinite alternate;
 }
+@keyframes blinking {0% { opacity:0;}100% { opacity: 1; }}
 /* フッター */
 .pokedex-footer {
 background: #2a4a00;
