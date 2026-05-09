@@ -1149,7 +1149,7 @@ position: relative;
 width: 68px;
 height: 68px;
 border-radius: 50%;
-background: radial-gradient(circle at 35% 30%, #e8f8ff 0%, #99ddee 35%, #55bbcc 70%, #0846c2 100%);
+background: radial-gradient(circle at 35% 30%, #e8f8ff 0%, #99ddee 35%, #259db3 70%, #0846c2 100%);
 border: 5px solid #ddeeff;
 box-shadow:
 0 0 0 2px rgba(0,0,0,0.45),
@@ -1182,17 +1182,17 @@ align-items: center;
 width: 26px;
 height: 26px;
 border-radius: 50%;
-border: 1px solid rgba(0,0,0,0.2);
+border: 1px solid rgba(207,39,101,0.3);
 }
-.light.red    { background: radial-gradient(circle at 35% 30%, #ffbbbb, #ee6677); box-shadow: 0 0 6px rgba(255,80,100,0.6); }
-.light.yellow { background: radial-gradient(circle at 35% 30%, #ffee99, #ddaa00); box-shadow: 0 0 6px rgba(255,200,0,0.6);}
-.light.green  { background: radial-gradient(circle at 35% 30%, #aaffaa, #22bb33); box-shadow: 0 0 6px rgba(0,200,50,0.6);}
+.light.red    {background:radial-gradient(circle at 35% 30%, #ffbbbb, #ee6677); box-shadow: 0 0 6px rgba(255,80,100,0.6); }
+.light.yellow {background:radial-gradient(circle at 35% 30%, #ffee99, #ddaa00); box-shadow: 0 0 6px rgba(255,200,0,0.6);}
+.light.green  {background:radial-gradient(circle at 35% 30%, #aaffaa, #22bb33); box-shadow: 0 0 6px rgba(0,200,50,0.6);}
 .pokedex-top::after {
 content:'• • •';
 margin-left:auto;
-font-size:1.5em;
+font-size:2em;
 color:rgba(80,0,0,0.45);
-letter-spacing:2px;
+letter-spacing:1px;
 padding-right:4px;
 }
 .pokedex-title {
