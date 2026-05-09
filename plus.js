@@ -54,60 +54,6 @@ observeInviewElements();
 renderPokedexItems();
 
 // ここから違うスクリプト
-
-// 2-1. シェアボタン
-const ITEMS = [
-  { id:'copy',    label:'URLをコピー',   icon:'<i class="fa-regular fa-copy"></i>' },
-  { id:'native',  label:'シェア',  icon:'<i class="fa-solid fa-share-nodes"></i>' },
-  { id:'x',       label:'X / Twitter',icon:'<i class="fa-brands fa-x-twitter"></i>' },
-  { id:'line',    label:'LINE',        icon:'<i class="fa-brands fa-line"></i>' },
-  { id:'threads', label:'Threads',     icon:'<i class="fa-brands fa-threads"></i>' },
-  { id:'sms',     label:'SMS',     icon:'<i class="fa-regular fa-comment-dots"></i>' },
-  { id:'reddit',  label:'Reddit',      icon:'<i class="fa-brands fa-reddit-alien"></i>' },
-  { id:'hatena',  label:'はてな',    icon:'<i class="fa-solid fa-bookmark"></i>' },
-  { id:'note',    label:'noteで引用',  icon:'<i class="fa-regular fa-file-lines"></i>' },
-];
-const ROTS = [-.8, .5, -.3, .7, -.6, .4, -.5, .9, -.4];
-function enc(s) { return encodeURIComponent(s); }
-function act(id, btn) {
-  const raw = location.href, u = enc(raw), t = enc(document.title);
-  const map = {
-    copy:    () => navigator.clipboard.writeText(raw).then(() => {
-                    btn.classList.add('copied');
-                    btn.querySelector('.sBtn-label').textContent = 'コピーしました';
-                    showToast();
-                    setTimeout(() => { btn.classList.remove('copied'); btn.querySelector('.sBtn-label').textContent = 'URLをコピー'; }, 2000);
-                  }),
-    native:  () => navigator.share?.({ title: document.title, url: raw }),
-    x:       () => open(`https://twitter.com/intent/tweet?url=${u}&text=${t}`, '_blank'),
-    line:    () => open(`https://social-plugins.line.me/lineit/share?url=${u}`, '_blank'),
-    threads: () => open(`https://www.threads.net/intent/post?url=${u}`, '_blank'),
-    sms:     () => { location.href = `sms:?body=${t}%20${u}`; },
-    reddit:  () => open(`https://www.reddit.com/submit?url=${u}&title=${t}`, '_blank'),
-    hatena:  () => open(`https://b.hatena.ne.jp/entry?url=${raw}`, '_blank'),
-    note:    () => open(`https://note.com/intent/post?url=${u}`, '_blank'),
-  };
-  map[id]?.();
-}
-function showToast() {
-  const el = document.getElementById('toast');
-  el.classList.add('show');
-  setTimeout(() => el.classList.remove('show'), 2000);
-}
-const grid = document.getElementById('grid');
-ITEMS.forEach(({ id, label, icon }, i) => {
-  const rot = ROTS[i % ROTS.length];
-  const btn = document.createElement('button');
-  btn.className = 'sBtn';
-  btn.style.transform = `rotate(${rot}deg)`;
-  btn.innerHTML = `<span class="sBtn-icon">${icon}</span><span class="sBtn-label">${label}</span>`;
-  btn.addEventListener('click', () => act(id, btn));
-  btn.addEventListener('mouseenter', () => { btn.style.transform = 'rotate(0deg)'; });
-  btn.addEventListener('mouseleave', () => { btn.style.transform = `rotate(${rot}deg)`; });
-  grid.appendChild(btn);
-});
-
-// ここから違うスクリプト
 // 2-2.template
 function renderPokedexItems() {
 const categorySlugMap = {
@@ -267,3 +213,55 @@ el.innerHTML = `
 // 2-3-9. 〆
 observeInviewElements();
 }
+
+// 3-1. シェアボタン
+const ITEMS = [
+  { id:'copy',    label:'URLをコピー',   icon:'<i class="fa-regular fa-copy"></i>' },
+  { id:'native',  label:'シェア',  icon:'<i class="fa-solid fa-share-nodes"></i>' },
+  { id:'x',       label:'X / Twitter',icon:'<i class="fa-brands fa-x-twitter"></i>' },
+  { id:'line',    label:'LINE',        icon:'<i class="fa-brands fa-line"></i>' },
+  { id:'threads', label:'Threads',     icon:'<i class="fa-brands fa-threads"></i>' },
+  { id:'sms',     label:'SMS',     icon:'<i class="fa-regular fa-comment-dots"></i>' },
+  { id:'reddit',  label:'Reddit',      icon:'<i class="fa-brands fa-reddit-alien"></i>' },
+  { id:'hatena',  label:'はてな',    icon:'<i class="fa-solid fa-bookmark"></i>' },
+  { id:'note',    label:'noteで引用',  icon:'<i class="fa-regular fa-file-lines"></i>' },
+];
+const ROTS = [-.8, .5, -.3, .7, -.6, .4, -.5, .9, -.4];
+function enc(s) { return encodeURIComponent(s); }
+function act(id, btn) {
+  const raw = location.href, u = enc(raw), t = enc(document.title);
+  const map = {
+    copy:    () => navigator.clipboard.writeText(raw).then(() => {
+                    btn.classList.add('copied');
+                    btn.querySelector('.sBtn-label').textContent = 'コピーしました';
+                    showToast();
+                    setTimeout(() => { btn.classList.remove('copied'); btn.querySelector('.sBtn-label').textContent = 'URLをコピー'; }, 2000);
+                  }),
+    native:  () => navigator.share?.({ title: document.title, url: raw }),
+    x:       () => open(`https://twitter.com/intent/tweet?url=${u}&text=${t}`, '_blank'),
+    line:    () => open(`https://social-plugins.line.me/lineit/share?url=${u}`, '_blank'),
+    threads: () => open(`https://www.threads.net/intent/post?url=${u}`, '_blank'),
+    sms:     () => { location.href = `sms:?body=${t}%20${u}`; },
+    reddit:  () => open(`https://www.reddit.com/submit?url=${u}&title=${t}`, '_blank'),
+    hatena:  () => open(`https://b.hatena.ne.jp/entry?url=${raw}`, '_blank'),
+    note:    () => open(`https://note.com/intent/post?url=${u}`, '_blank'),
+  };
+  map[id]?.();
+}
+function showToast() {
+  const el = document.getElementById('toast');
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 2000);
+}
+const grid = document.getElementById('grid');
+ITEMS.forEach(({ id, label, icon }, i) => {
+  const rot = ROTS[i % ROTS.length];
+  const btn = document.createElement('button');
+  btn.className = 'sBtn';
+  btn.style.transform = `rotate(${rot}deg)`;
+  btn.innerHTML = `<span class="sBtn-icon">${icon}</span><span class="sBtn-label">${label}</span>`;
+  btn.addEventListener('click', () => act(id, btn));
+  btn.addEventListener('mouseenter', () => { btn.style.transform = 'rotate(0deg)'; });
+  btn.addEventListener('mouseleave', () => { btn.style.transform = `rotate(${rot}deg)`; });
+  grid.appendChild(btn);
+});
