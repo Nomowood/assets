@@ -1149,7 +1149,7 @@ position: relative;
 width: 68px;
 height: 68px;
 border-radius: 50%;
-background: radial-gradient(circle at 35% 30%, #e8f8ff 0%, #99ddee 35%, #55bbcc 70%, #2299aa 100%);
+background: radial-gradient(circle at 35% 30%, #e8f8ff 0%, #99ddee 35%, #55bbcc 70%, #0846c2 100%);
 border: 5px solid #ddeeff;
 box-shadow:
 0 0 0 2px rgba(0,0,0,0.45),
