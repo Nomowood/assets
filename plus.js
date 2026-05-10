@@ -197,11 +197,11 @@ slug: "kits"
 },
 しぜん: {
 icon: "",
-slug: "nature
+slug: "nature"
 },
 食べもの: {
 icon: "",
-slug: "food
+slug: "food"
 },
 ざいりょう: {
 icon: "",
