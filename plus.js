@@ -227,7 +227,7 @@ slug: "decoration"
 icon: "",
 slug: "relaxation"
 }
-};
+}
     let typeHTML = "";
 const typeCount = Number(d.type) || 0;
 for (let i = 1; i <= typeCount; i++) {
