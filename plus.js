@@ -162,7 +162,7 @@ el.innerHTML = `
     let recipeHTML = "";
     const recipeCount = Number(d.recipe) || 0;
     for (let i = 1; i <= recipeCount; i++) {
-        recipeHTML += `<li><img src="${d[`recipeimg${i}`] || ""}" alt="">${d[`recipe${i}`] || ""}</li>`;
+        recipeHTML += `<li>${d[`recipe${i}`] || ""}</li>`;
     }
 
 // 2-3-6. 分類
