@@ -275,8 +275,7 @@ for (let i = 1; i <= typeCount; i++) {
         <h2>${name}の種類</h2>
         <ul class="material-list">${typeHTML}</ul>
 
-        <h2>${name}の使い道</h2>
-        <p>${d.catbody || ""}ポケモンのすみかに設置すると、${catSpanHTML}のアイテムを好きなポケモンが喜びます。</p>
+        ${catCount > 0 ? `<h2>${name}の使い道</h2><p>${d.catbody || ""}ポケモンのすみかに設置すると、${catSpanHTML}のアイテムを好きなポケモンが喜びます。</p>` : ""}
     ${catCount > 0 ? `<h2>${name}の分類</h2><ul class="material-list">${catHTML}</ul>` : ""}
     </div>`);
 });
