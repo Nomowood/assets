@@ -236,7 +236,7 @@ icon: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhWLevq3LHOZgz4
 slug: "foxil"
 }
 }
-    let typeHTML = "";
+let typeHTML = "";
 const typeCount = Number(d.type) || 0;
 for (let i = 1; i <= typeCount; i++) {
     const typeName = d[`type${i}`];
@@ -257,7 +257,7 @@ for (let i = 1; i <= typeCount; i++) {
         catSpanHTML += `<a href="/p/${slug}-items-pokopia.html" style="padding:0 0.5rem; text-decoration:none; color:var(--text-st);">${cat}</a>`;
         catHTML += `<li><a href="/p/${slug}-items-pokopia.html">${cat}</a></li>`;
 }
-const shouldAddText = d.dataset.addplace === "true";
+const shouldAddText = d.addplace === "true";
 
 // 2-3-8. 記述
     el.insertAdjacentHTML("afterend", `
