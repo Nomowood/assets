@@ -257,7 +257,7 @@ for (let i = 1; i <= typeCount; i++) {
         catSpanHTML += `<a href="/p/${slug}-items-pokopia.html" style="padding:0 0.5rem; text-decoration:none; color:var(--text-st);">${cat}</a>`;
         catHTML += `<li><a href="/p/${slug}-items-pokopia.html">${cat}</a></li>`;
 }
-const shouldAddText = d.addplace === "true";
+const shouldAddText = d.dataset.addplace === "true";
 
 // 2-3-8. 記述
     el.insertAdjacentHTML("afterend", `
@@ -273,11 +273,12 @@ const shouldAddText = d.addplace === "true";
         <div class="whoa-blue">レシピの入手方法</div>
         <p class="whoa-p">${d.recipebody || ""}</p>` : ""}
 
-        <h2>${name}の種類</h2>
-        <ul class="material-list">${typeHTML}</ul>
-    ${catCount > 0 ? `<h2>${name}の使い道</h2><p>${d.catbody || ""}ポケモンのすみかに設置すると、${catSpanHTML}のアイテムを好きなポケモンが喜びます。</p>` : ""}
-    ${catCount > 0 ? `<h2>${name}の分類</h2><ul class="material-list">${catHTML}</ul>` : ""}
-    </div>`);
+<h2>${name}の種類</h2>
+<ul class="material-list">${typeHTML}</ul>
+${catCount > 0 ? `<h2>${name}の使い道</h2><p>${d.catbody || ""}${shouldAddText ? `ポケモンのすみかに設置すると、${catSpanHTML}のアイテムを好きなポケモンが喜びます。` : ""}</p>
+` : ""}    
+${catCount > 0 ? `<h2>${name}の分類</h2><ul class="material-list">${catHTML}</ul>` : ""}
+</div>`);
 });
 
 // 2-3-9. 〆
