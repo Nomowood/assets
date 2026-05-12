@@ -168,64 +168,72 @@ el.innerHTML = `
 // 2-3-6. 分類
 const typeDATA = {
 かぐ: {
-icon: "",
+icon: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghbZ1lT0riY1KWwC6skAqyPd3CAZQahclzXaxCQb41pPYDsTBJt6t8u0ea8dFrRy4gs6E9jFsH4cF1DBHaHj5_gmX4jtA_hryKajKDWwHsZxDOxBHxy5fjQ8y-k20FutBfvsQQwdtcxTlRLDxHTxyp0ma4PxQy-WTizTIvafuKqUzrV_c/s1600/IMG_4050.png",
 slug: "furniture"
 },
 ざっか:{
-icon: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEij2xsTGfqU3by2ocZnG4PJw8xB8OqIKXOfztgavo0z9tYsyfvwb0xcb115HQvghBDMxPj9DSoOVY8aYeOHS2kSUzeRp4Klz3Xuwoq-9XhOT2mm2DMoKRj7HEYkbirrmYKOQmC4eJHyGRcQcJxTaci34t9vOp8bAeDN9-nScGzOXQiqpKQ8HDcvvwtN9EOm/s1600/IMG_3943.png",
+icon: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEivf6fPgOtuYZuu_FaZseyY1DC99dSZ4tWbewrFXVdTozNVqKWLkLheBGYIeBYep8SfKutKUkt2e-1a0sq-aoZST1YC8icjXHAgiGlpdPLuQ5YmFHAwWjuz4Y-mF-DsnjbZ0F63nSikcMgOP2mWZIPbqF69AcPueC_ux8km7r_GVtHaTPo/s1600/IMG_4051.png",
 slug:"mist"
 },
 おくがい: {
-icon: "",
+icon: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjKIgxmR9VWFX0BMtrTLoGvdS6wjrX6SHHuuLwo6yPm8mnQeRH1ZNYHq_J2y-A52qguLq7PdQ2tuJPhnslUtsl8ICvAY7nB0G8wlgiCrEqPjjWpUVswRCkKjzUNGdDnCTQkPwM1T-PfJRI7iSK4em0QTGjTkIyMksDu_rrnei5g2IpaPa4/s1600/IMG_4052.png",
 slug: "outdoor"
 },
 べんり: {
-icon: "",
+icon: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYoEp4RZLYRLqm6V6TFwuUXQlZR9WR5dk9cQ7yQAXYPYNbnxU3QIqe0lpSRjA03XG3kVWNGAtEV63nnU2NJI0SDIcIFY45Ft-7K-Llh5J1fb7TENbcRrsO_EQ3EhimCqB5T84bEXJLqfrxoJQu-ZMidYsHQ9WJIBqeDAP4SDVXZKGJ2mw/s1600/IMG_4053.png",
 slug: "utilities"
 },
-けんちく: {
-icon: "",
+たてもの: {
+icon: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhuRI95EuB2UZCSdAmndh4s1mBun3xvewlf45ZziNcMJYQdy0cM235uA6ijgKm4kVqWSIkccFqXiZv_u_uAZ3xuZqTDtVFf-oCTDI62gsQEEtSorvqtOfQDMkqq1ogvtboFPgdxZwOYdGLmDw38U4rNoWbY7-TVneZ19dNZtZUIUe3FA-o/s1600/IMG_3946.png",
 slug: "buildings"
 },
 ブロック: {
-icon: "",
+icon: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiUR9nKORMdgtf59xs6JnY7eVNygJO-qC30YgPXuVOaPBQUPM7Y7_9tvbc_OnM-fnt9HDtgwqisbsjhfD66JnJcNtHzMUJnJKlLhFxeSiFmaFSPQQ0opc9hSBvwfK27aCardAYCbD0EwKCtlL9PS0eZhNY8MrcIwq0awtS5qWDsgk-VsJA/s1600/IMG_3947.png",
 slug: "blocks"
 },
 キット: {
-icon: "",
+icon: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj2rAbQizQYuzuuNZb-3-bLL6d8aGRZ_ujIwo4glJKnXkFkvvPrZ9dbzU6yR9uSw2qy_wqXnrFnrKGWlKpgb1rhJS9GiqFVgTXoVgt8e5DO0RW1zkXu-3OqXgoqgvQUT5PqcmB6yAE4SH32gihW7ilxHkSwnkwNGOKEbOszdszB5VKfnMM/s1600/IMG_3948.png",
 slug: "kits"
 },
 しぜん: {
-icon: "",
+icon: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhkG_vu04C6272ligRRhWMXC-bbSx-MZx4uBlMSCTUHdkDm_8G_y8E5JqKBU4ac-zJtPIOdiGRPTECiPZxUpK7m43c6ztYF-z-HtYqXobOEb-YAuzrw_8FGGZKo91K0kq_9mBQ4fP1PPO3fKnZR5vrpL_-eX3GXfmkUdqDXwbYhC1OOyRg/s1600/IMG_3949.png",
 slug: "nature"
 },
 食べもの: {
-icon: "",
+icon: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhR77G-geALZwS5Qju3nFF-K7IFbMVkWzedh3vSklgHigqf2Hxs_zwcGUimaF7oYXLyk0XuVVPFolC7pXQ7DEOXTAZF51I2NbbBunPbeeiNSjYk88v551bRIn3IfSGJMRI-2zJmoVVsvYyp0i07dgydny4nL77i79EmWewgAjSgMCYFy4M/s1600/IMG_3950.png",
 slug: "food"
 },
 ざいりょう: {
-icon: "",
+icon: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisggkrOuFtcVKeFDIPi7-j3sIWpi86Gzt1EQdNiEkEjYZbBjrtOA9GzXpB0XR5kd3lJvTR4dH1EmheuMto-GQW7-nLTpIBseD9iK2I88_yu_P10J0Lab4B_Ash2AacKqZfcX5W0Xx56UaskJcgc3CpHXtseT6bRrQ90pYtwQ7xedJwlNE/s1600/IMG_3951.png",
 slug: "materials"
 },
 キーアイテム: {
-icon: "",
+icon: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj5hDy9IMtfe8x5-pV_TiEesPBZtOe0dJmjqhBzfXFKj4XdtdjbYQmZZ1xDjUlzOe2EoA9EU3g-YQeVkyHvjyLBUx6ZYFPDUNQCxCvA3RzaLWgmhtv4zYsOn9JFaBXqS__IuIdO-B1uXg-0rZg4oCx1DGOLLmd7rwG0f2c9QPRfnHf0Buw/s1600/IMG_3952.png",
 slug: "keyitems"
 },
 そのた: {
-icon: "",
+icon: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYGKpS0_GJOyHTNspOGiBvgxBLt-O_KbsvziAIk9EI91otvVoPU9btsC71vfXg4Jv1flDeMHUDo90hskfpzgDMmhaGiNZythn_6cK-aoMtWMUFGDGVgHRWoBMJOSbyjWRt4QyNwAPLW5rhkNQGvqKU-FCPUCbCDrzovMZ60IIJtF2Tjpw/s1600/IMG_3953.png",
 slug: "other"
 },
 オモチャ: {
-icon: "",
+icon: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg26BoRti4d5GyS4hCwCQRZSqTx2NhI08WoI5zQo0MiXRm_iZ-qUEn387FRWoKBt3qD1cBtRJaN9tqdd8VU5SNSBSouHNPY1Vzc3nnUk_TXdvi_30fP7G9wSRhNB6KUCd9GNTDjQ5YxJY-wP-nR0_LJombstvPu6QbOsqAxpMZx2M4zGok/s1600/IMG_4062.png",
 slug: "toy"
 },
 かざりつけ: {
-icon: "",
+icon: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjnKHFUU0qDrWJ79GZJZf9_AeTbB01QEA_bJjLQxzkKmVe8UbCvfgWb0JD0ci-c85HRaSICjHwsc9FDXQtZJAxH5thGDBhyphenhyphenYVKIUG9CyXk6lNeBaGyGXxgN9cukrSzlHdjM5vZVI7iL3h3xLB1s21V-bOZjliPsh_0fyO6Rw9jgjLHv2KY/s1600/IMG_4061.png",
 slug: "decoration"
 },
 きゅうけい: {
-icon: "",
+icon: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiCvhndlzOu9S5gtVrckkwcKjC81Os6YmGoYnpjX7sPk-4mBJaswqcNJ6NhpHQ8GPcWB726iKGgJ_L7xKl9cQYpovwd3BeAK_p4hYmaoci7TIgGNzHgzbF_5pivgNg5RwJZnTbZF2gGng1U6VWK1RykhGJ-_PQs2ciWpcUeueTHkJC_Q4s/s1600/IMG_4063.png",
 slug: "relaxation"
+},
+どうろ: {
+icon: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizvQhoWnHX18V3BHFQDLGyZEzWA8afoa99RirkdNobFm19HNgC0aLM81R9bNvjxqTEFfDaxdMSYv7CqYrBN9RtzFMDcg9PyZyTG0NZ_9xFhJdy8X7oe_YSJUXbxKsQZeChCIrpP0QAQLe4fLQDjXD-WtVWLG8nrRFZknLnXYxvbLxdG1E/s1600/IMG_4060.png",
+slug: "road"
+},
+かせき: {
+icon: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhWLevq3LHOZgz4sBzVK5D6YBka8N3Shvb38NBAe6yTu1QWZjxc6gYCFra3j42qYpdqB0UaLdKCzx7r2Sler8XmUKozvYhYF-eAMs6nOEXc8efkcj515CZu54qtAe-bIoJ_DiR3F4yy67axkSwqNVdOUUfCdk4kQzauhs3i_SOZmT4168g/s1600/IMG_9533.png",
+slug: "foxil"
 }
 }
     let typeHTML = "";
