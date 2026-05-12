@@ -1020,9 +1020,9 @@ z-index:-1;
   grid-template-columns: 1fr;
   grid-template-rows: 160px auto;
   background: #faf7f2;
-  border: 2.5px solid #2a1f1a;
+  border: 2.5px solid #7d674f;
   border-radius: 10px;
-  box-shadow: 4px 4px 0 #2a1f1a;
+  box-shadow: 4px 4px 0#7d674f;
   overflow: hidden;
   text-decoration: none;
   color: inherit;
@@ -1030,18 +1030,18 @@ z-index:-1;
 }
 .def-card a:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 #2a1f1a;
+  box-shadow: 6px 6px 0 #7d674f;
 }
 .def-card a:active {
   transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 #2a1f1a;
+  box-shadow: 2px 2px 0 #7d674f;
 }
 .def-card__thumb {
   width: 100%;
-  height: 160px;
+  height: 153px;
   object-fit: cover;
   display: block;
-  border-bottom: 2.5px solid #2a1f1a;
+  border-bottom: 2.5px solid #7d674f;
 }
 .def-card__body {
   padding: .75rem 1rem .75rem .9rem;
