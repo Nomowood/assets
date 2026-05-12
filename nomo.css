@@ -1320,7 +1320,6 @@ color: #c8d8a0;
 letter-spacing: 0.08em;
 text-shadow: 1px 1px 0 #000;
 }
-
 /* 画像エリア */
 .item-visual {
 background: #b8cc90;
@@ -1339,8 +1338,6 @@ image-rendering: pixelated;
 image-rendering: crisp-edges;
 filter: drop-shadow(2px 2px 0 rgba(0,50,0,0.3));
 }
-
-/* 説明テキスト */
 p.pokedex-description {
 position:relative;
 font-family: "DotGothic16", sans-serif;
@@ -1348,7 +1345,7 @@ width:100%;
 min-height: 4.8em;
 background: #b8cc90;
 color: #4c701c;
-font-size: 0.95em;
+font-size: 0.85em;
 line-height: 1.6;
 letter-spacing: 0.01em;
 margin: 0 auto;
