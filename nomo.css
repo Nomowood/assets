@@ -1211,7 +1211,10 @@ Share シェアボタン
   border-radius:7px;
   background:linear-gradient(to right, #ffe3c4, transparent);
 }
-.post-body h2.habitat-card-label::before {background:none;}
+.post-body h2.habitat-card-label::before, .post-body h2.simple::before {background:none;}
+.post-body h2.simple {padding:0;margin:1rem 0;
+border-bottom: 2px solid #e9e9e9;
+padding-bottom: 3px;}
 .mat-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -1224,9 +1227,10 @@ Share シェアボタン
 }
 .mat-count {
   font-size: 19px;
+  font-weight:bold;
 }
 .mat-name {
-  font-size: 12px;
+  font-size: 1em;
 }
 .poke-row {
   display: grid;
@@ -1256,6 +1260,7 @@ Share シェアボタン
 .poke-name {
   color:var(--text-main);
   font-size: 1.3rem;
+  font-weight:bold;
   margin: 3px 0 8px;
   line-height: 1.1;
 }
