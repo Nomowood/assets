@@ -1207,8 +1207,9 @@ Share シェアボタン
 .habitat-card-label {
   padding: 5px 12px;
   margin-bottom: 12px;
-  font-size: 13.5px;
-  border-radius: 999px;
+  font-size: 15px;
+  border-radius:7px;
+  background:linear-gradient(to right, #ffe3c4, transparent);
 }
 .post-body h2.habitat-card-label::before {background:none;}
 .mat-row {
@@ -1219,7 +1220,7 @@ Share シェアボタン
 .mat-card {
   padding: 10px;
   gap: 8px;
-  text-decoration:none; color:var(--text-main);
+  text-decoration:none!important; color:var(--text-main);
 }
 .mat-count {
   font-size: 19px;
