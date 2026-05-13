@@ -1271,15 +1271,16 @@ Share シェアボタン
   font-size:10px;
   color:#fff;
   font-weight:bold;
-  background:#91c97d;
+  background:#998a7c;
 }
 .area-tags{
   display:flex;
   flex-wrap:wrap;
-  gap:10px;
+  gap:8px;
+  align-items:center;
 }
 .area-tag{
-  padding: 9px 15px;
+  padding: 7px 12px;
   border-radius:999px;
   font-size:12px;
   color:#fff;
