@@ -704,7 +704,7 @@ ul.material-list li { padding: 2px 0 6px 15px; font-size: 1rem; color: var(--tex
   margin: 5px 0 0 105px;
   padding: 17px 13px;
   border-radius: 12px;
-  background: #fff0c6;
+  background: #d1c6ff;
 }
 .says:after {
   content: "";
@@ -713,7 +713,7 @@ ul.material-list li { padding: 2px 0 6px 15px; font-size: 1rem; color: var(--tex
   top: 18px; 
   left: -24px;
   border: 12px solid transparent;
-  border-right: 12px solid #fff0c6;
+  border-right: 12px solid #d1c6ff;
 }
 .says p {margin: 0;padding: 0;}
 .says img {width:18px;}
