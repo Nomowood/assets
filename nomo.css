@@ -1266,7 +1266,7 @@ Share シェアボタン
   border:1px solid var(--text-main);
 }
 .poke-card img {
-  width: 60%;
+  width:200px;
   height: auto;
   margin: 6px 0 10px;
 }
