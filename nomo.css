@@ -1208,139 +1208,69 @@ Share シェアボタン
   padding: 5px 12px;
   margin-bottom: 12px;
   font-size: 15px;
-  border-radius:7px;
-  background:linear-gradient(to right, #ffe3c4, transparent);
+  border-radius: 7px;
+  background: linear-gradient(to right, #ffe3c4, transparent);
 }
-.post-body h2.habitat-card-label::before, .post-body h2.simple::before {background:none;}
-.post-body h2.simple {padding:0;margin:1rem 0;
-border-bottom: 2px solid #e9e9e9;
-padding-bottom: 3px;}
+.post-body h2.habitat-card-label::before,
+.post-body h2.simple::before { background: none; }
+.post-body h2.simple {
+  padding: 0;
+  margin: 1rem 0 0 0;
+  border-bottom: 2px solid #e9e9e9;
+  padding-bottom: 2px;
+  font-size:1em;
+}
+
+/* ── 材料行 ── */
 .mat-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 8px;
 }
+/* スマホ：3列固定（横並び） */
+@media (max-width: 559px) {
+  .mat-row {
+    grid-template-columns: repeat(3, 1fr); /* 3列強制 */
+  }
+  /* 3列が窮屈な場合（4件以上など）は2列に自動縮退させたいなら↓ */
+  /* grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); */
+}
+
 .mat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   padding: 10px;
-  gap: 8px;
-  text-decoration:none!important; color:inherit!important;
+  gap: 6px;
+  text-decoration: none !important;
+  color: inherit !important;
+}
+.mat-card img {
+  width: 100%;
+  max-width: 64px;
+  height: auto;
 }
 .mat-count {
   font-size: 19px;
-  font-weight:bold;
+  font-weight: bold;
 }
 .mat-name {
-  font-size: 1em;
+  font-size: .85em;
+  line-height: 1.3;
 }
+
+/* ── ポケモン行 ── */
 .poke-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(158px, 1fr));
   gap: 12px;
 }
-.poke-card {
-  flex:1;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  padding: 14px 10px 12px;
-  border-radius: 22px;
-  background: linear-gradient(to bottom, #fffaf5, #fff5ec);
-  text-decoration:none!important; color:var(--text-main);
-}
-.poke-card img {
- width:60%;
- height:auto;
- margin: 6px 0 10px;
-}
-.poke-num {
-  color:var(--text-main);
-  font-size: 10px;
-  letter-spacing: .06em;
-}
-.poke-name {
-  color:var(--text-main);
-  font-size: 1.3rem;
-  font-weight:bold;
-  margin: 3px 0 8px;
-  line-height: 1.1;
-}
-.poke-types{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:5px;
-}
-.type-badge{
-  padding:5px 10px;
-  border-radius:999px;
-  font-size:10px;
-  color:#fff;
-  font-weight:bold;
-  background:#998a7c;
-}
-.area-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  align-items:center;
-}
-.area-tag{
-  padding: 7px 12px;
-  border-radius:999px;
-  font-size:12px;
-  color:#fff;
-  font-weight:bold;
-}
-.pasa {background:#d9a475}
-.don {background:#75acd9}
-.gotsu {background:#d97575}
-.spark {background:#d9d975}
-.pallet {background:#a7e391;}
-.chip-row {
-display: flex;
-flex-wrap: nowrap;
-overflow-x: auto;
-gap: 6px;
-padding: 4px 0 8px;
-scrollbar-width: none;
--webkit-overflow-scrolling: touch;
-}
-.chip-row::-webkit-scrollbar {
-  display: none;
-}
-.chip {
-flex: 1 0 auto;
-padding: 7px 0;
-border-radius: 12px;
-gap: 0;
-text-align: center;
-}
-.chip img {
-  width: 30px;
-  height: 30px;
-  border-radius:5px;
-}
-.chip span {
-  font-size: 10px;
-  font-weight: bold;
-  letter-spacing: .02em;
-}
-/* 極小画面対策 */
-@media (max-width: 380px) {
+/* スマホ：2列固定 */
+@media (max-width: 559px) {
   .poke-row {
-    grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
   }
-  .chip {
-    flex: 0 0 50px;
-    padding: 6px 3px;
-  }
-  .chip img {
-    width: 26px;
-    height: 26px;
-  }
-  .poke-card img {
-    width: 108px;height: 108px;
-}
 }
 @media (min-width: 560px) {
   .poke-row {
@@ -1348,6 +1278,122 @@ text-align: center;
   }
 }
 
+.poke-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 10px 12px;
+  border-radius: 22px;
+  background: linear-gradient(to bottom, #fffaf5, #fff5ec);
+  text-decoration: none !important;
+  color: var(--text-main);
+}
+.poke-card img {
+  width: 60%;
+  height: auto;
+  margin: 6px 0 10px;
+}
+.poke-num {
+  color: var(--text-main);
+  font-size: 10px;
+  letter-spacing: .06em;
+}
+.poke-name {
+  color: var(--text-main);
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 3px 0 8px;
+  line-height: 1.1;
+}
+.poke-types {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+.type-badge {
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 10px;
+  color: #fff;
+  font-weight: bold;
+  background: #998a7c;
+}
+.area-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+.area-tag {
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  color: #fff;
+letter-spacing:0.01em;
+  font-weight: bold;
+}
+.pasa  { background: #d9a475; }
+.don   { background: #75acd9; }
+.gotsu { background: #d97575; }
+.spark { background: #cfcf46; }
+.pallet{ background: #86d16b; }
+
+/* ── chip行（天気・時間帯）── */
+.chip-row {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 6px;
+  padding: 4px 0 8px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.chip-row::-webkit-scrollbar { display: none; }
+
+.chip {
+  flex: 0 0 auto;           /* 縮まないよう固定 */
+  display: flex;            /* ★ 縦並び */
+  flex-direction: column;   /* ★ */
+  align-items: center;      /* ★ 中央揃え */
+  gap: 3px;                 /* 画像とテキストの隙間 */
+  padding: 5px 4px;
+  border-radius: 12px;
+  text-align: center;
+  min-width: 44px;          /* タップしやすいサイズ確保 */
+}
+.chip img {
+  width: 32px;
+  height: 32px;
+  border-radius: 5px;
+  display: block;
+}
+.chip span {
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: .02em;
+  line-height: 1;
+}
+@media (max-width: 380px) {
+  .mat-row {
+    grid-template-columns: repeat(2, 1fr); /* 2列にフォールバック */
+  }
+  .poke-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .chip {
+    min-width: 38px;
+    padding: 4px 3px;
+  }
+  .chip img {
+    width: 26px;
+    height: 26px;
+  }
+  .poke-card img {
+    width: 80%;
+  }
+}
 
 
 /* Dex
