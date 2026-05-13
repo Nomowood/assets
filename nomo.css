@@ -1258,7 +1258,7 @@ Share シェアボタン
   flex-direction: column;
   align-items: center;
   padding:10px;
-  margin:0!important;
+  margin-left:-30px;
   border-radius: 20px;
   background: linear-gradient(to bottom, #fffaf5, #fff5ec);
   text-decoration: none !important;
