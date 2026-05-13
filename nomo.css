@@ -1253,6 +1253,17 @@ Share シェアボタン
   margin: 3px 0 8px;
   line-height: 1.1;
 }
+.area-tag{
+  padding: 9px 15px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:bold;
+}
+.pasa {background:#d9a475}
+.don {background:#75acd9}
+.gotsu {background:#d97575}
+.spark {background:#d9d975}
+.pallet {background:#a7e391;}
 .chip-row {
 display: flex;
 flex-wrap: nowrap;
