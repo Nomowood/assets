@@ -1197,167 +1197,113 @@ Share シェアボタン
 
 /* habitat
 ---------------------- */
-.img-habitat{
-width:100%;
-height:auto;
-max-width:600px;
-max-height:450px;
-border-radius:10px;
-display:block;
-margin:auto;
+.habitat-card {
+  padding: 16px 14px;
+  margin: 12px 0;
+  border-radius: 18px;
+  background: #fffaf5;
+  box-shadow: 0 3px 12px rgba(225, 139, 67, 0.08);
 }
-.habitat-no{
-  display:inline-block;
-  font-size:12px;
-  letter-spacing:.08em;
-  margin:6px 0 10px 0;
+.habitat-card-label {
+  padding: 5px 12px;
+  margin-bottom: 12px;
+  font-size: 13.5px;
+  border-radius: 999px;
 }
-.habitat-title{
-  margin:0;
-  font-size:clamp(32px,8vw,52px);
-  line-height:1.2;
-  font-weight:bold;
+.post-body h2.habitat-card-label::before {background:none;}
+.mat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
 }
-.habitat-card{
-padding:26px;
-margin:20px 0;
+.mat-card {
+  padding: 10px;
+  gap: 8px;
+  text-decoration:none; color:var(--text-main);
 }
-.habitat-card-label{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:5px 10px;
-  margin-bottom:18px;
-  font-size:14px;
-  font-weight:bold;
-  letter-spacing:.04em;
-  border-radius:7px;
-  background:linear-gradient(to right, #ffe3c4, transparent);
+.mat-count {
+  font-size: 19px;
 }
-.chip-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
+.mat-name {
+  font-size: 12px;
 }
-.chip{
-  flex:1;
-  min-width:30px;
-  max-width:110px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:8px;
-  padding:10px;
+.poke-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(158px, 1fr));
+  gap: 12px;
 }
-.chip img{
-  width:34px;
-  height:34px;
-  object-fit:contain;
+.poke-card {
+  padding: 14px 10px 12px;
+  border-radius: 22px;
+  background: linear-gradient(to bottom, #fffaf5, #fff5ec);
+  text-decoration:none; color:var(--text-main);
 }
-.chip span{
-  font-size:12px;
-  font-weight:bold;
+.poke-card img {
+ width: 115px;
+ height: 115px;
+ margin: 6px 0 10px;
 }
-.area-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
+.poke-num {
+  font-size: 10px;
+  letter-spacing: .06em;
 }
-.area-tag{
-  padding: 9px 15px;
-  border-radius:999px;
-  font-size:12px;
-  font-weight:bold;
+.poke-name {
+  font-size: 13px;
+  margin: 3px 0 8px;
+  line-height: 1.1;
 }
-.pasa {background:#d9a475}
-.don {background:#75acd9}
-.gotsu {background:#d97575}
-.spark {background:#d9d975}
-.pallet {background:#a7e391;}
-.mat-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
+.chip-row {
+display: flex;
+flex-wrap: nowrap;
+overflow-x: auto;
+gap: 6px;
+padding: 4px 0 8px;
+scrollbar-width: none;
+-webkit-overflow-scrolling: touch;
 }
-.mat-card{
-  flex:1;
-  min-width:120px;
-  max-width:180px;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:14px;
-  border-radius:24px;
-  background:#fff8f2;
-  text-decoration:none; color:inherit;
+.chip-row::-webkit-scrollbar {
+  display: none;
 }
-.mat-card img{
-width:35px;
-height:35px;
-object-fit:contain;
+.chip {
+flex: 1 0 auto;
+padding: 7px 0;
+border-radius: 12px;
+gap: 0;
+text-align: center;
 }
-.mat-count{
-  font-size:22px;
-  font-weight:900;
-  color:#e18b43;
-  line-height:1;
+.chip img {
+  width: 30px;
+  height: 30px;
 }
-.mat-name{
-  margin-top:4px;
-  font-size:13px;
-  font-weight:bold;
+.chip span {
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: .02em;
 }
-.poke-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:14px;
+/* 極小画面対策 */
+@media (max-width: 380px) {
+  .poke-row {
+    grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+  }
+  .chip {
+    flex: 0 0 50px;
+    padding: 6px 3px;
+  }
+  .chip img {
+    width: 26px;
+    height: 26px;
+  }
+  .poke-card img {
+    width: 108px;height: 108px;
 }
-.poke-card{
-  flex:1;
-  min-width:120px;
-  max-width:180px;
-  position:relative;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:8px;
-  padding:22px 14px 18px;
-  border-radius:28px;
-  background:linear-gradient(to bottom,#fffaf5,#fff5ec);
-text-decoration:none!important; color:inherit;
 }
-.poke-card img{
-  position:relative;
-  z-index:2;
-  width:150px;
-  height:150px;
-  object-fit:contain;
+@media (min-width: 560px) {
+  .poke-row {
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  }
 }
-.poke-num{
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:.08em;
-  color:#cf8d57;
-}
-.poke-name{
-  font-size:14px;
-  font-weight:900;
-  text-align:center;
-}
-.poke-types{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:5px;
-}
-.type-badge{
-  padding:5px 10px;
-  border-radius:999px;
-  font-size:10px;
-  color:#fff;
-  font-weight:bold;
-  background:#3d898f;
-}
+
+
 
 /* Dex
 ---------------------- */
