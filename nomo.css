@@ -1242,6 +1242,7 @@ Share シェアボタン
   font-weight: bold;
 }
 .mat-name {
+  font-weight:bold;
   font-size: .85em;
   line-height: 1.3;
 }
