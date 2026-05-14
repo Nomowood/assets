@@ -893,7 +893,7 @@ border:solid 2px var(--text-main);
 background:#e3d6bf;
 }
 .blog-card p {margin:0;font-size:0.8em;padding:0;}
-.blog-card p.berry {margin-left:-2px;margin-right:2px;font-size:0.7em;}
+.blog-card p.berry {margin-left:-0.5em;margin-right:-0.5em;font-size:0.7em;}
 .blog-card span {font-size:1em;font-weight:bold;}
 .blog-card img {margin:0;padding:0;}
 .blog-icon {
