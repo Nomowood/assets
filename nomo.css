@@ -882,6 +882,7 @@ a.blog-card {
 display: block;
 text-decoration: none!important;
 color: inherit;
+min-width:65px;
 flex:1;
 border-radius: 10px;
 line-height:1.2;
