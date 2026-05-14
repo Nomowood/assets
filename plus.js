@@ -241,9 +241,15 @@ const typeCount = Number(d.type) || 0;
 for (let i = 1; i <= typeCount; i++) {
     const typeName = d[`type${i}`];
     if (!typeName) continue;
-    const typeInfo = typeDATA[typeName];
+const typeInfo = typeDATA[typeName];
+const url = typeInfo?.slug
+  ? `https://blogger.googleusercontent.com/2026/04/${typeInfo.slug}`
+  : "";
+const label = url
+  ? `<a href="${url}" style="color:inherit">${typeName}</a>`
+  : typeName;
     typeHTML += `
-    <li><img src="${typeInfo?.icon || ""}" alt="${typeName}">${typeName}</li>`;
+    <li><img src="${typeInfo?.icon || ""}" alt="${typeName}">${label}</li>`;
 }
 
 // 2-3-7. カテゴリー
@@ -277,7 +283,7 @@ const shouldAddText = d.addplace === "true";
 <ul class="material-list">${typeHTML}</ul>
 ${(d.catbody || shouldAddText) ? `<h2>${name}の使い道</h2><p>${d.catbody || ""}${shouldAddText ? `ポケモンのすみかに設置すると${catSpanHTML}のアイテムを好きなポケモンが喜びます。` : ""}</p>
 ` : ""}    
-${catCount > 0 ? `<h2>${name}の分類</h2><ul class="material-list">${catHTML}</ul>` : ""}
+${catCount > 0 ? `<h2>${name}の属性</h2><ul class="material-list">${catHTML}</ul>` : ""}
 </div>`);
 });
 
