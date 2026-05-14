@@ -126,7 +126,7 @@ for (let i = 1; i <= freeCount; i++) {
 // 2-3-3. 図鑑ボックスの描画
 el.innerHTML = `
 <div class="fukidashi inview_re">
-<div class="faceicon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcgi537e8devoopI5LkSdV0veR08UoJuoA3NmCOcXNRohXDb05kCHKktudFV5uUuaqDMWYJTAYcork2_kbOscMna2hlt50VFcpHALNmCWvkTa60VeGfHhq6_9i65Oq_wh0P1CPZ5ibxLGuYXgYKXndBzvmC3hzHpWniqXY0AxW_yDc0jSsozBWagEg0Kbw/s1600/%E7%84%A1%E9%A1%8C829_20260410232336.png" alt="メタモン"></div>
+<div class="faceicon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhEyb-WqnorCwpUfWEjfr-JUeGvdeImD-6NtWQNRzyvgHtl3gu1V4esxI9X73VDoKyXMBGWbUhCQ54JpWeI7DefsE6rgDo-RYt2yRFenkxmYozIdt6JtqJ0qLeGJdbqgHY4eIb1IyVbJovRIeuyj5_ODldaSenf9Wc3Hh4w_bQVlK8BCcs/s1600/IMG_4114.jpeg" alt="メタモン"></div>
 <div class="chatting"><div class="says"><p>ぽこあポケモンに登場する『<span class="st">${name}</span>』の入手方法・レシピ・使い道をまとめたよ！</p></div></div>
 </div><br>
 <h2>${name}とは</h2>
