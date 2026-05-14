@@ -892,7 +892,7 @@ padding:0 10px;
 border:solid 2px var(--text-main);
 background:#e3d6bf;
 }
-.blog-card p {margin:0;font-size:0.9em;}
+.blog-card p {margin:0;font-size:0.7em;padding:0;}
 .blog-card span {font-size:1em;font-weight:bold;}
 .blog-card img {margin:0;padding:0;}
 .blog-icon {
