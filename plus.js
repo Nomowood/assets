@@ -261,7 +261,7 @@ const label = url
         if (!cat || typeof cat !== "string") continue;
         const slug = categorySlugMap[cat] || cat;
         catSpanHTML += `<a href="/p/${slug}-items-pokopia.html" style="padding:0 0.5rem; text-decoration:none; color:var(--text-st);">${cat}</a>`;
-        catHTML += `<li><a href="/p/${slug}-items-pokopia.html">${cat}</a></li>`;
+        catHTML += `<li><a href="/p/${slug}-items-pokopia.html" style="color:inherit">${cat}</a></li>`;
 }
 const shouldAddText = d.addplace === "true";
 
