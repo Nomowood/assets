@@ -884,14 +884,15 @@ text-decoration: none!important;
 color: inherit;
 min-width:65px;
 flex:1;
-border-radius: 10px;
+border-radius: 7px;
 line-height:1.2;
 text-align: center;
 transition: all 0.3s;
 margin: 0 auto;
 padding:0 10px;
-border:solid 2px var(--text-main);
+border:solid 1px var(--text-main);
 background:#e3d6bf;
+box-shadow:0 3px 0 rgba(42,31,20,0.5);
 }
 .blog-card p {margin:0;font-size:0.8em;padding:0;}
 .blog-card p.berry {margin-left:-0.5em;margin-right:-0.5em;font-size:0.7em;}
