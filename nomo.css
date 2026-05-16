@@ -361,8 +361,10 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
   margin: auto;
   padding: 20px;
 }
+.index-main a {text-decoration:none;color:inherit;}
 .index-announce {position:relative;background:#fff;color:#333;font-size:1em;padding:0 1.5rem;
-text-decoration:none;margin:0.3rem 0;}
+margin:0.3rem 0;}
+
 .index-announce::before {
   content: "";
   position: absolute;
