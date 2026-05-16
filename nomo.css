@@ -385,6 +385,7 @@ repeating-linear-gradient(#97B7C4, 2px, #4f5f66 2px 4px);color: white;}
   padding: 0 0 0 0.4rem;
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border:3px solid #444;
   border-top:16px solid var(--top);
 }
 .index-card:hover {
