@@ -364,9 +364,10 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
 .index-main a {text-decoration:none;color:inherit;}
 .index-announce {color:#444;font-size:1em;font-weight:bold;padding:0;
 margin:var(--margin);display:inline-block;border-bottom:solid 2px #555;
-}
-.in-left {--margin:0.3rem 0;}
-.in-right {--margin:0.3rem 0 1.5rem auto;}
+border:2px solid #555;border-bottom:solid 5px #555;border-right:solid 5px #555;
+border-radius:0 15px 15px 0;background:#cfcfcf;}
+.in-left {--margin:0.3rem 0 0.3rem -20px;}
+.in-right {--margin:0.3rem 0 1.5rem -20px;}
 .index-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
