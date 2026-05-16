@@ -119,8 +119,8 @@ margin:0;
 padding:0;
 width:100%;
 max-width:100%;
-background-image: linear-gradient(0deg, transparent calc(100% - 1px), #ccc calc(100% - 1px)),
-linear-gradient(90deg, transparent calc(100% - 1px), #ccc calc(100% - 1px));
+background-image: linear-gradient(0deg, transparent calc(100% - 1px), #fcfcfc calc(100% - 1px)),
+linear-gradient(90deg, transparent calc(100% - 1px), #fcfcfc calc(100% - 1px));
 background-size: 30px 30px;
 background-repeat: repeat;
 background-position: center center;
@@ -368,12 +368,11 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
 }
 .index-main a {text-decoration:none;color:inherit;}
 .index-announce {color:#fff;font-size:1em;font-weight:bold;padding:0 1.5rem;
-margin:0.3rem 0;border:5px solid #272b30; background-image:
-        linear-gradient(45deg, transparent 15px, #333 16px calc(100% - 16px), transparent calc(100% - 15px)),
-        repeating-linear-gradient(#97B7C4, 2px, #4f5f66 2px 4px);
-    color: white;}
-.ye {--corner:#ffd32a; --bottom:#ffb12a;}
-.re {--corner:#e8d9b0; --bottom:#bfa96d; margin-bottom:1rem;}
+margin:0.3rem 0;border-radius:var(--radius);
+border:5px solid #272b30; background-image:
+linear-gradient(45deg, transparent 15px, #272b30 16px calc(100% - 16px), transparent calc(100% - 15px)),
+repeating-linear-gradient(#97B7C4, 2px, #4f5f66 2px 4px);color: white;}
+.ye {--radius:0;} .re {--radius:50%;}
 .index-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -381,14 +380,14 @@ margin:0.3rem 0;border:5px solid #272b30; background-image:
   margin-bottom: 2rem;
 }
 .index-grid a {text-decoration:none;}
-.index-card {
+.index-card {position:absolutely;
   background: #fff;
   padding: 0 0 0 0.4rem;
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-top:16px solid var(--top);
 }
-.index-card::before{width:100%;height:100%;border:solid 3px #333;}
+.index-card::before{position:relative;content:'';width:100%;height:100%;border:solid 3px #333;}
 .index-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.12);
