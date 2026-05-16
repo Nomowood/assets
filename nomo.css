@@ -362,21 +362,19 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
   padding: 20px;
 }
 .index-main a {text-decoration:none;color:inherit;}
-.index-announce {position:relative;width:100%;color:#fff;font-size:1em;padding:0 1.5rem;
+.index-announce {position:relative;color:#5a4631;font-size:1em;padding:0 1.5rem;
 margin:0.3rem 0;border:solid 1px var(--corner);
 background:radial-gradient(circle at top left,rgba(255,255,255,.35),transparent 45%),
 radial-gradient(circle at bottom right,rgba(120,85,40,.12),transparent 50%),
 linear-gradient(180deg, #f3e2b8 0%, #ead6a8 100%);
 }
 .index-announce::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-top: 18px solid var(--corner);
-  border-right: 18px solid transparent;
+content:"";
+  position:absolute;
+  inset:0;
+  opacity:.25;
+  background:repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0px,rgba(255,255,255,.03) 1px,transparent 2px,transparent 4px);
+  pointer-events:none;
 }
 .index-grid {
   display: grid;
@@ -386,13 +384,11 @@ linear-gradient(180deg, #f3e2b8 0%, #ead6a8 100%);
 }
 .index-announce::after {
   content: "";
+  background:var(--corner);
   position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 0;
-  height: 0;
-  border-bottom: 18px solid var(--corner);
-  border-left: 18px solid transparent;
+  left: 0
+  width: 12px;
+  height: 100%;
 }
 .ye {--corner:#ffd32a;}
 .re {--corner:#ff4d4f;}
