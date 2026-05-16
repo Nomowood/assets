@@ -386,6 +386,7 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
   margin-bottom: 0.6rem;
 object-fit: contain;
 }
+.index-card-inner {display:flex; align-items:center; gap:0.5rem;}
 .index-card h3 {
   font-size: 1.1rem;
   margin: 0 0 0.4rem;
@@ -395,6 +396,7 @@ object-fit: contain;
   font-size: 0.85rem;
   color: #666;
 }
+.index-text {margin:0;}
 .top-card a {
   display: grid;
   grid-template-columns: 1fr;
