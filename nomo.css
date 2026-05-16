@@ -410,7 +410,7 @@ object-fit: contain;
   transition: transform 0.3s ease;
 }
 .top-card__body {
-  padding: 1rem;
+  padding: 0.5rem 1rem;
 }
 .top-card__cat {
   display: inline-block;
@@ -420,12 +420,12 @@ object-fit: contain;
   background: #eae8ff;
   border-radius: 6px;
   padding: 0.2em 0.6em;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.2rem;
 }
 .top-card__title {
   font-size: 1.1rem;
   font-weight: 700;
-  margin: 0.2rem 0;
+  margin:0;
 }
 /* Headings
 ----------------------------------------------- */
