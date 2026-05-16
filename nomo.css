@@ -363,14 +363,14 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
 }
 .index-announce {background:#fff;color:#333;font-size:1em;padding:0 1.5rem;
 text-decoration:none;}
-.ye::before {
+.index-announce::before {
   content: "";
   position: absolute;
   top: -14px;
   left: -14px;
   width: 0;
   height: 0;
-  border-top: 80px solid #ffd32a;
+  border-top: 80px solid var(--corner);
   border-right: 80px solid transparent;
   border-radius: 10px;}
 .index-grid {
@@ -379,17 +379,19 @@ text-decoration:none;}
   gap: 0.6rem;
   margin-bottom: 2rem;
 }
-.ye::after {
+.index-announce::after {
   content: "";
   position: absolute;
   right: -14px;
   bottom: -14px;
   width: 0;
   height: 0;
-  border-bottom: 80px solid #ffd32a;
+  border-bottom: 80px solid var(--corner);
   border-left: 80px solid transparent;
   border-radius: 10px;
 }
+.ye {--corner:#ffd32a;}
+.re {--corner:#ff4d4f;}
 .index-grid a {text-decoration:none;}
 .index-card {
   background: #fff;
