@@ -399,9 +399,8 @@ object-fit: contain;
   line-height:1.1; letter-spacing:0.02em;
 }
 .in-line{border-top:16px solid var(--inbg);border-bottom:2px solid #444;}
-.po {border-top:16px solid #9dedb4;} .it{border-top:16px solid #9ee7ff;}
-.ha{border-top:16px solid #ebb88f;} .rec{border-top:16px solid #f5a9a2;}
-.drm{border-top:16px solid #9492fc;border-bottom:2px solid #444;}
+.po {--inbg: #9dedb4;} .it{--inbg: #9ee7ff;}.ha{--inbg: #ebb88f;} 
+.rec{--inbg: #f5a9a2;}.drm{--inbg: #9492fc;}
 .top-card a {
   display: grid;
   grid-template-columns: 1fr;
