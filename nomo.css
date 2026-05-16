@@ -364,13 +364,13 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
 .index-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.8rem;
+  gap: 0.6rem;
   margin-bottom: 2rem;
 }
 .index-grid a {text-decoration:none;}
 .index-card {
   background: #fff;
-  border-radius: 20px;
+  border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   padding: 1rem 0.4rem;
   text-align: left;
