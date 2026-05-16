@@ -119,11 +119,6 @@ margin:0;
 padding:0;
 width:100%;
 max-width:100%;
-background-image: linear-gradient(0deg, transparent calc(100% - 1px), #fcfcfc calc(100% - 1px)),
-linear-gradient(90deg, transparent calc(100% - 1px), #fcfcfc calc(100% - 1px));
-background-size: 30px 30px;
-background-repeat: repeat;
-background-position: center center;
 background-color:#f5ce4e;
 }
 html, body {
@@ -373,7 +368,6 @@ border:5px solid #272b30; background-image:
 linear-gradient(45deg, transparent 15px, #272b30 16px calc(100% - 16px), transparent calc(100% - 15px)),
 repeating-linear-gradient(#97B7C4, 2px, #4f5f66 2px 4px);color: white;}
 .ye {--radius:0;} .re {--radius:50px;}
-.
 .index-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -448,7 +442,6 @@ div.widget h2.title {
 .article-wrap {
 background: #fff!important;
 padding: 45px;
-border-radius: 12px;
 max-width: 860px; 
 margin: 5rem 1rem 3rem 1rem;
 }
