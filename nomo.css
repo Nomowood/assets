@@ -400,7 +400,7 @@ object-fit: contain;
 }
 .po {border-top:16px solid #9dedb4;} .it{border-top:16px solid #9ee7ff;}
 .ha{border-top:16px solid #ebb88f;} .rec{border-top:16px solid #f5a9a2;}
-.drm{border-top:16px solid #9492fc;}
+.drm{background:16px solid #9492fc;border-bottom:2px solid #444;}
 .top-card a {
   display: grid;
   grid-template-columns: 1fr;
