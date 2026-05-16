@@ -367,7 +367,7 @@ margin:0.3rem 0;background:var(--corner);
 border-bottom:3px solid var(--bottom);
 }
 .ye {--corner:#ffd32a; --bottom:#ffb12a;}
-.re {--corner:#e8d9b0; --bottom:#bf393c; margin-bottom:1rem;}
+.re {--corner:#e8d9b0; --bottom:#bfa96d; margin-bottom:1rem;}
 .index-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -400,11 +400,6 @@ object-fit: contain;
   color: #333;
   line-height:1.1; letter-spacing:0.02em;
 }
-.index-card p {
-  font-size: 0.85rem; margin:0; padding:0;
-  color: #666;
-}
-.index-text {margin:0;padding:0;gap:0;}
 .po {--top:#9dedb4;} .it{--top:#bce7f5;} .ha{--top:#e0c4ad;} .rec{--top:#f5a9a2;}
 .top-card a {
   display: grid;
