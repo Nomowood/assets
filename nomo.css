@@ -362,11 +362,11 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
   padding: 20px;
 }
 .index-main a {text-decoration:none;color:inherit;}
-.index-announce {color:#444;font-size:1em;font-weight:bold;padding:0;
-margin:var(--margin);display:inline-block;border-bottom:solid 2px #444;
-border-left:20px solid #555;}
+.index-announce {color:#454545;font-size:1em;font-weight:bold;padding:0;
+margin:var(--margin);display:inline-block;border-bottom:solid 2px #555;
+border-left:12px solid #555;background:#ccc;}
 .in-left {--margin:0.3rem 0;}
-.in-right {--margin:0.3rem 0 1.5rem 0; right:0;}
+.in-right {--margin:0.3rem 0 1.5rem auto;}
 .index-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
