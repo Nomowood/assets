@@ -365,7 +365,7 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
 .index-announce {color:#272b30;font-size:1em;font-weight:bold;padding:0 1.5rem;
 margin:0.3rem 0; background-image:
 linear-gradient(45deg, transparent 15px, #fff 16px calc(100% - 16px), transparent calc(100% - 15px)),
-repeating-linear-gradient(#272b30, 2px, #f5ce4e 2px 4px);}
+repeating-linear-gradient(#f7a3e7, 2px, #a3f2f7 2px 4px);}
 .bottom {margin-bottom:1.5rem;}
 .index-grid {
   display: grid;
