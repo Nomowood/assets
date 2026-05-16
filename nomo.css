@@ -362,8 +362,12 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
   padding: 20px;
 }
 .index-main a {text-decoration:none;color:inherit;}
-.index-announce {position:relative;background:#323842;color:#fff;font-size:1em;padding:0 1.5rem;
-margin:0.3rem 0;border:solid 1px var(--corner);}
+.index-announce {position:relative;width:100%;color:#fff;font-size:1em;padding:0 1.5rem;
+margin:0.3rem 0;border:solid 1px var(--corner);
+background:radial-gradient(circle at top left,rgba(255,255,255,.35),transparent 45%),
+radial-gradient(circle at bottom right,rgba(120,85,40,.12),transparent 50%),
+linear-gradient(180deg, #f3e2b8 0%, #ead6a8 100%);
+}
 .index-announce::before {
   content: "";
   position: absolute;
