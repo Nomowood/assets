@@ -381,7 +381,7 @@ repeating-linear-gradient(#97B7C4, 2px, #4f5f66 2px 4px);color: white;}
   margin-bottom: 2rem;
 }
 .index-grid a {text-decoration:none;}
-.index-card { position:relative;
+.index-card {
   background: #fff;
   padding: 0 0 0 0.4rem;
   text-align: left;
