@@ -359,6 +359,10 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
 
 /* トップ記事一覧
 ----------------------------------------------- */
+.index-main {
+margin:auto;
+padding:10px;
+}
 .index-grid {
       position: relative;
       z-index: 1;
