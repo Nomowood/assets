@@ -205,9 +205,7 @@ paint-order: stroke;
 padding-right:3px;
 }
 .logo a {text-decoration:none;}
-.nav-toggle {
-display: none;
-}
+.nav-toggle {display: none;}
 .hamburger {
 display: none;
 margin-top:8px;
@@ -1644,11 +1642,11 @@ body {font-size:1em;letter-spacing:0.05em;line-height:1.9;}
 .default-box {max-width: 94%;padding: 1.4em 1.3em 1.2em;}
 .nav-container {width:100%;max-width:767px;}
 .hero {padding: 80px 16px 60px;}
-.article-wrap {padding:12px 5px;}
+.article-wrap {padding:12px 5px;margin:5.2rem 0 0 0;}
 .cta-buttons {flex-direction: column;align-items: center;}
 .btn {width: 100%;max-width: 280px;text-align: center;}
 .hamburger {display: flex;}
-.nav-links {position: fixed;font-size:1em;top: 0;right: -100%;width: 280px;height: auto;background: rgba(102, 72, 38,0.9);
+.nav-links {position: fixed;font-size:1em;top: 0;right: -100%;width: 280px;height: auto;background: #272b30;
 flex-direction: column;align-items: flex-start;padding: 100px 30px 30px;gap: 24px;transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);z-index: 1000;overflow-y: auto;}
 .nav-links a{color:#ffffff;}
 #nav-toggle:checked ~ .nav-links {right: 0;}
