@@ -362,13 +362,13 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
   padding: 20px;
 }
 .index-main a {text-decoration:none;color:inherit;}
-.index-announce {position:relative;background:#fff;color:#333;font-size:1em;padding:0 1.5rem;
+.index-announce {position:relative;background:#323842;color:#333;font-size:1em;padding:0 1.5rem;
 margin:0.3rem 0;border:solid 1px var(--corner);}
 .index-announce::before {
   content: "";
   position: absolute;
-  top: -2px;
-  left: -2px;
+  top: 0;
+  left: 0;
   width: 0;
   height: 0;
   border-top: 18px solid var(--corner);
@@ -383,15 +383,15 @@ margin:0.3rem 0;border:solid 1px var(--corner);}
 .index-announce::after {
   content: "";
   position: absolute;
-  right: -2px;
-  bottom: -2px;
+  right: 0;
+  bottom: 0;
   width: 0;
   height: 0;
   border-bottom: 18px solid var(--corner);
   border-left: 18px solid transparent;
 }
-.ye {--corner:#ffd32a; background:#f5f0e9;}
-.re {--corner:#ff4d4f; background:#dedcd9;}
+.ye {--corner:#ffd32a;}
+.re {--corner:#ff4d4f;}
 .index-grid a {text-decoration:none;}
 .index-card {
   background: #fff;
