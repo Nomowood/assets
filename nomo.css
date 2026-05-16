@@ -363,7 +363,7 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
 }
 .index-main a {text-decoration:none;color:inherit;}
 .index-announce {position:relative;color:#ccc;font-size:1em;padding:0 1.5rem;
-margin:0.3rem 0;background:#323842;border-left:solid 12px var(--corner);
+margin:0.3rem 0;background:var(--corner);border-left:solid 12px #444857;
 border-bottom:3px solid var(--bottom);
 }
 .ye {--corner:#ffd32a; --bottom:#ffb12a;}
