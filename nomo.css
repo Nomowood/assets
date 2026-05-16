@@ -361,12 +361,34 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
   margin: auto;
   padding: 20px;
 }
-.index-announce {background:#fff;color:#333;font-size:1em;padding:1rem;}
+.index-announce {background:#fff;color:#333;font-size:1em;padding:0 1.5rem;
+text-decoration:none;}
+.ye::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: -14px;
+  width: 0;
+  height: 0;
+  border-top: 80px solid #ffd32a;
+  border-right: 80px solid transparent;
+  border-radius: 10px;}
 .index-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.6rem;
   margin-bottom: 2rem;
+}
+.ye::after {
+  content: "";
+  position: absolute;
+  right: -14px;
+  bottom: -14px;
+  width: 0;
+  height: 0;
+  border-bottom: 80px solid #ffd32a;
+  border-left: 80px solid transparent;
+  border-radius: 10px;
 }
 .index-grid a {text-decoration:none;}
 .index-card {
