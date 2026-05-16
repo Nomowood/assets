@@ -81,7 +81,7 @@ p.other::after {margin-left: 8px;}
   gap:8px;
   font-size:13px;
   line-height:1.6;
-  margin-bottom:18px;
+  margin-bottom:8px;
   padding:10px 14px;
   background:#f7f7f7;
   border-radius:12px;
@@ -91,16 +91,11 @@ box-shadow:
 }
 .breadcrumb a{
  color:#555;
- text-decoration:none;
+ text-decoration:none!important;
  transition:.2s;
 }
 .breadcrumb span{
   color:#999;
-}
-.breadcrumb a:not(:last-child)::after{
-  content:"›";
-  margin-left:8px;
-  color:#bbb;
 }
 .post-meta{
   display:flex;
@@ -111,22 +106,12 @@ box-shadow:
   margin-bottom:20px;
 }
 .post-meta time{
-  display:flex;
-  align-items:center;
-  gap:4px;
+display:flex;
+align-items:center;
+gap:4px;
 }
-.post-date{
-  display:block;
-  font-size:13px;
-  color:#888;
-  margin-bottom:16px;
-}
-.post-updated{
-  display:block;
-  font-size:13px;
-  color:#888;
-  margin-top:4px;
-}
+.post-date{display:block;font-size:13px;color:#888;left:1rem;}
+.post-updated{display:block;font-size:13px;color:#888;margin-top:2px;left:1rem;}
 
 /* Content
 ----------------------------------------------- */
