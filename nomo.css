@@ -367,7 +367,7 @@ margin:0.3rem 0;background:#323842;border-left:solid 12px var(--corner);
 border-bottom:3px solid var(--bottom);
 }
 .ye {--corner:#ffd32a; --bottom:#ffb12a;}
-.re {--corner:#ff4d4f; --bottom:#bf393c;}
+.re {--corner:#ff4d4f; --bottom:#bf393c; margin-bottom:1rem;}
 .index-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
