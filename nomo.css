@@ -362,7 +362,7 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
   padding: 20px;
 }
 .index-announce {position:relative;background:#fff;color:#333;font-size:1em;padding:0 1.5rem;
-text-decoration:none;}
+text-decoration:none;margin:0.3rem 0;}
 .index-announce::before {
   content: "";
   position: absolute;
@@ -370,8 +370,8 @@ text-decoration:none;}
   left: -14px;
   width: 0;
   height: 0;
-  border-top: 80px solid var(--corner);
-  border-right: 80px solid transparent;
+  border-top: 10px solid var(--corner);
+  border-right: 10px solid transparent;
   border-radius: 10px;}
 .index-grid {
   display: grid;
