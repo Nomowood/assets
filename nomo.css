@@ -362,8 +362,8 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
   padding: 20px;
 }
 .index-main a {text-decoration:none;color:inherit;}
-.index-announce {position:relative;color:#ccc;font-size:1em;padding:0 1.5rem;
-margin:0.3rem 0;background:var(--corner);border-left:solid 12px #444857;
+.index-announce {position:relative;color:#333;font-size:1em;padding:0 1.5rem;
+margin:0.3rem 0;background:var(--corner);
 border-bottom:3px solid var(--bottom);
 }
 .ye {--corner:#ffd32a; --bottom:#ffb12a;}
