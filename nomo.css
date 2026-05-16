@@ -362,9 +362,9 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
   padding: 20px;
 }
 .index-main a {text-decoration:none;color:inherit;}
-.index-announce {color:#454545;font-size:1em;font-weight:bold;padding:0;
+.index-announce {color:#444;font-size:1em;font-weight:bold;padding:0;
 margin:var(--margin);display:inline-block;border-bottom:solid 2px #555;
-border-left:12px solid #555;background:#ccc;}
+}
 .in-left {--margin:0.3rem 0;}
 .in-right {--margin:0.3rem 0 1.5rem auto;}
 .index-grid {
@@ -398,7 +398,7 @@ object-fit: contain;
   line-height:1.1; letter-spacing:0.02em;
 }
 .po {--top:#9dedb4;} .it{--top:#9ee7ff;} .ha{--top:#ebb88f;} .rec{--top:#f5a9a2;}
-.drm{--top:#726ff7;}
+.drm{--top:#9492fc;}
 .top-card a {
   display: grid;
   grid-template-columns: 1fr;
