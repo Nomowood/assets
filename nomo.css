@@ -397,7 +397,8 @@ object-fit: contain;
   color: #333;
   line-height:1.1; letter-spacing:0.02em;
 }
-.po {--top:#9dedb4;} .it{--top:#bce7f5;} .ha{--top:#e0c4ad;} .rec{--top:#f5a9a2;}
+.po {--top:#9dedb4;} .it{--top:#9ee7ff;} .ha{--top:#ebb88f;} .rec{--top:#f5a9a2;}
+.drm{--top:#726ff7;}
 .top-card a {
   display: grid;
   grid-template-columns: 1fr;
