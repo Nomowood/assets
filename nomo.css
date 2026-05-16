@@ -379,10 +379,12 @@ border-bottom:3px solid var(--bottom);
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  padding: 0.7rem 0.4rem;
+  padding: 0 0 0 0.4rem;
+  border-top:10px solid var(--top);
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.po {--top:##54b370;} .it{--top:#549cb3;} .ha{--top:#b8977b;} .re{--top:#cf6a61;}
 .index-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.12);
@@ -390,7 +392,6 @@ border-bottom:3px solid var(--bottom);
 .index-icon {
   width: 48px;
   height: 48px;
-  margin-bottom: 0.6rem;
 object-fit: contain;
 }
 .index-card-inner {display:flex; align-items:center; gap:0.5rem;}
