@@ -368,6 +368,7 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
   gap: 1.2rem;
   margin-bottom: 2rem;
 }
+.index-grid a {text-decoration:none;}
 .index-card {
   background: #fff;
   border-radius: 20px;
