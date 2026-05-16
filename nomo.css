@@ -405,7 +405,7 @@ object-fit: contain;
   color: #666;
 }
 .index-text {margin:0;padding:0;gap:0;}
-.po {--top:#54b370;} .it{--top:#549cb3;} .ha{--top:#b8977b;} .rec{--top:#cf6a61;}
+.po {--top:#9dedb4;} .it{--top:#bce7f5;} .ha{--top:#b8977b;} .rec{--top:#cf6a61;}
 .top-card a {
   display: grid;
   grid-template-columns: 1fr;
