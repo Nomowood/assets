@@ -376,12 +376,6 @@ content:"";
   background:repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0px,rgba(255,255,255,.03) 1px,transparent 2px,transparent 4px);
   pointer-events:none;
 }
-.index-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.6rem;
-  margin-bottom: 2rem;
-}
 .index-announce::after {
   content: "";
   background:var(--corner);
@@ -392,6 +386,12 @@ content:"";
 }
 .ye {--corner:#ffd32a;}
 .re {--corner:#ff4d4f;}
+.index-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
 .index-grid a {text-decoration:none;}
 .index-card {
   background: #fff;
