@@ -382,7 +382,7 @@ border-bottom:3px solid var(--bottom);
   padding: 0 0 0 0.4rem;
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-top:10px solid var(--top);
+  border-top:16px solid var(--top);
 }
 .index-card:hover {
   transform: translateY(-4px);
@@ -405,7 +405,7 @@ object-fit: contain;
   color: #666;
 }
 .index-text {margin:0;padding:0;gap:0;}
-.po {--top:#9dedb4;} .it{--top:#bce7f5;} .ha{--top:#b8977b;} .rec{--top:#cf6a61;}
+.po {--top:#9dedb4;} .it{--top:#bce7f5;} .ha{--top:#e0c4ad;} .rec{--top:#f5a9a2;}
 .top-card a {
   display: grid;
   grid-template-columns: 1fr;
