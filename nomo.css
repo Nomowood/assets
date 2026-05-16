@@ -372,7 +372,7 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  padding: 1rem 0.4rem;
+  padding: 0.7rem 0.4rem;
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -389,7 +389,7 @@ object-fit: contain;
 .index-card-inner {display:flex; align-items:center; gap:0.5rem;}
 .index-card h3 {
   font-size: 1rem;
-  margin: 0 0 0.4rem;
+  margin: 0;
   color: #333;
   line-height:1.1; letter-spacing:0.02em;
 }
@@ -397,12 +397,12 @@ object-fit: contain;
   font-size: 0.85rem;
   color: #666;
 }
-.index-text {margin:0;}
+.index-text {margin:0;padding:0;gap:0;}
 .top-card a {
   display: grid;
   grid-template-columns: 1fr;
   background: #fff;
-  border-radius: 16px;
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   text-decoration: none;
