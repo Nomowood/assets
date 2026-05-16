@@ -119,9 +119,9 @@ margin:0;
 padding:0;
 width:100%;
 max-width:100%;
-background-image: linear-gradient(0deg, transparent calc(100% - 1px), #fff calc(100% - 1px)),
-linear-gradient(90deg, transparent calc(100% - 1px), #fff calc(100% - 1px));
-background-size: 16px 16px;
+background-image: linear-gradient(0deg, transparent calc(100% - 1px), #ccc calc(100% - 1px)),
+linear-gradient(90deg, transparent calc(100% - 1px), #ccc calc(100% - 1px));
+background-size: 30px 30px;
 background-repeat: repeat;
 background-position: center center;
 background-color:#f5ce4e;
@@ -367,8 +367,8 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
   padding: 20px;
 }
 .index-main a {text-decoration:none;color:inherit;}
-.index-announce {position:relative;color:#333;font-size:1em;padding:0 1.5rem;
-margin:0.3rem 0;background:#fff;
+.index-announce {position:relative;color:#fff;font-size:1em;padding:0 1.5rem;
+margin:0.3rem 0;background:#333;
 border:2px solid #444;
 }
 .ye {--corner:#ffd32a; --bottom:#ffb12a;}
@@ -387,6 +387,7 @@ border:2px solid #444;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-top:16px solid var(--top);
 }
+.index-card::before{width:100%;height:100%;border:solid 3px #333;}
 .index-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.12);
