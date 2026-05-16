@@ -366,8 +366,8 @@ h3 {font-size:1.2em; font-weight:bold;margin:10px 0;}
 margin:var(--margin);border-bottom:solid 2px #444;
 border:2px solid #444;border-bottom:solid 5px #444; border-right:solid 5px #444;
 border-radius:0 4px 15px 0;background:#fff;}
-.in-left {--margin:0.3rem 0 0.3rem -20px;}
-.in-right {--margin:0.3rem 0 1.5rem -20px;}
+.in-left {--margin:0.3rem 0 0.3rem -20px;max-width:70%;}
+.in-right {--margin:0.3rem 0 1.5rem -20px;max-width:85%;}
 .index-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
