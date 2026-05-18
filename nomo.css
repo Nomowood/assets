@@ -190,19 +190,10 @@ height: 76px;
 .logo {
 font-size: 40px;
 font-weight: bold;
-font-family: "Spicy Rice", serif;
 letter-spacing:0.04em;
-color:#ebb359!important;
--webkit-text-stroke: 6px #ffffff;
-paint-order: stroke fill;
+color:#fff;
 padding:5px 0 0 5px;
 text-decoration:none!important;
-}
-.logo::first-letter {
-font-size:45px;color:#71e362;
--webkit-text-stroke: 6px #ffffff;
-paint-order: stroke;
-padding-right:3px;
 }
 .logo a {text-decoration:none;}
 .nav-toggle {display: none;}
