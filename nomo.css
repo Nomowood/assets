@@ -855,7 +855,7 @@ overflow: hidden;
 border:solid 2px #f8c1d8;
 background: #f8c1d8;
 }
-th {
+table.item-list th {
 background: #f8c1d8;
 color: #4a4a5a;
 padding: 1.1rem 1rem;
@@ -864,27 +864,27 @@ font-size: 0.7rem;
 font-weight: bold;
 margin:0;
 }
-td {
+table.item-list td {
 padding: 1.1rem 0;
 border-bottom:dotted 1px #f0e6ff;
 vertical-align: middle;
 font-size:0.9em;
 background:#fff;
 }
-td img {width:40px; height:40px; margin:0; padding:0;}
-td:nth-child(1) {
+table.item-list td img {width:40px; height:40px; margin:0; padding:0;}
+table.item-list td:nth-child(1) {
 width:18%;
 text-align:center;
 }
-td:nth-child(2) {
+table.item-list td:nth-child(2) {
 width:55%;
 text-align:left;
 }
-td:nth-child(3) {
+table.item-list td:nth-child(3) {
 text-align:center;
 font-size:0.8em;
 }
-tr:hover {
+table.item-list tr:hover {
 background: #f8f4ff;
 }
 .row-inner {display:flex; align-items:center; padding:0; gap: 12px;}
