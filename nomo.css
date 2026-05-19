@@ -1049,7 +1049,7 @@ border-right: solid 4px #C9A84C;
 border-bottom: solid 6px #b5953c;
 border-left: solid 2px #C9A84C;
 padding: 1rem;
-z-index: 1;
+z-index: -1;
 overflow: hidden;
 }
 .whoa-p::before {
