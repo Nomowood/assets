@@ -37,7 +37,7 @@ max-width:100%;
   -webkit-user-drag: none;
   user-drag: none;
 }
-a, a i, .copy{
+a, a i, div.copy{
   user-select: text;
   -webkit-user-select: text;
 }
@@ -106,8 +106,8 @@ display:flex;
 align-items:center;
 gap:4px;
 }
-.post-date{display:block;font-size:13px;color:#888;left:1rem;}
-.post-updated{display:block;font-size:13px;color:#888;margin-top:2px;left:1rem;}
+.post-date{display:block;font-size:13px;color:#999;left:1rem;}
+.post-updated{display:block;font-size:13px;color:#999;left:1rem;}
 
 /* Content
 ----------------------------------------------- */
