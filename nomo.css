@@ -1024,7 +1024,7 @@ width:auto;
   background: #846ce6;
   border-radius: 25px;
 box-sizing: border-box;
-word-break: break-all;
+word-break: break-all; z-index:5;
 }
 .whoa-blue::before {
 content: '✦';
