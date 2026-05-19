@@ -198,7 +198,7 @@ margin-right:20px;
 flex-direction: column;
 justify-content: space-between;
 width: 33px;
-height: 25px;
+height: 20px;
 padding:15px;
 background:#272b30;
 border-radius:10px;
@@ -995,7 +995,7 @@ width:auto;
   background: #a58eff;
   border-radius: 25px;
 box-sizing: border-box;
-z-index: 999;
+z-index: 20;
 word-break: break-all;
 }
 .whoa:before {
@@ -1006,7 +1006,7 @@ right:-16px;
 transform: translateY(-50%);
 border: 10px solid transparent;
 border-left: 10px solid #23294a;
-z-index: 0;
+z-index: 1;
 }
 .whoa-blue {
   position:relative;
