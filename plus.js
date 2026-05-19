@@ -407,5 +407,15 @@ if (grid) {
       btn.style.transform = `rotate(${rot}deg)`;
     });
     grid.appendChild(btn);
+
+      document.addEventListener('selectstart', e => {
+    if (e.target.closest('.copy, a, button, input, textarea')) return;
+    e.preventDefault();
+});
+
+document.addEventListener('copy', e => {
+    if (e.target.closest('.copy, a, button, input, textarea')) return;
+    e.preventDefault();
+});
   });
 }
