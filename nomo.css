@@ -995,7 +995,7 @@ width:auto;
   background: #a58eff;
   border-radius: 25px;
 box-sizing: border-box;
-z-index: 20;
+z-index: 5;
 word-break: break-all;
 }
 .whoa:before {
@@ -1049,7 +1049,7 @@ border-right: solid 4px #C9A84C;
 border-bottom: solid 6px #b5953c;
 border-left: solid 2px #C9A84C;
 padding: 1rem;
-z-index: 0;
+z-index: 3;
 overflow: hidden;
 }
 .whoa-p::before {
