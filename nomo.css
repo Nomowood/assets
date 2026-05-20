@@ -212,7 +212,7 @@ height: 3.5px;
 width: 100%;
 background: #fff;
 transition: transform .3s, box-shadow .3s;
-border-radius: 2px;
+border-radius: 2px; z-index:1201;
 }
 .nav-links {
 display:flex;
