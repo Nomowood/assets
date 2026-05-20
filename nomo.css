@@ -203,7 +203,7 @@ padding:15px;
 background:#272b30;
 border-radius:10px;
 cursor: pointer;
-z-index: 1200;
+z-index: 1200!important;
 box-sizing:content-box;
 }
 .hamburger span {
