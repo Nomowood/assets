@@ -459,8 +459,7 @@ width: 1%;
         border: 2px solid #fff;
         box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         margin-top: 29px;
-    }
-    .avatar  { background: #ccc; color: #666; }    
+    background: #ccc; color: #666; }    
     .content {
         display: flex;
         flex-direction: column;
