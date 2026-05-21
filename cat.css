@@ -87,7 +87,7 @@ margin:0;
 padding:0;
 width:100%;
 max-width:100%;
-background-color:#d9b91c;
+background-color:#fdfaf5;
 overflow-wrap:break-word;
 }
 img, iframe, video {
@@ -227,9 +227,7 @@ div.widget h2.title {
 /* Article Page
 ----------------------------------------------- */
 .article-wrap {
-background: #fff!important;
-padding: 45px;
-max-width: 860px; 
+padding: 0;
 margin: 5rem 1rem 3rem 1rem;
 }
 .entry-title { 
@@ -780,7 +778,7 @@ body {font-size:1em;letter-spacing:0.02em;line-height:1.9;}
 .default-box {max-width: 94%;padding: 1.4em 1.3em 1.2em;}
 .nav-container {width:100%;max-width:767px;}
 .hero {padding: 80px 16px 60px;}
-.article-wrap {padding:12px 8px;margin:5.2rem 0 0 0;}
+.article-wrap {padding:12px 0;margin:0;}
 .cta-buttons {flex-direction: column;align-items: center;}
 .btn {width: 100%;max-width: 280px;text-align: center;}
 .hamburger {display: flex;}
