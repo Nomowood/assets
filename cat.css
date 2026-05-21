@@ -410,7 +410,7 @@ font-size: 0.88rem;
 .jp-card th {font-size:0.6rem;color:#7a6f66;letter-spacing:0.1em;}
 .jp-card tr {border-bottom: 1px dotted #e0d8ce;}
 .jp-card tr:last-child {border-bottom: none;}
-.jp-card td {padding: 0.55rem 1.4rem;vertical-align: middle;}
+.jp-card td {padding: 0.5rem 1rem;vertical-align: middle;}
 .jp-card td:first-child {
 font-size: 0.6rem;
 letter-spacing: 0.12em;
@@ -420,7 +420,7 @@ white-space: nowrap;
 width: 1%;
 }
 .jp-card tr.kana { background: #fff; }
-.jp-card tr.kana td:nth-child(1) {font-size: 1.3rem; font-weight: bold; color: #1a1614; }
+.jp-card tr.kana td:nth-child(1) {font-size: 1.3rem; font-weight: bold; color: #1a1614; text-align:center;}
 .jp-card tr.kana td:nth-child(2) {color: #c0392b; }
 .jp-card tr.kana td:nth-child(3) {color: #7a6f66; font-size: 0.75rem; }
  .conversation-example {
