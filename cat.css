@@ -407,7 +407,7 @@ width: 100%;
 border-collapse: collapse;
 font-size: 0.88rem;
 }
-.jp-card th {font-size:0.6rem;color:#666;letter-spacing:0.1em;}
+.jp-card th {font-size:0.6rem;color:#7a6f66;letter-spacing:0.1em;}
 .jp-card tr {border-bottom: 1px dotted #e0d8ce;}
 .jp-card tr:last-child {border-bottom: none;}
 .jp-card td {padding: 0.55rem 1.4rem;vertical-align: middle;}
