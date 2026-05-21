@@ -434,7 +434,8 @@ width: 1%;
     font-size: 19px;
     font-weight: bold;
     text-align: center; margin-top:1rem;}
-.under {border-bottom:2px solid #eee;margin-bottom:5px;padding-bottom:5px;}
+.under {border-bottom:2px solid #eee;margin-bottom:5px;padding-bottom:5px;padding-left:1.2rem;}
+.under::before{content:'▼';font-size:1.1em;}
     .message {
         display: flex;
         gap: 12px;
