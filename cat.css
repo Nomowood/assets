@@ -480,12 +480,10 @@ width: 1%;
 }
 .left {
     --bubble:#666b7d;
-    --speaker:#1e40af;
     --align:left; --radius:0 6px 6px 6px;
 }
 .right{
     --bubble:#21a68b;
-    --speaker:#374151;
     --align:right; --radius:6px 0 6px 6px;
 }
 .speaker {
@@ -493,8 +491,6 @@ width: 1%;
     font-weight: 600;
     margin-bottom: 6px;
     text-align: var(--align);
-    opacity: 0.9;
-    color: var(--speaker);
 }
 /* =====================
 Share シェアボタン 
