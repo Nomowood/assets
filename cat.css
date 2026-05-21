@@ -423,7 +423,7 @@ width: 1%;
 .jp-card tr.kana td:nth-child(1) {font-size: 1.3rem; font-weight: bold; color: #555; text-align:center;}
 .jp-card tr.kana td:nth-child(2) {color: #c0392b; }
 .jp-card tr.kana td:nth-child(3) {color: #7a6f66; font-size: 0.75rem; }
-
+.conversation-example{margin:1rem 0 2rem 0;}
 .ex {padding: 10px 20px;
     border: 5px solid #333;
     border-radius: 50px;
@@ -434,7 +434,7 @@ width: 1%;
     font-size: 19px;
     font-weight: bold;
     text-align: center;}
-.ex-number {color:#d10000;font-size:1.2em;}
+.ex-number {color:#d10000;font-size:1.2em;font-weight:bold;}
 .under {border-bottom:2px solid #eee;margin-bottom:5px;padding-bottom:5px;}
     .message {
         display: flex;
