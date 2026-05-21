@@ -460,23 +460,38 @@ width: 1%;
         max-width: 75%;
     }    
     .bubble {
-        padding: 14px 18px;
-        border-radius: 18px;
-        font-size: 15.8px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
-        line-height: 1.65;
-    }
-  .bubble p {border-bottom:dotted 1px #fff; padding-bottom:6px;margin-bottom:3px;}
-  .bubble {border-bottom-left-radius: 6px;color: #fff; background:var(--bubble)}
-  .left {--babble:#848aa3; --speaker:#1e40af; --align:left;} 
-  .right{--babble: #0fba98; --speaker:#374151; --align:right;}
-    .speaker {
-        font-size: 13px;
-        font-weight: 600;
-        margin-bottom: 6px; text-align:--align;
-        opacity: 0.9; color:var(--speaker)
-    }
-
+    padding: 14px 18px;
+    border-radius: 18px;
+    font-size: 15.8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+    line-height: 1.65;
+    border-bottom-left-radius: 6px;
+    color: #fff;
+    background: var(--bubble);
+}
+.bubble p {
+    border-bottom:dotted 1px #fff;
+    padding-bottom:6px;
+    margin-bottom:3px;
+}
+.left {
+    --bubble:#848aa3;
+    --speaker:#1e40af;
+    --align:left;
+}
+.right{
+    --bubble:#0fba98;
+    --speaker:#374151;
+    --align:right;
+}
+.speaker {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    text-align: var(--align);
+    opacity: 0.9;
+    color: var(--speaker);
+}
 /* =====================
 Share シェアボタン 
 ======================= */
