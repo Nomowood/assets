@@ -1098,8 +1098,8 @@ z-index:-1;
       font-size: 1.1em;
     }
     .habitat-image {
-      width: 100%;
-      height: auto;
+      width: auto; min-height:100px;
+      height: auto; max-height:300px;
       display: block;
     }
 /* ブログカード */
