@@ -424,26 +424,18 @@ width: 1%;
 .jp-card tr.kana td:nth-child(2) {color: #c0392b; }
 .jp-card tr.kana td:nth-child(3) {color: #7a6f66; font-size: 0.75rem; }
 
-.ex {padding: 15px 20px;
+.ex {padding: 10px 20px;
     border: 5px solid #333;
     border-radius: 50px;
     background-image:
         linear-gradient(90deg, transparent 15px, #333 16px calc(100% - 16px), transparent calc(100% - 15px)),
         repeating-linear-gradient(45deg, #F3CC57, 2px, #9b8237 2px 4px);
     color: white;
-    font-size: 26px;
+    font-size: 19px;
     font-weight: bold;
     text-align: center;}
- .conversation-example {
-        max-width: 720px;
-        margin: 40px auto;
-        font-family: "Helvetica Neue", Arial, "Hiragino Sans", "Meiryo", system-ui, sans-serif;
-        line-height: 1.65;
-        padding: 20px;
-        background: #f8fafc;
-        border-radius: 12px;
-    }
-.under {border-bottom:2px solid #eee;margin-bottom:5px;}
+.ex-number {color:#d10000;font-size:1.2em;}
+.under {border-bottom:2px solid #eee;margin-bottom:5px;padding-bottom:5px;}
     .message {
         display: flex;
         gap: 12px;
