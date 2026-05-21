@@ -1075,7 +1075,34 @@ background: #a58eff;
 border-radius: 50%;
 z-index:-1;
 }
-
+  .habitat-container {
+      display: flex;
+      gap: 8px;
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 10px;
+    }
+    .habitat-panel {
+      flex: 1;
+      border: 3px solid #333;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .habitat-header {
+      background: #4a7043;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    .habitat-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+/* ブログカード */
 .def-card {
   display: block;
   width: 100%;
