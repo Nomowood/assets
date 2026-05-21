@@ -432,6 +432,7 @@ width: 1%;
         background: #f8fafc;
         border-radius: 12px;
     }
+.under {border-bottom:2px solid #eee;margin-bottom:5px;}
     .message {
         display: flex;
         gap: 12px;
