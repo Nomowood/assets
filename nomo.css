@@ -1077,10 +1077,10 @@ z-index:-1;
 }
   .habitat-container {
       display: flex;
-      gap: 8px;
+      gap: 3px;
       max-width: 1200px;
       margin: 20px auto;
-      padding: 0 10px;
+      padding: 0;
     }
     .habitat-panel {
       flex: 1;
@@ -1090,15 +1090,14 @@ z-index:-1;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     .habitat-header {
-      background: #4a7043;
+      background: #ba3838;
       color: white;
       text-align: center;
-      padding: 10px;
+      padding: 3px 5px;
       font-weight: bold;
-      font-size: 1.1em;
     }
     .habitat-image {
-      width: auto; min-height:100px;
+      width: 100%; min-height:100px;
       height: auto; max-height:300px;
       display: block;
     }
