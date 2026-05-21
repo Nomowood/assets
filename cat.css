@@ -435,7 +435,9 @@ width: 1%;
     font-weight: bold;
     text-align: center; margin-top:1rem;}
 .under {border-bottom:2px solid #eee;margin-bottom:5px;padding-bottom:5px;padding-left:1.2rem;}
-.under::before{content:'▼';font-size:1.1em;}
+.under::before{content:'';font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\e4f2";font-size:1.1em;color:#666;}
     .message {
         display: flex;
         gap: 12px;
@@ -481,12 +483,12 @@ width: 1%;
 .left {
     --bubble:#848aa3;
     --speaker:#1e40af;
-    --align:left; --radius:0 6px 6px 0;
+    --align:left; --radius:0 6px 6px 6px;
 }
 .right{
     --bubble:#0fba98;
     --speaker:#374151;
-    --align:right; --radius:6px 0 0 6px;
+    --align:right; --radius:6px 0 6px 6px;
 }
 .speaker {
     font-size: 13px;
