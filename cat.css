@@ -437,7 +437,7 @@ width: 1%;
 .under {border-bottom:2px solid #eee;margin-bottom:5px;padding-bottom:5px;padding-left:1.2rem;}
 .under::before{content:'';font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  content: "\e4f2";font-size:1.1em;color:#666;}
+  content: "\e4f2";font-size:1.1em;color:#1e7694;}
     .message {
         display: flex;
         gap: 12px;
