@@ -463,9 +463,8 @@ width: 1%;
     padding: 14px 18px;
     border-radius: 18px;
     font-size: 15.8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
     line-height: 1.65;
-    border-bottom-left-radius: 6px;
+    border-radius: var(--radius);
     color: #fff;
     background: var(--bubble);
 }
@@ -477,12 +476,12 @@ width: 1%;
 .left {
     --bubble:#848aa3;
     --speaker:#1e40af;
-    --align:left;
+    --align:left; --radius:0 6px 6px 0;
 }
 .right{
     --bubble:#0fba98;
     --speaker:#374151;
-    --align:right;
+    --align:right; --radius:6px 0 0 6px;
 }
 .speaker {
     font-size: 13px;
