@@ -477,7 +477,6 @@ width: 1%;
 .bubble p {
     border-bottom:dotted 1px #fff;
     padding-bottom:6px;
-    margin-bottom:3px;
 }
 .left {
     --bubble:#666b7d;
