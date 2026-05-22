@@ -1085,7 +1085,7 @@ z-index:-1;
 .habitat-container a {text-decoration:none;}
     .habitat-panel {
       flex: 1;
-      border: 2px solid #333;
+      border: 2px solid #777; border-radius:5px;
       overflow: hidden; padding:0;
     }
     .habitat-header {
@@ -1096,8 +1096,8 @@ z-index:-1;
       font-weight: bold;
     }
     .habitat-image {
-      min-width:100%; width:auto; height:180px;
-      oject-fit: cover;
+      min-width:100%; width:auto; height:200px;
+      oject-fit: cover; margin-top:1rem;
       display: block; padding:0; margin:0;
     }
 /* ブログカード */
