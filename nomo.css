@@ -1097,8 +1097,8 @@ z-index:-1;
       font-weight: bold;
     }
     .habitat-image {
-      min-width:100%; height:auto;
-      oject-fit: cover;
+      min-width:100%; width:auto; height:100%;
+      oject-fit: contain;
       display: block; padding:0; margin:0;
     }
 /* ブログカード */
