@@ -1090,13 +1090,13 @@ z-index:-1;
     }
     .habitat-header {
       background: #ba3838;
-      color: white;
+      color: white; letter-spacing:0.03em;
       text-align: center;
-      padding: 3px 5px; font-size:0.8em;
+      padding: 3px; font-size:0.7em;
       font-weight: bold;
     }
     .habitat-image {
-      min-width: 100%; height:auto;
+      min-width: 100%; min-height:100%;
       oject-fit: cover;
       display: block;
     }
