@@ -1096,7 +1096,7 @@ z-index:-1;
       font-weight: bold;
     }
     .habitat-image {
-      width: 100%;
+      min-width: 100%; height:auto;
       oject-fit: cover;
       display: block;
     }
