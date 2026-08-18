@@ -1761,7 +1761,7 @@ ol.material-listY li:before{margin-top:-0.3rem;margin-left:0.5rem;}
     font-weight:700;
     font-size:1.08rem;
     color:var(--ink);
-    margin:0;
+    margin:1.5em 0 0 0;
     padding:0;
     border:none;
     border-bottom:none;
