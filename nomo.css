@@ -1720,3 +1720,182 @@ ol.material-listY li:before{margin-top:-0.3rem;margin-left:0.5rem;}
 .db-grid, .guides-grid {grid-template-columns: 1fr;}
 .hero-description {font-size:0.8em;right:8px;bottom:20px;padding:10px 8px;border:double 5px #f1f1f1;}
 }
+
+/* Note */
+:root{
+    --paper:#f5eddc;
+    --paper-deep:#ecdfc4;
+    --wood:#a97c4f;
+    --wood-deep:#7c5636;
+    --ink:#332419;
+    --ink-soft:#6b5a47;
+    --moss:#5c7a52;
+    --moss-deep:#3f5a38;
+    --honey:#e0a53a;
+    --clay:#c06b45;
+    --card:#fffaf0;
+    --line:#d8c6a1;
+  }
+  /* ---------- SECTION LABEL ---------- */
+  .section{margin:34px 16px 0;}
+  .sec-head{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:16px;
+  }
+  .sec-num{
+    font-family:'Zen Maru Gothic',sans-serif;
+    font-weight:900;
+    font-size:.75rem;
+    color:#fff;
+    background:var(--wood-deep);
+    width:30px;height:30px;
+    border-radius:9px;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 3px 0 #5c3f28;
+    flex-shrink:0;
+  }
+  .sec-head h2{
+    font-family:'Zen Maru Gothic',sans-serif;
+    font-weight:700;
+    font-size:1.08rem;
+    color:var(--ink);
+  }
+
+  /* ---------- METHOD CARDS ---------- */
+  .method-list{display:flex;flex-direction:column;gap:10px;}
+  .method-card{
+    background:var(--card);
+    border:2px solid var(--line);
+    border-radius:14px;
+    padding:14px 14px 14px 52px;
+    position:relative;
+    font-size:.86rem;
+    box-shadow:2px 3px 0 var(--line);
+  }
+  .method-card b{
+    display:block;
+    font-family:'Zen Maru Gothic',sans-serif;
+    font-size:.94rem;
+    margin-bottom:3px;
+    color:var(--wood-deep);
+  }
+  .method-card::before{
+    content:attr(data-n);
+    position:absolute;
+    left:12px; top:14px;
+    width:28px;height:28px;
+    background:var(--honey);
+    color:#4a3410;
+    font-family:'Zen Maru Gothic',sans-serif;
+    font-weight:900;
+    font-size:.9rem;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 2px 0 #a5741c;
+  }
+  .method-card img{width:20px;height:20px;display:inline-block;vertical-align:-4px;margin-right:2px;}
+  .method-card .st{color:var(--clay);font-weight:700;}
+
+  /* ---------- RECIPE TAG CARD ---------- */
+  .recipe-tag{
+    position:relative;
+    background:var(--card);
+    border:2.5px solid var(--wood-deep);
+    border-radius:14px;
+    padding:26px 16px 18px;
+    box-shadow:3px 4px 0 var(--wood-deep);
+  }
+  .recipe-tag::after{
+    content:'';
+    position:absolute;
+    top:-6px; left:50%;
+    transform:translateX(-50%);
+    width:10px;height:10px;
+    border-radius:50%;
+    background:var(--paper);
+    box-shadow:0 0 0 2px var(--wood-deep);
+  }
+  .recipe-eyebrow{
+    font-family:'Zen Maru Gothic',sans-serif;
+    font-size:.68rem;
+    font-weight:700;
+    color:var(--moss-deep);
+    letter-spacing:.08em;
+    text-align:center;
+    margin-bottom:10px;
+  }
+  .recipe-items{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .recipe-item{
+    text-align:center;
+    width:88px;
+  }
+  .recipe-item .icon-box{
+    background:var(--paper-deep);
+    border:1.5px solid var(--line);
+    border-radius:12px;
+    padding:8px;
+    margin-bottom:6px;
+  }
+  .recipe-item .icon-box img{width:36px;height:36px;margin:0 auto;}
+  .recipe-item .name{font-size:.78rem;font-weight:700;}
+  .recipe-item .amount{
+    font-family:'Zen Maru Gothic',sans-serif;
+    font-size:.72rem;
+    color:var(--clay);
+    font-weight:700;
+  }
+
+  .drop-note{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:16px;
+    background:var(--moss);
+    color:#f4f6ee;
+    border-radius:12px;
+    padding:10px 14px;
+    font-size:.82rem;
+  }
+  .drop-note img{width:26px;height:26px;flex-shrink:0;}
+  .drop-note b{color:#fff;}
+
+  /* ---------- USAGE ---------- */
+  .usage-box{
+    background:var(--card);
+    border:2px solid var(--line);
+    border-radius:14px;
+    padding:16px;
+    font-size:.85rem;
+    box-shadow:2px 3px 0 var(--line);
+  }
+  .attr-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+  .attr-pill{
+    font-family:'Zen Maru Gothic',sans-serif;
+    font-size:.72rem;
+    font-weight:700;
+    padding:5px 12px;
+    border-radius:999px;
+    color:#fff;
+  }
+  .attr-pill.a1{background:#7a95c9;}
+  .attr-pill.a2{background:#c98f7a;}
+  .attr-pill.a3{background:#8fb579;}
+
+  .type-row{display:flex;gap:8px;margin-top:12px;}
+  .type-pill{
+    display:flex;align-items:center;gap:6px;
+    background:var(--paper-deep);
+    border:1.5px solid var(--line);
+    border-radius:999px;
+    padding:4px 12px 4px 4px;
+    font-size:.78rem;
+    font-weight:700;
+  }
+  .type-pill img{width:22px;height:22px;}
