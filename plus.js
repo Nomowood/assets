@@ -15,7 +15,7 @@ setTimeout(() => {
 }, 10);
 
 // 1-2. スクロール処理（ヘッダーの固定・表示切り替え）
-const header = document.getElementById('header');
+const header = document.querySelector('header');
 if(header){
   let lastScroll = window.scrollY || 0;
   let ticking = false;
@@ -126,7 +126,7 @@ for (let i = 1; i <= freeCount; i++) {
 // 2-3-3. 図鑑ボックスの描画
 el.innerHTML = `
 <div class="fukidashi inview_re">
-<div class="faceicon"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhEyb-WqnorCwpUfWEjfr-JUeGvdeImD-6NtWQNRzyvgHtl3gu1V4esxI9X73VDoKyXMBGWbUhCQ54JpWeI7DefsE6rgDo-RYt2yRFenkxmYozIdt6JtqJ0qLeGJdbqgHY4eIb1IyVbJovRIeuyj5_ODldaSenf9Wc3Hh4w_bQVlK8BCcs/s1600/IMG_4114.jpeg" alt="メタモン"></div>
+<div class="faceicon"><img src="https://fuwa-mochi.com/img/b/R29vZ2xl/AVvXsEhEyb-WqnorCwpUfWEjfr-JUeGvdeImD-6NtWQNRzyvgHtl3gu1V4esxI9X73VDoKyXMBGWbUhCQ54JpWeI7DefsE6rgDo-RYt2yRFenkxmYozIdt6JtqJ0qLeGJdbqgHY4eIb1IyVbJovRIeuyj5_ODldaSenf9Wc3Hh4w_bQVlK8BCcs/s1600/IMG_4114.jpeg" alt="メタモン"></div>
 <div class="chatting"><div class="says"><p>ぽこあポケモンに登場する『<span class="st">${name}</span>』の入手方法・レシピ・使い道をまとめたよ！</p></div></div>
 </div><br>
 <h2>${name}とは</h2>
@@ -397,21 +397,22 @@ if (grid) {
       <span class="sBtn-icon">${icon}</span>
       <span class="sBtn-label">${label}</span>
     `;
-    btn.addEventListener('click', () => {
-      act(id, btn);
-    });
-    btn.addEventListener('mouseenter', () => {
-      btn.style.transform = 'rotate(0deg)';
-    });
-    btn.addEventListener('mouseleave', () => {
-      btn.style.transform = `rotate(${rot}deg)`;
-    });
+    btn.addEventListener('click', () => { act(id, btn); });
+    btn.addEventListener('mouseenter', () => { btn.style.transform = 'rotate(0deg)'; });
+    btn.addEventListener('mouseleave', () => { btn.style.transform = `rotate(${rot}deg)`; });
     grid.appendChild(btn);
+  }); // ← forEachはここで閉じる
 
-      document.addEventListener('selectstart', e => {
+  // selectstart / copy の禁止処理はループの外に1回だけ登録
+  document.addEventListener('selectstart', e => {
     if (e.target.closest('.copy, a, button, input, textarea')) return;
     e.preventDefault();
-});
+  });
+  document.addEventListener('copy', e => {
+    if (e.target.closest('.copy, a, button, input, textarea')) return;
+    e.preventDefault();
+  });
+}
 
 document.addEventListener('copy', e => {
     if (e.target.closest('.copy, a, button, input, textarea')) return;
