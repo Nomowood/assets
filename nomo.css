@@ -448,7 +448,7 @@ line-height: 1.85;
 .post-body h2 {
 position: relative;
 padding-left: 30px;
-margin:3rem 0;
+margin:5rem 0 3rem 0;
 line-height: 1.4;
 min-height: 40px;
 display: flex;
