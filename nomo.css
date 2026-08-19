@@ -1888,6 +1888,7 @@ ol.material-listY li:before{margin-top:-0.3rem;margin-left:0.5rem;}
     font-size:.85rem;
     box-shadow:2px 3px 0 var(--line);
   }
+/* --- アイテムの属性ボタン ---*/
   .attr-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
   .attr-pill{
     font-family:'Zen Maru Gothic',sans-serif;
@@ -1895,7 +1896,7 @@ ol.material-listY li:before{margin-top:-0.3rem;margin-left:0.5rem;}
     font-weight:700;
     padding:5px 12px;
     border-radius:999px;
-    color:#fff;
+    color:#fff; text-decoration:none;
   }
   .attr-pill.a1{background:#7a95c9;}
   .attr-pill.a2{background:#c98f7a;}
@@ -1912,3 +1913,66 @@ ol.material-listY li:before{margin-top:-0.3rem;margin-left:0.5rem;}
     font-weight:700;
   }
   .type-pill img{width:22px;height:22px;}
+
+.favorite-list-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 10px;
+}
+.favorite-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); 
+  gap: 15px; 
+  justify-content: center; 
+}
+/* --- 各アイテム --- */
+.favorite-item {
+  display: flex;
+  flex-direction: column; /* 上下に並べる */
+  align-items: center;
+  text-align: center;
+  word-break: break-all; /* 長い英単語などで改行させる */
+}
+/* --- 正方形アイコン --- */
+.favorite-pokemon {
+  width: 100%; 
+  aspect-ratio: 1 / 1; 
+  background-color: #f0f0f0; 
+  border-radius: 8px; 
+  overflow: hidden; 
+  border: 1px solid #ddd;
+  /* 画像の配置設定 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.favorite-pokémon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* --- ポケモンの名前--- */
+.favorite-pokename {
+  margin-top: 5px;
+  font-size: 12px;
+  line-height: 1.3;
+  color: #333;
+  /* 6文字1行の設定 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1; /* 1行に制限 */
+  overflow: hidden;
+  text-overflow: ellipsis; /* はみ出した場合に「...」を表示（保険） */
+  width: 100%;
+  text-align:center;
+}
+/* --- レスポンシブ調整（大画面向け） --- */
+@media (min-width: 600px) {
+  .favorite-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); 
+    gap: 20px;
+  }
+  .favorite-text {
+    font-size: 14px;
+  }
+}
