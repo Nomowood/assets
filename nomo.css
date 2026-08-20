@@ -1916,12 +1916,12 @@ ol.material-listY li:before{margin-top:-0.3rem;margin-left:0.5rem;}
 
 .favorite-list-container {
   max-width: 800px;
-  margin: 20px auto;
+  margin: 25px auto;
   padding: 0 10px;
 }
 .favorite-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); 
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); 
   gap: 10px; 
   justify-content: center; 
 }
