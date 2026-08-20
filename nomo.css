@@ -1936,8 +1936,7 @@ ol.material-listY li:before{margin-top:-0.3rem;margin-left:0.5rem;}
 /* --- 正方形アイコン --- */
 .favorite-pokemon {
   width: 100%; 
-  aspect-ratio: 1 / 1; 
-  background-color: #caa5d6; 
+  aspect-ratio: 1 / 1;
   border-radius: 8px; 
   overflow: hidden; 
   border: 1px solid #ddd;
