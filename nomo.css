@@ -1945,13 +1945,13 @@ ol.material-listY li:before{margin-top:-0.3rem;margin-left:0.5rem;}
   align-items: center;
 }
 .favorite-pokemon img {
-  width: 50px;
+  width: 50px; padding:0;
   height: auto;
   object-fit: cover;
 }
 /* --- ポケモンの名前--- */
 .favorite-pokename {
-  margin-top: 5px;
+  margin:0;
   font-size: 14px;
   line-height: 1.3;
   color: #333;
