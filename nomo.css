@@ -1921,7 +1921,7 @@ ol.material-listY li:before{margin-top:-0.3rem;margin-left:0.5rem;}
 }
 .favorite-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); 
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); 
   gap: 10px; 
   justify-content: center; 
 }
@@ -1946,6 +1946,7 @@ ol.material-listY li:before{margin-top:-0.3rem;margin-left:0.5rem;}
 }
 .favorite-pokemon img {
   width: 100%;
+  max-width:50px;
   height: 100%;
   object-fit: cover;
 }
