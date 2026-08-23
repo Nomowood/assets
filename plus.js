@@ -1,3 +1,32 @@
+// 0. マス目
+const patterns = [
+  [1,1], [1,2], [1,3],
+  [2,1], [2,2], [2,3],
+  [3,1], [3,2]
+];
+const container = document.getElementById('patterns');
+patterns.forEach(([cols, rows]) => {
+  const wrap = document.createElement('div');
+  wrap.className = 'block';
+  const label = document.createElement('div');
+  label.className = 'label';
+  label.textContent = `${cols}×${rows} マス`;
+  wrap.appendChild(label);
+  const grid = document.createElement('div');
+  grid.className = 'masu-grid';
+  grid.style.setProperty('--cols', cols);
+  grid.style.setProperty('--rows', rows);
+  for (let i = 1; i <= cols * rows; i++) {
+    const cell = document.createElement('div');
+    cell.className = 'cell';
+    cell.textContent = i;
+    grid.appendChild(cell);
+  }
+  wrap.appendChild(grid);
+  container.appendChild(wrap);
+});
+
+// START
 let observer;
 function observeInviewElements() {
   document.querySelectorAll('.inview_re:not(.observed)').forEach(el => {
