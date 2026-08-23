@@ -16,6 +16,11 @@
   --rust:  #c4522a;
   --sage:  #5a7a5e;
   --dust:  #b5a990;
+    --masu-size: 44px;
+    --masu-outer: #2f6fed;
+    --masu-inner: #2f6fed;
+    --masu-bg: #f4f8ff;
+    --masu-text: #333;
 }
 *, *::before, *::after {box-sizing:border-box;}
 html {font-size:17px;}
@@ -1964,6 +1969,31 @@ ol.material-listY li:before{margin-top:-0.3rem;margin-left:0.5rem;}
   width: 100%;
   text-align:center;
 }
+/* アイテムのマス目 */
+.masu-grid{
+    display:inline-grid;
+    grid-template-columns: repeat(var(--cols), var(--masu-size));
+    grid-template-rows: repeat(var(--rows), var(--masu-size));
+    gap: 0;                              /* ブロック間の隙間なし */
+    border: 2px solid var(--masu-outer); /* 外側だけ青の実線 */
+    background: var(--masu-bg);
+  }
+  .masu-grid .cell{
+    width: var(--masu-size);
+    height: var(--masu-size);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size: 13px;
+    color: var(--masu-text);
+    border-right: 1px dashed var(--masu-inner);
+    border-bottom: 1px dashed var(--masu-inner);
+  }
+  /* 右端・下端のマスは内側の点線を出さない（外枠の青と重複させない） */
+  .masu-grid .cell:nth-last-child(-n+1){ }
+  .block{margin-bottom:28px;}
+  .block .label{font-size:12px; color:#999; margin-bottom:8px;}
+
 /* --- レスポンシブ調整（大画面向け） --- */
 @media (min-width: 600px) {
   .favorite-grid {
